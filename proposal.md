@@ -16,7 +16,6 @@ Desarrollar un sistema de inscripción de alumnos para las carreras de grado y p
 ![Imagen del Modelo de Dominio](https://drive.google.com/file/d/1sN6lxknGDeUfjowhyQDId1MU-sqobIae/view?usp=drive_link)
 
 
-
 ## Alcance Funcional 
 
 Adicionales para Aprobación
@@ -47,9 +46,9 @@ Adicionales para Aprobación
 
 |REQUISITOS|DETALLE
 |:-|:-|
-|CRUD|1. CRUD Carreras<br>
-      2. CRUD Facultades<br>
-      3. CRUD Materias
+|CRUD             |1. CRUD Carreras<br>
+                   2. CRUD Facultades<br>
+                   3. CRUD Materias|
 |CRUD Dependiente | 4. CRUD Comisiones {depende de} CRUD Carrera y Materias<br>
                     5. CRUD Materias {depende de} CRUD Carrera<br>
                     6. CRUD Inscripciones {depende de} CRUD Carrera<br>
@@ -87,37 +86,34 @@ Adicionales para Aprobación
 
 ### Casos de Uso de Negocio
 
-CUN_001. Registrar un nuevo ingresante<br>
+<b>CUN_001. Registrar un nuevo ingresante</b><br>
 1. El usuario ingresa al sitio web donde se realiza el proceso de registro.
 2. El usuario inicia el proceso de registro.
 3. El usuario completa el formulario de registro con sus datos.
 4. El usuario válida la inscripción e ingresa al sistema.
 <br>
 <br>
-<br>
-CUN_002. Registrar Solicitud de Inscripción<br>
+<b>CUN_002. Registrar Solicitud de Inscripción</b><br>
 1. El usuario ingresa al sistema con sus credenciales.
 2. El usuario completa el formulario de inscripción con sus datos y adjunta
 documentación.
 3. El usuario finaliza la inscripción y envía la solicitud.
-CUN_003. Validar Inscripción
+<b>CUN_003. Validar Inscripción
 1. El PA chequea diariamente las solicitudes de inscripciones.
 2. Si existe una solicitud de inscripción pendiente, el PA comienza el
 proceso de validación de datos.
 3. Si todos los datos son correctos, el PA aprueba la inscripción.
 <br>
 <br>
-<br>
-CUN_004. Registrar Nuevos Alumnos<br>
+<b>CUN_004. Registrar Nuevos Alumnos</b><br>
 1. El PA realiza el proceso de "CUU_001 Iniciar Sesión"
 2. El PA ingresa al panel de inscripciones.
 3. El PA busca las inscripciones con estado “aprobado”.
 4. El PA realiza el proceso de alta de alumnos.
 
-
 ### Casos de Uso de Sistema
 
-CUS_001. Registrar un nuevo ingresante<br>
+<b>CUS_001. Registrar un nuevo ingresante</b><br>
 1. El usuario ingresa al sitio web donde se realiza el proceso de registro.
 El Sistema inicia el proceso de registro.
 2. El usuario inicia el proceso de registro. El Sistema registra la
@@ -129,8 +125,7 @@ registra y actualiza el estado del Usuario a “Verificado” y crea un
 registro de inscripción con estado “Nueva”.
 <br>
 <br>
-<br>
-CUS_002. Registrar solicitud de inscripción<br>
+<b>CUS_002. Registrar solicitud de inscripción</b><br>
 1. El usuario ingresa al sistema con sus credenciales. El Sistema lo
 valida.
 2. El usuario completa el formulario de inscripción y envía la solicitud.
@@ -138,8 +133,7 @@ El Sistema lo registra y modifica el estado de la inscripción a
 “Pendiente”.
 <br>
 <br>
-<br>
-CUS_003. Validar Inscripción<br>
+<b>CUS_003. Validar Inscripción</b><br>
 1. El PA realiza el proceso de "CUU_001 Iniciar Sesión"
 2. El PA chequea diariamente las solicitudes de inscripciones. El Sistema
 muestra las inscripciones “pendientes”.
@@ -151,8 +145,7 @@ Sistema registra la selección y modifica el estado de la inscripción a
 “aprobada”.
 <br>
 <br>
-<br>
-CUS_004. Registrar Nuevos Alumnos<br>
+<b>CUS_004. Registrar Nuevos Alumnos</b><br>
 1. El PA realiza el proceso de "CUU_001 Iniciar Sesión"
 2. El PA ingresa al panel de inscripciones. El Sistema las muestra.
 3. El PA busca las inscripciones con estado “aprobado”. El Sistema las
