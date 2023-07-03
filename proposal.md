@@ -13,7 +13,7 @@
 Desarrollar un sistema de inscripción de alumnos para las carreras de grado y posgrado dictadas en la Universidad Tecnologica Nacional Regional Rosario y en los diferentes anexos institucionales, que permita realizar el registro e inscripción de un nuevo alumno en la institución de forma automatizada.
 
 ### Modelo
-![https://drive.google.com/file/d/1sN6lxknGDeUfjowhyQDId1MU-sqobIae/view?usp=drive_link](https://drive.google.com/file/d/1sN6lxknGDeUfjowhyQDId1MU-sqobIae/view?usp=drive_link)]
+![https://drive.google.com/file/d/1sN6lxknGDeUfjowhyQDId1MU-sqobIae/view?usp=drive_link](https://drive.google.com/file/d/1sN6lxknGDeUfjowhyQDId1MU-sqobIae/view?usp=drive_link)
 
 ## Alcance Funcional 
 
