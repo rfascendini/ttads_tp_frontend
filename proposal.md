@@ -65,27 +65,27 @@ Adicionales para Aprobación
 ### Casos de Uso de Negocio
 
 <b>CUN_001. Registrar un nuevo ingresante</b><br>
-1. El usuario ingresa al sitio web donde se realiza el proceso de registro.
-2. El usuario inicia el proceso de registro.
-3. El usuario completa el formulario de registro con sus datos.
+1. El usuario ingresa al sitio web donde se realiza el proceso de registro.<br>
+2. El usuario inicia el proceso de registro.<br>
+3. El usuario completa el formulario de registro con sus datos.<br>
 4. El usuario válida la inscripción e ingresa al sistema.
 <br>
 <b>CUN_002. Registrar Solicitud de Inscripción</b><br>
-1. El usuario ingresa al sistema con sus credenciales.
-2. El usuario completa el formulario de inscripción con sus datos y adjunta documentación.
+1. El usuario ingresa al sistema con sus credenciales.<br>
+2. El usuario completa el formulario de inscripción con sus datos y adjunta documentación.<br>
 3. El usuario finaliza la inscripción y envía la solicitud.
 <br>
 <br>
 <b>CUN_003. Validar Inscripción</b><br>
-1. El PA chequea diariamente las solicitudes de inscripciones.
-2. Si existe una solicitud de inscripción pendiente, el PA comienza el proceso de validación de datos.
+1. El PA chequea diariamente las solicitudes de inscripciones.<br>
+2. Si existe una solicitud de inscripción pendiente, el PA comienza el proceso de validación de datos.<br>
 3. Si todos los datos son correctos, el PA aprueba la inscripción.
 <br>
 <br>
 <b>CUN_004. Registrar Nuevos Alumnos</b><br>
-1. El PA realiza el proceso de "CUU_001 Iniciar Sesión".
-2. El PA ingresa al panel de inscripciones.
-3. El PA busca las inscripciones con estado “aprobado”.
+1. El PA realiza el proceso de "CUU_001 Iniciar Sesión".<br>
+2. El PA ingresa al panel de inscripciones.<br>
+3. El PA busca las inscripciones con estado “aprobado”.<br>
 4. El PA realiza el proceso de alta de alumnos.
 
 ### Casos de Uso de Sistema
