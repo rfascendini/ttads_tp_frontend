@@ -15,7 +15,6 @@ Desarrollar un sistema de inscripción de alumnos para las carreras de grado y p
 ### Modelo
 ![Imagen del Modelo de Dominio](https://drive.google.com/file/d/1sN6lxknGDeUfjowhyQDId1MU-sqobIae/view?usp=drive_link)
 
-
 ## Alcance Funcional 
 
 Adicionales para Aprobación
@@ -98,10 +97,11 @@ Adicionales para Aprobación
 2. El usuario completa el formulario de inscripción con sus datos y adjunta
 documentación.
 3. El usuario finaliza la inscripción y envía la solicitud.
-<b>CUN_003. Validar Inscripción
+<br>
+<br>
+<b>CUN_003. Validar Inscripción</b><br>
 1. El PA chequea diariamente las solicitudes de inscripciones.
-2. Si existe una solicitud de inscripción pendiente, el PA comienza el
-proceso de validación de datos.
+2. Si existe una solicitud de inscripción pendiente, el PA comienza el proceso de validación de datos.
 3. Si todos los datos son correctos, el PA aprueba la inscripción.
 <br>
 <br>
@@ -114,44 +114,26 @@ proceso de validación de datos.
 ### Casos de Uso de Sistema
 
 <b>CUS_001. Registrar un nuevo ingresante</b><br>
-1. El usuario ingresa al sitio web donde se realiza el proceso de registro.
-El Sistema inicia el proceso de registro.
-2. El usuario inicia el proceso de registro. El Sistema registra la
-solicitud y muestra los campos a completar.
-3. El usuario completa los datos para validación de la solicitud. El
-Sistema los registra y envía el correo de validación.
-4. El usuario válida la inscripción e ingresa al sistema. El Sistema lo
-registra y actualiza el estado del Usuario a “Verificado” y crea un
-registro de inscripción con estado “Nueva”.
+1. El usuario ingresa al sitio web donde se realiza el proceso de registro. El Sistema inicia el proceso de registro.
+2. El usuario inicia el proceso de registro. El Sistema registra la solicitud y muestra los campos a completar.
+3. El usuario completa los datos para validación de la solicitud. El Sistema los registra y envía el correo de validación.
+4. El usuario válida la inscripción e ingresa al sistema. El Sistema lo registra y actualiza el estado del Usuario a “Verificado” y crea un registro de inscripción con estado “Nueva”.
 <br>
 <br>
 <b>CUS_002. Registrar solicitud de inscripción</b><br>
-1. El usuario ingresa al sistema con sus credenciales. El Sistema lo
-valida.
-2. El usuario completa el formulario de inscripción y envía la solicitud.
-El Sistema lo registra y modifica el estado de la inscripción a
-“Pendiente”.
+1. El usuario ingresa al sistema con sus credenciales. El Sistema lo valida.
+2. El usuario completa el formulario de inscripción y envía la solicitud. El Sistema lo registra y modifica el estado de la inscripción a “Pendiente”.
 <br>
 <br>
 <b>CUS_003. Validar Inscripción</b><br>
 1. El PA realiza el proceso de "CUU_001 Iniciar Sesión"
-2. El PA chequea diariamente las solicitudes de inscripciones. El Sistema
-muestra las inscripciones “pendientes”.
-3. Si existe una solicitud de inscripción pendiente, el PA comienza el
-proceso de validación de datos. El Sistema muestra la información
-completa de dicha inscripción.
-4. Si todos los datos son correctos, el PA aprueba la inscripción. El
-Sistema registra la selección y modifica el estado de la inscripción a
-“aprobada”.
+2. El PA chequea diariamente las solicitudes de inscripciones. El Sistema muestra las inscripciones “pendientes”.
+3. Si existe una solicitud de inscripción pendiente, el PA comienza el proceso de validación de datos. El Sistema muestra la información completa de dicha inscripción.
+4. Si todos los datos son correctos, el PA aprueba la inscripción. El Sistema registra la selección y modifica el estado de la inscripción a “aprobada”.
 <br>
 <br>
 <b>CUS_004. Registrar Nuevos Alumnos</b><br>
 1. El PA realiza el proceso de "CUU_001 Iniciar Sesión"
 2. El PA ingresa al panel de inscripciones. El Sistema las muestra.
-3. El PA busca las inscripciones con estado “aprobado”. El Sistema las
-filtra y las muestra.
-4. El PA realiza el proceso de alta de alumnos. El Sistema exporta las
-inscripciones con estado “aprobado” y crea los registros como nuevas
-personas en la base de datos con los datos del ingresante. A su vez, el
-Sistema repite el proceso pero con los registro de personas pero crea
-registros de alumnos con los datos de las personas.
+3. El PA busca las inscripciones con estado “aprobado”. El Sistema las filtra y las muestra.
+4. El PA realiza el proceso de alta de alumnos. El Sistema exporta las inscripciones con estado “aprobado” y crea los registros como nuevas personas en la base de datos con los datos del ingresante. A su vez, el Sistema repite el proceso pero con los registro de personas pero crea registros de alumnos con los datos de las personas.
