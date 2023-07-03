@@ -45,9 +45,7 @@ Adicionales para Aprobación
 
 |REQUISITOS|DETALLE
 |:-|:-|
-|CRUD             |1. CRUD Carreras<br>
-                   2. CRUD Facultades<br>
-                   3. CRUD Materias|
+|CRUD|1. CRUD Carreras<br>2. CRUD Facultades<br>3. CRUD Materias|
 |CRUD Dependiente | 4. CRUD Comisiones {depende de} CRUD Carrera y Materias<br>
                     5. CRUD Materias {depende de} CRUD Carrera<br>
                     6. CRUD Inscripciones {depende de} CRUD Carrera<br>
@@ -91,7 +89,6 @@ Adicionales para Aprobación
 3. El usuario completa el formulario de registro con sus datos.
 4. El usuario válida la inscripción e ingresa al sistema.
 <br>
-<br>
 <b>CUN_002. Registrar Solicitud de Inscripción</b><br>
 1. El usuario ingresa al sistema con sus credenciales.
 2. El usuario completa el formulario de inscripción con sus datos y adjunta
@@ -118,7 +115,6 @@ documentación.
 2. El usuario inicia el proceso de registro. El Sistema registra la solicitud y muestra los campos a completar.
 3. El usuario completa los datos para validación de la solicitud. El Sistema los registra y envía el correo de validación.
 4. El usuario válida la inscripción e ingresa al sistema. El Sistema lo registra y actualiza el estado del Usuario a “Verificado” y crea un registro de inscripción con estado “Nueva”.
-<br>
 <br>
 <b>CUS_002. Registrar solicitud de inscripción</b><br>
 1. El usuario ingresa al sistema con sus credenciales. El Sistema lo valida.
