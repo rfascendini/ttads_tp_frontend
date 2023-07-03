@@ -5,9 +5,8 @@
 * 43075 - Fascendini, Renzo
 
 ### Repositorios
-* [frontend app](http://hyperlinkToGihubOrGitlab)
-* [backend app](http://hyperlinkToGihubOrGitlab)
-*Nota*: si utiliza un monorepo indicar un solo link con fullstack app.
+* [frontend app - No Disponibles Actualmente]
+* [backend app - No Disponibles Actualmente]
 
 ## Tema
 ### Descripción
