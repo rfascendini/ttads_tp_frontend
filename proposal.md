@@ -46,36 +46,17 @@ Adicionales para Aprobación
 |REQUISITOS|DETALLE
 |:-|:-|
 |CRUD|1. CRUD Carreras<br>2. CRUD Facultades<br>3. CRUD Materias|
-|CRUD Dependiente | 4. CRUD Comisiones {depende de} CRUD Carrera y Materias<br>
-                    5. CRUD Materias {depende de} CRUD Carrera<br>
-                    6. CRUD Inscripciones {depende de} CRUD Carrera<br>
-                    7. CRUD Discapacidad {depende de} CRUD Inscripción<br>
-                    8. CRUD Personas {depende de} CRUD Inscripción<br>
-                    9. CRUD Alumnos {depende de} CRUD Personas y de una aplicación externa.|
-|Listado + Detalle |  1. Listado de Carreras filtrado por nombre.<br>
-                      2. Listado de Facultades filtrado por nombre.<br>
-                      3. Listado de Comisiones filtrado por turno y carrera.<br>
-                      4. Listado de Materias filtrado por nombre.<br>
-                      5. Listado de Inscripciones filtrado por ingresante {apellido, nombre, dni}, fecha de alta, estado solicitud => detalle muestra datos completos de la inscripción e inscripto.|
-|CUU/Epic | 1. Registrar un nuevo ingresante<br>
-            2. Registrar Solicitud de Inscripción<br>
-            3. Validar Inscripción<br>
-            4. Registrar un nuevo ingresante|
-
+|CRUD Dependiente|4. CRUD Comisiones {depende de} CRUD Carrera y Materias<br>5. CRUD Materias {depende de} CRUD Carrera<br>6. CRUD Inscripciones {depende de} CRUD Carrera<br>7. CRUD Discapacidad {depende de} CRUD Inscripción<br>8. CRUD Personas {depende de} CRUD Inscripción<br>9. CRUD Alumnos {depende de} CRUD Personas y de una aplicación externa.|
+|Listado + Detalle |1. Listado de Carreras filtrado por nombre.<br>2. Listado de Facultades filtrado por nombre.<br>3. Listado de Comisiones filtrado por turno y carrera.<br>4. Listado de Materias filtrado por nombre.<br>5. Listado de Inscripciones filtrado por ingresante {apellido, nombre, dni}, fecha de alta, estado solicitud => detalle muestra datos completos de la inscripción e inscripto.|
+|CUU/Epic |1. Registrar un nuevo ingresante<br>2. Registrar Solicitud de Inscripción<br>3. Validar Inscripción<br>4. Registrar un nuevo ingresante|
 
 ### Alcance Adicional Voluntario
 
-
 |REQUISITOS|DETALLE|
 |:-|:-|
-|Listados | 1. Listado de Personas filtrado por datos del inscripto {todos los datos}.<br>
-            2. Listado de Alumnos filtrado por datos de la persona {todos los datos}.|
-|CUU/Epic | 1. Registrar Ingresante como Persona<br>
-            2. Registrar Persona como Alumno|
-|Otros    | 1. Registro vía token y confirmación de correo.<br>
-            2. Envío de notificación de validación de inscripción por email.|
-
-
+|Listados |1. Listado de Personas filtrado por datos del inscripto {todos los datos}.<br>2. Listado de Alumnos filtrado por datos de la persona {todos los datos}.|
+|CUU/Epic |1. Registrar Ingresante como Persona<br>2. Registrar Persona como Alumno|
+|Otros    |1. Registro vía token y confirmación de correo.<br>2. Envío de notificación de validación de inscripción por email.|
 
 ## Análisis y Relevamiento
 
@@ -91,8 +72,7 @@ Adicionales para Aprobación
 <br>
 <b>CUN_002. Registrar Solicitud de Inscripción</b><br>
 1. El usuario ingresa al sistema con sus credenciales.
-2. El usuario completa el formulario de inscripción con sus datos y adjunta
-documentación.
+2. El usuario completa el formulario de inscripción con sus datos y adjunta documentación.
 3. El usuario finaliza la inscripción y envía la solicitud.
 <br>
 <br>
@@ -103,7 +83,7 @@ documentación.
 <br>
 <br>
 <b>CUN_004. Registrar Nuevos Alumnos</b><br>
-1. El PA realiza el proceso de "CUU_001 Iniciar Sesión"
+1. El PA realiza el proceso de "CUU_001 Iniciar Sesión".
 2. El PA ingresa al panel de inscripciones.
 3. El PA busca las inscripciones con estado “aprobado”.
 4. El PA realiza el proceso de alta de alumnos.
@@ -122,14 +102,14 @@ documentación.
 <br>
 <br>
 <b>CUS_003. Validar Inscripción</b><br>
-1. El PA realiza el proceso de "CUU_001 Iniciar Sesión"
+1. El PA realiza el proceso de "CUU_001 Iniciar Sesión".
 2. El PA chequea diariamente las solicitudes de inscripciones. El Sistema muestra las inscripciones “pendientes”.
 3. Si existe una solicitud de inscripción pendiente, el PA comienza el proceso de validación de datos. El Sistema muestra la información completa de dicha inscripción.
 4. Si todos los datos son correctos, el PA aprueba la inscripción. El Sistema registra la selección y modifica el estado de la inscripción a “aprobada”.
 <br>
 <br>
 <b>CUS_004. Registrar Nuevos Alumnos</b><br>
-1. El PA realiza el proceso de "CUU_001 Iniciar Sesión"
+1. El PA realiza el proceso de "CUU_001 Iniciar Sesión".
 2. El PA ingresa al panel de inscripciones. El Sistema las muestra.
 3. El PA busca las inscripciones con estado “aprobado”. El Sistema las filtra y las muestra.
 4. El PA realiza el proceso de alta de alumnos. El Sistema exporta las inscripciones con estado “aprobado” y crea los registros como nuevas personas en la base de datos con los datos del ingresante. A su vez, el Sistema repite el proceso pero con los registro de personas pero crea registros de alumnos con los datos de las personas.
