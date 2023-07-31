@@ -1,0 +1,1298 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+
+  <form class="was-validated">
+
+    <!---------------------------------------- SECCIONES -------------------------------------------->
+
+    <!-- CARRERA -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Carrera</h2>
+      </div>
+      <div class="card-body row g-3">
+
+        <div class="form-group">
+          <label for="carrera">Carrera</label>
+          <select class="form-select is-invalid" id="carrera" name="carrera"
+            data-related="lugarcursado|formaingreso|tipocursado" required>
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="lugarcursado">Lugar cursado</label>
+          <select class="form-select is-invalid" id="lugarcursado" name="lugarcursado" required>
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="formaingreso">Forma de ingreso</label>
+          <select class="form-select is-invalid" id="formaingreso" name="formaingreso" required
+            data-dynamic-section="formaingreso">
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tipocursado">Curso</label>
+          <select class="form-select is-invalid" id="tipocursado" name="tipocursado">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="formaingreso-block" data-showon="introductorio">
+          <div class="mb-12">
+            <label for="introductoriointensivo">Desea realizar el curso intensivo de verano?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" id="introductoriointensivo" name="introductoriointensivo"
+                value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" id="introductoriointensivo" name="introductoriointensivo"
+                value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- DATOS PERSONALES -->
+
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Datos Personales</h2>
+      </div>
+      <div class="card-body row g-3">
+
+        <div class="form-group">
+          <label for="alumnoapellido">Apellido</label>
+          <input type="text" class="form-control" id="alumnoapellido" name="alumnoapellido" required>
+          <small id="alumnoapellidoHelpBlock" class="form-text text-muted">Si su apellido es compuesto, ingréselo
+            completo.</small>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="alumnonombres">Nombres</label>
+          <input type="text" class="form-control" id="alumnonombres" name="alumnonombres" required>
+          <small id="alumnonombreHelpBlock" class="form-text text-muted">Si su nombre es compuesto, ingréselo
+            completo.</small>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="alumnotipodocumento">Tipo de Documento</label>
+          <select class="form-select is-invalid" id="alumnotipodocumento" name="alumnotipodocumento" required>
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="alumnonumerodocumento">Número de Documento</label>
+          <input type="text" class="form-control" id="alumnonumerodocumento" name="alumnonumerodocumento" required>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="alumnocuil">CUIL (Puede obtener su n&uacute;mero de CUIL haciendo clic <a
+              href="https://www.anses.gob.ar/consulta/constancia-de-cuil" target="_blank">aqui</a>)</label>
+          <input type="cuil" class="form-control" id="alumnocuil" name="alumnocuil"
+            pattern="([0-9]{2})-([0-9]{8})-([0-9]{1})">
+          <div class="invalid-feedback">Este valor es obligatorio y debe estar en formato 99-99999999-9</div>
+        </div>
+
+        <div class="form-group">
+          <label for="alumnosexo">Sexo (como figura en su documento)</label>
+          <select class="form-select is-invalid" id="alumnosexo" name="alumnosexo" required>
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="alumnogenero">Identidad de Género</label>
+          <select class="form-select is-invalid" id="alumnogenero" name="alumnogenero"
+            data-dynamic-section="alumnogenero">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group alumnogenero-block" data-showon="13">
+          <label for="alumnogenerodet">Detalle de Género</label>
+          <input type="text" class="form-control" id="alumnogenerodet" name="alumnogenerodet">
+        </div>
+
+        <div class="form-group">
+          <label for="alumnoestadocivil">Estado Civil</label>
+          <select class="form-select is-invalid" id="alumnoestadocivil" name="alumnoestadocivil">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="nacgruposanguineo">Grupo Sanguíneo</label>
+          <select class="form-select is-invalid" id="nacgruposanguineo" name="nacgruposanguineo">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- DISCAPACIDAD -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Condición de Discapacidad</h2>
+      </div>
+      <div class="card-body row g-3">
+
+        <div class="form-group">
+          <label for="discapacidad">Condición de discapacidad</label><br>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" name="discapacidad" [value]="'SI'"
+              [(ngModel)]="seccion_discapacidad" [checked]="isChecked" required />
+            <label for="" class="form-check-label">Declaro condición de discapacidad</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" name="discapacidad" [value]="'NO'"
+              [(ngModel)]="seccion_discapacidad" [checked]="!isChecked" required>
+            <label for="" class="form-check-label">No presento ninguna condición que implique discapacidad</label>
+          </div>
+          <br><small id="alumnoapellidoHelpBlock" class="form-text text-muted">Tildar la opción que corresponda.</small>
+        </div>
+
+        <div class="from-group row g-3 mt-3" *ngIf="seccion_discapacidad == 'SI'">
+
+          <div class="form-group">
+            <label for="discapacidadCERTDISCAP">¿Posee Certificado de Discapacidad Único (CUD)?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadCERTDISCAP" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadCERTDISCAP" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidad">Discapacidad</label>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="discapacidadNEAEAUDITI" value="SI"
+                data-dynamic-section="discapacidadAUDITIVA">
+              <label class="form-check-label" for="">Auditiva</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="discapacidadNEAEVISUAL" value="SI"
+                data-dynamic-section="discapacidadVISUAL">
+              <label class="form-check-label" for="">Visual</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="discapacidadNEAEMOTRIZ" value="SI"
+                data-dynamic-section="discapacidadMOTORA">
+              <label class="form-check-label" for="">Motora</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="discapacidadNEAEPSICOS" value="SI"
+                data-dynamic-section="discapacidadPSICO">
+              <label class="form-check-label" for="">Condición Psicosocial</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="discapacidadNEAEOTRAS" value="SI"
+                data-dynamic-section="discapacidadOTRA">
+              <label class="form-check-label" for="">Otras</label>
+            </div>
+          </div>
+
+          <h4>Auditiva</h4>
+          <div class="form-group">
+            <label for="discapacidadAUD_DIFICU">¿Tiene dificultad para oír, incluso si usa un audífono o implante
+              coclear? </label>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_DIFICU" value="1">
+              <label class="form-check-label" for="">No, no hay dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_DIFICU" value="2">
+              <label class="form-check-label" for="">Si, alguna dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_DIFICU" value="3">
+              <label class="form-check-label" for="">Si, mucha dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_DIFICU" value="4">
+              <label class="form-check-label" for="">No puedo hacerlo en absoluto</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadAUDITIVAFORMA">¿Cuál es su forma habitual de comunicación?</label>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="discapacidadAUD_COMUNI" value="SI">
+              <label class="form-check-label" for="">Lengua de Señas</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="discapacidadAUD_COM_LA" value="SI">
+              <label class="form-check-label" for="">Lectura Labial</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" name="discapacidadAUD_COMOTR" id="discapacidadAUD_COMOTRDESC"
+                class="form-check-input" value="otro">
+              <label class="form-check-label" for="">Otras </label>
+              <input type="text" name="discapacidadAUD_COMOTRDESC" class="form-control">
+              <div class="invalid-feedback">Debe especificar este valor.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-group">
+              <label for="discapacidadAUD_APOYO">¿Qué apoyos utiliza en su vida diaria? </label>
+              <input type="text" class="form-control" id="discapacidadAUD_APOYO" name="discapacidadAUD_APOYO">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadAUD_APY_I">¿Requiere intérprete de lengua de señas Argentina?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_I" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_I" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadAUD_APY_A">¿Requiere aro magnético?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_A" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_A" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadAUD_APY_O">¿Requiere otros apoyos?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_O" value="SI"
+                data-dynamic-section="discapacidadAUD_APY_D">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_O" value="NO"
+                data-dynamic-section="discapacidadAUD_APY_D">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group discapacidadAUD_APY_D-block">
+            <label for="discapacidadAUD_APY_D">Especificar cuales:</label>
+            <input type="text" class="form-control" id="discapacidadAUD_APY_D" name="discapacidadAUD_APY_D">
+          </div>
+
+
+          <h4>Visual</h4>
+          <div class="form-group">
+            <label for="discapacidadVIS_DIFICU">¿Tiene dificultad para ver, incluso si usa lentes? </label>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_DIFICU" value="1">
+              <label class="form-check-label" for="">No, no hay dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_DIFICU" value="2">
+              <label class="form-check-label" for="">Si, alguna dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_DIFICU" value="3">
+              <label class="form-check-label" for="">Si, mucha dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_DIFICU" value="4">
+              <label class="form-check-label" for="">No puedo hacerlo en absoluto</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APOYO">¿Qué apoyos utiliza en su vida diaria? </label>
+            <input type="text" class="form-control" id="discapacidadVIS_APOYO" name="discapacidadVIS_APOYO">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APY_A">¿Requiere archivos de audio?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_A" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_A" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APY_T">¿Requiere texto digital accesible?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_T" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_T" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APY_B">¿Requiere texto en Braile?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_B" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_B" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APY_O">¿Requiere otros apoyos?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_O" value="SI"
+                data-dynamic-section="discapacidadVIS_APY_D">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_O" value="NO"
+                data-dynamic-section="discapacidadVIS_APY_D">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APY_D">Especificar cuales:</label>
+            <input type="text" class="form-control" id="discapacidadVIS_APY_D" name="discapacidadVIS_APY_D">
+          </div>
+
+          <h4>Motora</h4>
+
+          <div class="form-group">
+            <label for="discapacidadMOT_APOYO">¿Qué apoyos utiliza en su vida diaria? </label>
+            <input type="text" class="form-control" id="discapacidadMOT_APOYO" name="discapacidadMOT_APOYO">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadMOT_APY_P">¿Requiere apoyos para la permanencia en el aula? ¿Cuáles?</label>
+            <input type="text" class="form-control" id="discapacidadMOT_APY_P" name="discapacidadMOT_APY_P">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadMOT_APY_O">¿Requiere otros apoyos?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadMOT_APY_O" value="SI"
+                data-dynamic-section="discapacidadMOT_APY_D">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadMOT_APY_O" value="NO"
+                data-dynamic-section="discapacidadMOT_APY_D">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadMOT_APY_D">Especificar cuales:</label>
+            <input type="text" class="form-control" id="discapacidadMOT_APY_D" name="discapacidadMOT_APY_D">
+          </div>
+
+
+          <h4>Condición Psicosocial</h4>
+
+          <div class="form-group">
+            <label for="discapacidadPSI_DESCRI">¿Describa cual?</label>
+            <input type="text" class="form-control" id="discapacidadPSI_DESCRI" name="discapacidadPSI_DESCRI">
+          </div>
+
+
+          <div class="form-group">
+            <label for="discapacidadPSI_APOYO">¿Qué apoyos utiliza en su vida diaria? </label>
+            <input type="text" class="form-control" id="discapacidadPSI_APOYO" name="discapacidadPSI_APOYO">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadPSI_APY_O">¿Requiere otros apoyos?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadPSI_APY_O" value="SI"
+                data-dynamic-section="discapacidadPSI_APY_D">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadPSI_APY_O" value="NO"
+                data-dynamic-section="discapacidadPSI_APY_D">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadPSI_APY_D">Especificar cuales:</label>
+            <input type="text" class="form-control" id="discapacidadPSI_APY_D" name="discapacidadPSI_APY_D">
+          </div>
+
+          <h4>Otra Situación de Discapacidad</h4>
+
+          <div class="form-group">
+            <label for="discapacidadOTRA_CUAL">¿Describa cual?</label>
+            <input type="text" class="form-control" id="discapacidadOTRA_CUAL" name="discapacidadOTRA_CUAL">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadOTRA_APY_O">¿Requiere otros apoyos?</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadOTRA_APY_O" value="SI"
+                data-dynamic-section="discapacidadOTRA_APY_D">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadOTRA_APY_O" value="NO"
+                data-dynamic-section="discapacidadOTRA_APY_D">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadOTRA_APY_D">Especificar cuales:</label>
+            <input type="text" class="form-control" id="discapacidadOTRA_APY_D" name="discapacidadOTRA_APY_D">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadOTRA_DISCA">¿Alguna otra información que considere importante comunicar?</label>
+            <input type="text" class="form-control" name="discapacidadOTRA_DISCA">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NACIMIENTO -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Nacimiento</h2>
+      </div>
+      <div class="card-body row g-3">
+
+        <div class="form-group">
+          <label for="nacfechanacimiento">Fecha Nacimiento</label>
+          <input type="date" class="form-control" id="nacfechanacimiento" name="nacfechanacimiento" required>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="nacnacionalidad">Nacionalidad</label>
+          <select class="form-select is-invalid" id="nacnacionalidad" name="nacnacionalidad" required>
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+
+        </div>
+
+        <div class="form-group">
+          <label for="nacvencdni">Fecha de Vencimiento del DNI</label>
+          <input type="date" class="form-control" id="nacvencdni" name="nacvencdni">
+        </div>
+
+        <div class="form-group">
+          <label for="nacpais">País</label>
+          <input type="text" class="form-control" id="nacpais" name="nacpais" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nacprovincia">Provincia</label>
+          <input type="text" class="form-control" id="nacprovincia" name="nacprovincia" required>
+        </div>
+
+        <div class="form-group">
+          <label for="naclocalidad">Ciudad o localidad</label>
+          <input type="text" class="form-control" id="naclocalidad" name="naclocalidad" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nacpartidodepartamento">Partido</label>
+          <input type="text" class="form-control" id="nacpartidodepartamento" name="nacpartidodepartamento">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DOMICILIO -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Domicilio (como figura en su documento)</h2>
+      </div>
+      <div class="card-body row g-3">
+
+        <div class="form-group">
+          <label for="domiciliocalle">Calle</label>
+          <input type="text" class="form-control" id="domiciliocalle" name="domiciliocalle" required>
+        </div>
+
+        <div class="form-group">
+          <label for="domicilionumero">Número</label>
+          <input type="text" class="form-control" id="domicilionumero" name="domicilionumero" required>
+        </div>
+
+        <div class="form-group">
+          <label for="domiciliopiso">Piso</label>
+          <input type="text" class="form-control" id="domiciliopiso" name="domiciliopiso">
+        </div>
+
+        <div class="form-group">
+          <label for="domiciliolocalidad">Ciudad o localidad</label>
+          <input type="text" class="form-control" id="domiciliolocalidad" name="domiciliolocalidad" required>
+        </div>
+
+        <div class="form-group">
+          <label for="domiciliopartido">Partido</label>
+          <input type="text" class="form-control" id="domiciliopartido" name="domiciliopartido">
+        </div>
+
+        <div class="form-group">
+          <label for="domicilioprovincia">Provincia o estado</label>
+          <input type="text" class="form-control" id="domicilioprovincia" name="domicilioprovincia" required>
+        </div>
+
+        <div class="form-group">
+          <label for="domiciliocp">Código Postal</label>
+          <input type="text" class="form-control" id="domiciliocp" name="domiciliocp" required>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Contacto</h2>
+      </div>
+      <div class="card-body row g-3">
+
+
+        <div class="form-group telefono">
+
+          <label for="contactotelefonofijo">Teléfono Fijo</label>
+
+          <div class="input-group">
+
+            <input type="phone" pattern="\d*" name="contactotelefonofijo" maxlength="5" class="form-control prefix"
+              placeholder="Ingrese el código de área" required>
+            <div class="input-group-prepend">
+              <span class="input-group-text"> - </span>
+            </div>
+            <input type="phone" pattern="\d*" maxlength="8" class="form-control nbr"
+              placeholder="Ingrese el número de teléfono" required>
+          </div>
+
+        </div>
+
+        <div class="form-group telefono">
+
+          <label for="contactotelefonomovil">Teléfono Móvil</label>
+
+          <div class="input-group">
+
+            <input type="phone" pattern="\d*" name="contactotelefonomovil" maxlength="5" class="form-control prefix"
+              placeholder="Ingrese el código de área" required>
+            <div class="input-group-prepend">
+              <span class="input-group-text"> - 15 - </span>
+            </div>
+            <input type="phone" pattern="\d*" maxlength="8" class="form-control nbr"
+              placeholder="Ingrese el número de teléfono" required>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="contactoemail">Correo Electrónico</label>
+          <input type="email" class="form-control" id="contactoemail" name="contactoemail" readonly="true" required>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="contactoemailalternativo">Correo Electrónico Alternativo</label>
+          <input type="email" class="form-control" id="contactoemailalternativo" name="contactoemailalternativo">
+        </div>
+
+
+
+        <h5 class=" text-primary">¿A quién recurrir en caso de que lo necesites?</h5>
+
+        <div class="form-group emergenciacontacto">
+          <label for="emergenciacontacto">Contacto</label>
+          <input type="text" class="form-control" name="emergenciacontacto">
+        </div>
+
+        <div class="form-group emergenciatelefono">
+          <label for="emergenciatelefono">Tel&eacute;fono (incluir característica)</label>
+          <input type="text" class="form-control" name="emergenciatelefono">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECUINDARIO -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Secundario</h2>
+      </div>
+      <div class="card-body row g-3">
+
+
+        <div class="mb-12">
+
+          <label for="secundarioegreso">Secundario Completo</label><br>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="secundarioegreso" name="secundarioegreso" value="2"
+              required>
+            <label for="" class="form-check-label">SI</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="secundarioegreso" name="secundarioegreso" value="1"
+              required>
+            <label for="" class="form-check-label">NO</label>
+          </div>
+
+          <label class="invalid">La finalización del secundario es obligatoria para la carrera
+            seleccionada.</label>
+        </div>
+
+        <div class="secundarioegreso-block" data-showon="NO">
+          <div class="form-group">
+            <label for="secundarioestado">Estado <span style="color:red">*</span></label>
+            <select class="form-select is-invalid" id="secundarioestado" name="secundarioestado"
+              data-required="required">
+              <option value="" selected disabled>--Seleccione--</option>
+              <option value="">...</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="secundarioegreso-block">
+          <div class="form-group">
+            <label for="secundarioanioegreso">Año de Egreso</label>
+            <input type="text" class="form-control" id="secundarioanioegreso" name="secundarioanioegreso">
+            <small id="secundarioanioegresoHelpBlock" class="form-text text-muted">Tal como figura en el
+              diploma.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="secundariotituladoen">Nombre del título secundario obtenido o a obtener</label>
+          <input type="text" class="form-control" id="secundariotituladoen" name="secundariotituladoen" required>
+        </div>
+
+        <div class="mb-12">
+          <label for="secundariotecnico">Secundario Técnico?</label><br>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="secundariotecnico" name="secundariotecnico" value="2"
+              required>
+            <label for="" class="form-check-label">SI</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="secundariotecnico" name="secundariotecnico" value="1"
+              required>
+            <label for="" class="form-check-label">NO</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="secundarioanalitico">Constancia de Estudios</label>
+          <select class="form-select is-invalid" id="secundarioanalitico" name="secundarioanalitico" required>
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="secundariocue">CUE del Colegio <span style="color:red">*</span> <button class="btn btn-link"
+              type="button" id="button-addon2" data-section='secundario' data-toggle="modal"
+              data-target="#CUEModal">Buscar
+              CUE</button></label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="secundariocue" name="secundariocue" required>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2" data-section='secundario'
+                data-toggle="modal" data-target="#CUEModal">Buscar CUE</button>
+            </div>
+          </div>
+          <small id="secundariocueHelpBlock" class="form-text text-muted">El CUE es la Clave Única del Establecimiento y
+            suele figurar en el diploma.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="secundarioinstitucion">Nombre Colegio</label>
+          <input type="text" class="form-control" id="secundarioinstitucion" name="secundarioinstitucion" disabled>
+        </div>
+
+        <div class="form-group">
+          <label for="secundariolocalidad">Ciudad o localidad</label>
+          <input type="text" class="form-control" id="secundariolocalidad" name="secundariolocalidad" disabled>
+        </div>
+
+        <div class="form-group">
+          <label for="secundarioprovincia">Provincia</label>
+          <input type="text" class="form-control" id="secundarioprovincia" name="secundarioprovincia" disabled>
+        </div>
+
+        <div class="form-group">
+          <label for="secundariodependede">Depende de</label>
+          <select class="form-select is-invalid" id="secundariodependede" name="secundariodependede">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ESTUDIOS UNIVERSITARIOS O SUPERIORES -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Estudios Universitarios o Superiores Previos</h2>
+      </div>
+      <div class="card-body row g-3">
+
+        <div class="form-group">
+          <label for="titulounivnombre">Titulo Universitario o Superior obtenido o a obtener (tal como figura en el
+            diploma)</label>
+          <input type="text" class="form-control" id="titulounivnombre" name="titulounivnombre" required>
+        </div>
+
+        <div class="mb-12">
+          <label for="titulouniventramite">T&iacute;tulo en tr&aacute;mite</label><br>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="titulouniventramite" name="titulouniventramite" value="2"
+              required>
+            <label for="" class="form-check-label">SI</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="titulouniventramite" name="titulouniventramite" value="1"
+              required>
+            <label for="" class="form-check-label">NO</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="titulounivanioegreso">Año de Egreso</label>
+          <input type="text" class="form-control" id="titulounivanioegreso" name="titulounivanioegreso">
+          <small id="titulounivanioegresoHelpBlock" class="form-text text-muted">Tal como figura en el diploma.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="titulounivcue">CUE de la Institución <span style="color:red">*</span><button class="btn btn-link"
+              type="button" id="button-addon2" data-section='titulouniv' data-toggle="modal"
+              data-target="#CUEModal">Buscar
+              CUE</button></label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="titulounivcue" name="titulounivcue" required>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2" data-section='titulouniv'
+                data-toggle="modal" data-target="#CUEModal">Buscar CUE</button>
+            </div>
+          </div>
+          <small id="titulounivcueHelpBlock" class="form-text text-muted">El CUE es la Clave Única del Establecimiento y
+            suele figurar en el diploma.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="titulounivinstitucion">Nombre de la Institución</label>
+          <input type="text" class="form-control" id="titulounivinstitucion" name="titulounivinstitucion" disabled>
+        </div>
+
+        <div class="form-group">
+          <label for="titulounivlocalidad">Ciudad o localidad</label>
+          <input type="text" class="form-control" id="titulounivlocalidad" name="titulounivlocalidad" disabled>
+        </div>
+
+        <div class="form-group">
+          <label for="titulounivprovincia">Provincia</label>
+          <input type="text" class="form-control" id="titulounivprovincia" name="titulounivprovincia" disabled>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OTROS ESTUDIOS -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Otros Estudios</h2>
+      </div>
+      <div class="card-body row g-3">
+
+        <div class="form-group">
+          <label for="otrosestudiostipo">Tipo</label>
+          <select class="form-select is-invalid" id="otrosestudiostipo" name="otrosestudiostipo">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="otrosestudioscarrera">Carrera</label>
+          <input type="text" class="form-control" id="otrosestudioscarrera" name="otrosestudioscarrera">
+        </div>
+
+        <div class="form-group">
+          <label for="otrosestudiosinstitucion">Institución</label>
+          <input type="text" class="form-control" id="otrosestudiosinstitucion" name="otrosestudiosinstitucion">
+        </div>
+
+        <div class="form-group">
+          <label for="otrosestudiosmateriasaprobadas">Cantidad de Materias Aprobadas</label>
+          <input type="text" class="form-control" id="otrosestudiosmateriasaprobadas"
+            name="otrosestudiosmateriasaprobadas">
+        </div>
+
+        <div class="form-group">
+          <label for="otrosestudiosestado">Estado</label>
+          <select class="form-select is-invalid" id="otrosestudiosestado" name="otrosestudiosestado">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRABAJO -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Trabajo</h2>
+      </div>
+      <div class="card-body row g-3">
+
+        <div class="form-group">
+          <label for="trabajotrabajas">Trabajas?</label><br>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="trabajotrabajas" name="trabajotrabajas" value="SI"
+              required>
+            <label for="" class="form-check-label">SI</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="trabajotrabajas" name="trabajotrabajas" value="NO"
+              required>
+            <label for="" class="form-check-label">NO</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="situacionlaboral">Situación Laboral</label>
+          <select class="form-select is-invalid" id="situacionlaboral" name="situacionlaboral"
+            data-dynamic-section="trabajotrabajas">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <div class="form-group">
+            <label for="trabajoocupacion">Ocupación</label>
+            <select class="form-select is-invalid" id="trabajoocupacion" name="trabajoocupacion">
+              <option value="" selected disabled>--Seleccione--</option>
+              <option value="">...</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="tipotrabajo">Tipo de Trabajo</label>
+          <select class="form-select is-invalid" id="tipotrabajo" name="tipotrabajo">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tipoocupacion">Tipo de Ocupación</label>
+          <select class="form-select is-invalid" id="tipoocupacion" name="tipoocupacion">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="trabajoenque">Ocupación/Cargo</label>
+          <input type="text" class="form-control" id="trabajoenque" name="trabajoenque">
+        </div>
+
+        <div class="form-group">
+          <label for="trabajohoras">Cantidad de horas semanales</label>
+          <select class="form-select is-invalid" id="trabajohoras" name="trabajohoras">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="trabajorelcarrera">Relación del trabajo con la carrera</label>
+          <select class="form-select is-invalid" id="trabajorelcarrera" name="trabajorelcarrera">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="trabajoempresa">Nombre de la Empresa</label>
+          <input type="text" class="form-control" id="trabajoempresa" name="trabajoempresa">
+        </div>
+
+        <div class="form-group">
+          <label for="trabajodireccion">Dirección</label>
+          <input type="text" class="form-control" id="trabajodireccion" name="trabajodireccion">
+        </div>
+
+        <div class="form-group">
+          <label for="trabajotelefono">Teléfono</label>
+          <input type="text" class="form-control" id="trabajotelefono" name="trabajotelefono">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DEPORTE -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Deporte</h2>
+      </div>
+      <div class="card-body row g-3">
+
+        <div class="form-group">
+          <label for="deporte">Qué practicas?</label>
+          <input type="text" class="form-control" id="deporte" name="deporte">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECNOLOGÍA -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Tecnología</h2>
+      </div>
+      <div class="card-body row g-3">
+
+
+        <div class="mb-12">
+          <label for="tecnotienepc">Tiene acceso a una computadora?</label><br>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="tecnotienepc" name="tecnotienepc" value="SI">
+            <label for="" class="form-check-label">SI</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="tecnotienepc" name="tecnotienepc" value="NO">
+            <label for="" class="form-check-label">NO</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="tecnodondepc">Desde donde?</label>
+          <select class="form-select is-invalid" name="tecnodondepc" id="tecnodondepc">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tecnocelular">Cuantos celulares hay en su hogar?</label>
+          <input type="number" step="1" min="0" class="form-control" id="tecnocelular" name="tecnocelular">
+        </div>
+
+        <div class="mb-12">
+          <label for="tecnotieneinternet">Tiene acceso a Internet?</label><br>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="tecnotieneinternet" name="tecnotieneinternet" value="SI">
+            <label for="" class="form-check-label">SI</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="tecnotieneinternet" name="tecnotieneinternet" value="NO">
+            <label for="" class="form-check-label">NO</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="tecnointernet">Desde donde accede a Internet?</label>
+          <select class="form-select is-invalid" name="tecnointernet" id="tecnointernet">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tecnousointernet">Utiliza internet para</label>
+          <select class="form-select is-invalid" name="tecnousointernet" id="tecnousointernet">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAMILIA -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Familia</h2>
+      </div>
+      <div class="card-body row g-3">
+
+        <!-- FAMILIARES A CARGO -->
+        <h5 class="text-primary">Familiares a Cargo</h5>
+
+        <div class="form-group">
+          <label for="hijosacargo">Cantidad de hijos a cargo</label>
+          <select class="form-select is-invalid" id="hijosacargo" name="hijosacargo">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="familiaacargo">Cantidad de familiares a cargo (sin incluir a los hijos)</label>
+          <select class="form-select is-invalid" id="familiaacargo" name="familiaacargo">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <!-- PADRE -->
+        <h5 class="text-primary">Padre</h5>
+
+        <div class="form-group">
+          <label for="padreapellido">Apellido</label>
+          <input type="text" class="form-control" id="padreapellido" name="padreapellido">
+        </div>
+
+        <div class="form-group">
+          <label for="padrenombre">Nombre</label>
+          <input type="text" class="form-control" id="padrenombre" name="padrenombre">
+        </div>
+
+        <div class="form-group">
+          <label for="padrefechanac">Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="padrefechanac" name="padrefechanac" min="1900-01-01"
+            max="2005-01-01">
+        </div>
+
+
+        <div class="form-group">
+          <label for="padrevive">Vive?</label><br>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="padrevive" name="padrevive" value="SI"
+              data-dynamic-section="padrevive">
+            <label for="" class="form-check-label">SI</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="padrevive" name="padrevive" value="NO"
+              data-dynamic-section="padrevive">
+            <label for="" class="form-check-label">NO</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="padrevive" name="padrevive" value="desconoce"
+              data-dynamic-section="padrevive">
+            <label for="" class="form-check-label">Desconoce</label>
+          </div>
+        </div>
+
+        <!-- SECCION PADRE VIVE = SI -->
+        <div class="row g-3">
+
+          <div class="form-group">
+            <label for="padreestudios">Nivel de estudios alcanzados</label>
+            <select class="form-select is-invalid" id="padreestudios" name="padreestudios">
+              <option value="" selected disabled>--Seleccione--</option>
+              <option value="">...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="padretrabajo">Trabajo/actividad</label>
+            <input type="text" class="form-control" id="padretrabajo" name="padretrabajo">
+          </div>
+
+          <div class="form-group">
+            <label for="padresituacionlaboral">Situación Laboral</label>
+            <select class="form-select is-invalid" id="padresituacionlaboral" name="padresituacionlaboral">
+              <option value="" selected disabled>--Seleccione--</option>
+              <option value="">...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="padreobrasocial">Obra Social</label>
+            <br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" id="padreobrasocial" name="padreobrasocial" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" id="padreobrasocial" name="padreobrasocial" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- MADRE -->
+        <h5 class="text-primary">Madre</h5>
+
+        <div class="form-group">
+          <label for="madreapellido">Apellido</label>
+          <input type="text" class="form-control" id="madreapellido" name="madreapellido">
+        </div>
+
+        <div class="form-group">
+          <label for="madrenombre">Nombre</label>
+          <input type="text" class="form-control" id="madrenombre" name="madrenombre">
+        </div>
+
+        <div class="form-group">
+          <label for="madrefechanac">Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="madrefechanac" name="madrefechanac" min="1900-01-01"
+            max="2005-01-01">
+        </div>
+
+        <div class="form-group">
+          <label for="madrevive">Vive?</label><br>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="madrevive" name="madrevive" value="SI"
+              data-dynamic-section="madrevive">
+            <label for="" class="form-check-label">SI</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="madrevive" name="madrevive" value="NO"
+              data-dynamic-section="madrevive">
+            <label for="" class="form-check-label">NO</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="madrevive" name="madrevive" value="desconoce"
+              data-dynamic-section="madrevive">
+            <label for="" class="form-check-label">Desconoce</label>
+          </div>
+        </div>
+
+        <!-- SECCION MADRE VIVE = SI -->
+        <div class="row g-3">
+
+          <div class="form-group">
+            <label for="madreestudios">Nivel de estudios alcanzados</label>
+            <select class="form-select is-invalid" id="madreestudios" name="madreestudios">
+              <option value="" selected disabled>--Seleccione--</option>
+              <option value="">...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="madretrabajo">Trabajo/actividad</label>
+            <input type="text" class="form-control" id="madretrabajo" name="madretrabajo">
+          </div>
+
+          <div class="form-group">
+            <label for="madresituacionlaboral">Situación Laboral</label>
+            <select class="form-select is-invalid" id="madresituacionlaboral" name="madresituacionlaboral">
+              <option value="" selected disabled>--Seleccione--</option>
+              <option value="">...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="madreobrasocial">Obra Social</label>
+            <br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" id="madreobrasocial" name="madreobrasocial" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" id="madreobrasocial" name="madreobrasocial" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- HERMANOS -->
+        <h5 class="text-primary">Hermanos</h5>
+
+        <div class="form-group">
+          <label for="hermanoscantidad">Cantidad</label>
+          <input type="number" step="1" class="form-control" id="hermanoscantidad" name="hermanoscantidad">
+        </div>
+
+        <div class="form-group">
+          <label for="hermanosedades">Edades (separar por comas si son varios)</label>
+          <input type="text" class="form-control" id="hermanosedades" name="hermanosedades">
+        </div>
+
+        <div class="form-group">
+          <label for="hermanosactividades">Actividades (separar por comas si son varias)</label>
+          <input type="text" class="form-control" id="hermanosactividades" name="hermanosactividades">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CASA -->
+    <section class="card mt-3">
+      <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Casa</h2>
+      </div>
+      <div class="card-body row g-3">
+
+        <div class="form-group">
+          <label for="casatipo">Tipo de Vivienda</label>
+          <select class="form-select is-invalid" id="casatipo" name="casatipo">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="casacondicion">Condición</label>
+          <select class="form-select is-invalid" id="casacondicion" name="casacondicion">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="casamediotraslado">Cómo se trasladará a su lugar de estudios?</label>
+          <select class="form-select is-invalid" id="casamediotraslado" name="casamediotraslado">
+            <option value="" selected disabled>--Seleccione--</option>
+            <option value="">...</option>
+          </select>
+        </div>
+
+      </div>
+    </section>
+
+  </form>
+
+
+
+</div>
