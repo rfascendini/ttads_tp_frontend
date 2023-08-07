@@ -8,6 +8,7 @@ import { FormInscripcionComponent } from './public/components/form-inscripcion/f
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './public/components/navbar/navbar.component';
+import { FooterComponent } from './public/components/footer/footer.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { NavbarComponent } from './public/components/navbar/navbar.component';
     AppComponent,
     HomeComponent,
     FormInscripcionComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
