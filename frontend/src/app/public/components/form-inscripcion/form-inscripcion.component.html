@@ -191,27 +191,27 @@
           <div class="form-group">
             <label for="discapacidad">Discapacidad</label>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" name="discapacidadNEAEAUDITI" [value]="'SI'"
+              <input type="checkbox" class="form-check-input" name="discapacidadNEAEAUDITI" value="SI"
                 [(ngModel)]="seccion_discapacidadNEAEAUDITI" id="discapacidadNEAEAUDITI" />
               <label class="form-check-label" for="">Auditiva</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" name="discapacidadNEAEVISUAL" [value]="'SI'"
+              <input type="checkbox" class="form-check-input" name="discapacidadNEAEVISUAL" value="SI"
                 [(ngModel)]="seccion_discapacidadNEAEVISUAL" />
               <label class="form-check-label" for="">Visual</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" name="discapacidadNEAEMOTRIZ" [value]="'SI'"
+              <input type="checkbox" class="form-check-input" name="discapacidadNEAEMOTRIZ" value="SI"
                 [(ngModel)]="seccion_discapacidadNEAEMOTRIZ" />
               <label class="form-check-label" for="">Motora</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" name="discapacidadNEAEPSICOS" [value]="'SI'"
+              <input type="checkbox" class="form-check-input" name="discapacidadNEAEPSICOS" value="SI"
                 [(ngModel)]="seccion_discapacidadNEAEPSICOS" />
               <label class="form-check-label" for="">Condición Psicosocial</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" name="discapacidadNEAEOTRAS" [value]="'SI'"
+              <input type="checkbox" class="form-check-input" name="discapacidadNEAEOTRAS" value="SI"
                 [(ngModel)]="seccion_discapacidadNEAEOTRAS" />
               <label class="form-check-label" for="">Otras</label>
             </div>
@@ -783,12 +783,12 @@
         <div class="form-group">
           <label for="trabajotrabajas">¿Tienes Estudios Universitarios o Superiores Previos?</label><br>
           <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" name="titulo_universitario_previo" [value]="'SI'"
+            <input type="radio" class="form-check-input" name="titulo_universitario_previo" value="SI"
               [(ngModel)]="titulo_universitario_previo" required>
             <label for="" class="form-check-label">SI</label>
           </div>
           <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" name="titulo_universitario_previo" [value]="'NO'"
+            <input type="radio" class="form-check-input" name="titulo_universitario_previo" value="NO"
               [(ngModel)]="titulo_universitario_previo" required>
             <label for="" class="form-check-label">NO</label>
           </div>
@@ -911,12 +911,12 @@
         <div class="form-group">
           <label for="trabajotrabajas">¿Trabajas?</label><br>
           <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" id="trabajotrabajas" name="trabajotrabajas" [value]="'SI'"
+            <input type="radio" class="form-check-input" id="trabajotrabajas" name="trabajotrabajas" value="SI"
               [(ngModel)]="seccion_trabajo" required>
             <label for="" class="form-check-label">SI</label>
           </div>
           <div class="form-check form-check-inline">
-            <input type="radio" class="form-check-input" id="trabajotrabajas" name="trabajotrabajas" [value]="'NO'"
+            <input type="radio" class="form-check-input" id="trabajotrabajas" name="trabajotrabajas" value="NO"
               [(ngModel)]="seccion_trabajo" required>
             <label for="" class="form-check-label">NO</label>
           </div>
@@ -926,8 +926,7 @@
 
           <div class="form-group">
             <label for="situacionlaboral">Situación Laboral</label>
-            <select class="form-select is-invalid" id="situacionlaboral" name="situacionlaboral"
-              data-dynamic-section="trabajotrabajas">
+            <select class="form-select is-invalid" id="situacionlaboral" name="situacionlaboral" formControlName="situacionlaboral">
               <option value="" selected disabled>Seleccione una opción</option>
               <option value="">...</option>
             </select>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-inscripcion',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class FormInscripcionComponent {
+
 
   // -------------------- SECCION DISCAPACIDAD
   seccion_discapacidad: string = "";

@@ -1,48 +1,56 @@
-<div>
+<body class="d-flex text-center">
 
-  <app-navbar></app-navbar>
+  <div class="cover-container d-flex w-100 h-100 flex-column justify-content-between">
+    
+    <app-navbar></app-navbar>
 
-  <!-- header -->
+    <main class="px-3">
+      <div class="container d-flex align-items-center space-between!important mx-auto py-5 row">
 
-  <div class="container d-flex align-items-center mx-auto py-5 row">
-
-    <div class="col-lg-7 pe-5">
-      <h1 class="display-6 fw-bold lh-1 mb-4 text-center">
-        ¡Bienvenidos al <span class="text-primary">Ingreso 2024!</span>
-      </h1>
-      <p class="col-lg-12 fs-6" style="text-align: justify; font-size: 2vh !important;">
-        &nbsp;Para comenzar con la inscripción complete el siguiente formulario. Enviaremos un correo electrónico con
-        las instrucciones para completar su inscripción. <br><br>
-        &nbsp;En caso de no recibir el correo electrónico o tener problemas con el proceso de inscripción, no dude en
-        comunicarse con nosotros.<br><br>
-        &nbsp;Si usted ya se encuentra registrado, deberá acceder al formulario utilizando el enlance enviado cuando
-        se
-        registro por primera vez. <br><br>
-      </p>
-    </div>
-
-    <div class="col-lg-5 p-4 p-md-5 border rounded-3 bg-light">
-      <form class="needs-validation">
-        <div class="form-floating mb-3">
-          <input type="number" class="form-control" required />
-          <label for="">DNI</label>
+        <div class="col-lg-7 pe-5">
+          <h1 class="display-6 fw-bold lh-1 mb-4 text-center">
+            ¡Bienvenidos al <span class="text-primary">Ingreso 2024!</span>
+          </h1>
+          <p class="col-lg-12 fs-6" style="text-align: justify; font-size: 2vh !important;">
+            &nbsp;Para comenzar con la inscripción complete el siguiente formulario. Enviaremos un correo electrónico
+            con
+            las instrucciones para completar su inscripción. <br><br>
+            &nbsp;En caso de no recibir el correo electrónico o tener problemas con el proceso de inscripción, no dude
+            en
+            comunicarse con nosotros.<br><br>
+            &nbsp;Si usted ya se encuentra registrado, deberá acceder al formulario utilizando el enlance enviado cuando
+            se
+            registro por primera vez. <br><br>
+          </p>
         </div>
-        <div class="form-floating mb-3">
-          <input type="number" class="form-control" required />
-          <label for="">Número de Trámite</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" required />
-          <label for="">Correo Electrónico</label>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">
-          Iniciar Inscripción
-        </button>
-      </form>
-    </div>
 
+        <div class="col-lg-5 p-4 p-md-5 border rounded-3 bg-light">
+          <form class="needs-validation">
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" required />
+              <label for="">DNI</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" required />
+              <label for="">Número de Trámite</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" required />
+              <label for="">Correo Electrónico</label>
+            </div>
+            <button class="w-100 btn btn-lg btn-dark" type="submit">
+              Iniciar Inscripción
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </main>
+
+    <app-footer></app-footer>
   </div>
-  
-  <!-- footer -->
-  <app-footer></app-footer>
-</div>
+
+
+
+
+</body>
