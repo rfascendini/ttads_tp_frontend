@@ -24,8 +24,6 @@ import { SectionTecnologiaComponent } from './public/components/form-inscripcion
 import { SectionFamiliaComponent } from './public/components/form-inscripcion/section-familia/section-familia.component';
 import { SectionCasaComponent } from './public/components/form-inscripcion/section-casa/section-casa.component';
 
-
-
 @NgModule({
   
   declarations: [

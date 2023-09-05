@@ -8,7 +8,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 export class FormInscripcionComponent {
 
-
   // -------------------- SECCION DISCAPACIDAD
   seccion_discapacidad: string = "";
 
@@ -36,7 +35,6 @@ export class FormInscripcionComponent {
   // -------------------- SECCION FAMILIA
   padre_vive: string = "";
   madre_vive: string = "";
-
 
 
 }
