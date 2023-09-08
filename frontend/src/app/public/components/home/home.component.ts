@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   obtenerData() {
     this.apiService.getData().subscribe(data => {
       this.data = data;
-      console.log(this.data);
+      console.log(data);
     })
   }
 
