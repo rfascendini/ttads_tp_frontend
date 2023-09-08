@@ -7,7 +7,8 @@ import { HomeComponent } from './public/components/home/home.component';
 import { FormInscripcionComponent } from './public/components/form-inscripcion/form-inscripcion.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { NavbarComponent } from './public/components/navbar/navbar.component';
+import { HeaderComponent } from './public/components/header/header.component';
+import { HeaderPrivateComponent } from './private/components/header-private/header.component';
 import { FooterComponent } from './public/components/footer/footer.component';
 import { SectionCarreraComponent } from './public/components/form-inscripcion/section-carrera/section-carrera.component';
 import { SectionDatosPersonalesComponent } from './public/components/form-inscripcion/section-datos-personales/section-datos-personales.component';
@@ -23,6 +24,17 @@ import { SectionDeporteComponent } from './public/components/form-inscripcion/se
 import { SectionTecnologiaComponent } from './public/components/form-inscripcion/section-tecnologia/section-tecnologia.component';
 import { SectionFamiliaComponent } from './public/components/form-inscripcion/section-familia/section-familia.component';
 import { SectionCasaComponent } from './public/components/form-inscripcion/section-casa/section-casa.component';
+import { ConfiguracionComponent } from './private/components/configuracion/configuracion.component';
+import { ExcepcionComponent } from './private/components/excepcion/excepcion.component';
+import { ExportadosComponent } from './private/components/exportados/exportados.component';
+import { ExportarComponent } from './private/components/exportar/exportar.component';
+import { InscripcionesComponent } from './private/components/inscripciones/inscripciones.component';
+import { PreguntasComponent } from './private/components/preguntas/preguntas.component';
+import { SysacadComponent } from './private/components/sysacad/sysacad.component';
+import { UsuariosComponent } from './private/components/usuarios/usuarios.component';
+import { AdminPanelComponent } from './private/components/admin-panel/admin-panel.component';
+import { NavbarComponent } from './private/components/navbar/navbar.component';
+
 
 @NgModule({
   
@@ -30,7 +42,8 @@ import { SectionCasaComponent } from './public/components/form-inscripcion/secti
     AppComponent,
     HomeComponent,
     FormInscripcionComponent,
-    NavbarComponent,
+    HeaderComponent,
+    HeaderPrivateComponent,
     FooterComponent,
     SectionCarreraComponent,
     SectionDatosPersonalesComponent,
@@ -46,7 +59,16 @@ import { SectionCasaComponent } from './public/components/form-inscripcion/secti
     SectionTecnologiaComponent,
     SectionFamiliaComponent,
     SectionCasaComponent,
-
+    ConfiguracionComponent,
+    ExcepcionComponent,
+    ExportadosComponent,
+    ExportarComponent,
+    InscripcionesComponent,
+    PreguntasComponent,
+    SysacadComponent,
+    UsuariosComponent,
+    AdminPanelComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +82,7 @@ import { SectionCasaComponent } from './public/components/form-inscripcion/secti
             AppComponent,
             HomeComponent,
             FormInscripcionComponent,
-            NavbarComponent
+            HeaderComponent
             ],
   exports: [RouterModule]
 })
