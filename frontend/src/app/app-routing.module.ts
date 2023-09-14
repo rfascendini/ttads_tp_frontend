@@ -15,9 +15,9 @@ import { UsuariosComponent } from './private/components/usuarios/usuarios.compon
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Ingresantes - FRRo' },
   { path: 'formulario', component: FormInscripcionComponent, title: 'Formulario de Ingreso - 2024' },
-  { path: 'adminpanel', component: AdminPanelComponent, title: 'Admin Panel - Gestor Inscripciones' },
+  { path: 'gestor', component: AdminPanelComponent, title: 'Admin Panel - Gestor Inscripciones' },
   { path: 'inscripciones', component: InscripcionesComponent },
-  { path: 'exportados', component: ExportadosComponent },
+  { path: 'gestor/exportados', component: ExportadosComponent },
   { path: 'sysacad', component: SysacadComponent },
   { path: 'excepcion', component: ExcepcionComponent },
   { path: 'configuracion', component: ConfiguracionComponent },
