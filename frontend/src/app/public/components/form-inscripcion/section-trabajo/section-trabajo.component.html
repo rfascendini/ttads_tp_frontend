@@ -1,1 +1,96 @@
-<p>section-trabajo works!</p>
+<section class="card mt-3">
+  <div class="card-header bg-dark text-white">
+    <h4 class="mb-0">Trabajo</h4>
+  </div>
+  <div class="card-body row g-3 mt-0">
+
+    <div class="form-group">
+      <label for="trabajotrabajas">¿Trabajas?</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="trabajotrabajas" name="trabajotrabajas" value="SI"
+          [(ngModel)]="seccion_trabajo" required>
+        <label for="" class="form-check-label">SI</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="trabajotrabajas" name="trabajotrabajas" value="NO"
+          [(ngModel)]="seccion_trabajo" required>
+        <label for="" class="form-check-label">NO</label>
+      </div>
+    </div>
+
+    <div class="form-group row g-3 mt-0" *ngIf="seccion_trabajo == 'SI'">
+
+      <div class="form-group">
+        <label for="situacionlaboral">Situación Laboral</label>
+        <select class="form-select is-invalid" id="situacionlaboral" name="situacionlaboral" formControlName="situacionlaboral">
+          <option value="" selected disabled>Seleccione una opción</option>
+          <option value="">...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group">
+          <label for="trabajoocupacion">Ocupación</label>
+          <select class="form-select is-invalid" id="trabajoocupacion" name="trabajoocupacion">
+            <option value="" selected disabled>Seleccione una opción</option>
+            <option value="">...</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tipotrabajo">Tipo de Trabajo</label>
+        <select class="form-select is-invalid" id="tipotrabajo" name="tipotrabajo">
+          <option value="" selected disabled>Seleccione una opción</option>
+          <option value="">...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tipoocupacion">Tipo de Ocupación</label>
+        <select class="form-select is-invalid" id="tipoocupacion" name="tipoocupacion">
+          <option value="" selected disabled>Seleccione una opción</option>
+          <option value="">...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="trabajoenque">Ocupación/Cargo</label>
+        <input type="text" class="form-control" id="trabajoenque" name="trabajoenque">
+      </div>
+
+      <div class="form-group">
+        <label for="trabajohoras">Cantidad de horas semanales</label>
+        <select class="form-select is-invalid" id="trabajohoras" name="trabajohoras">
+          <option value="" selected disabled>Seleccione una opción</option>
+          <option value="">...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="trabajorelcarrera">Relación del trabajo con la carrera</label>
+        <select class="form-select is-invalid" id="trabajorelcarrera" name="trabajorelcarrera">
+          <option value="" selected disabled>Seleccione una opción</option>
+          <option value="">...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="trabajoempresa">Nombre de la Empresa</label>
+        <input type="text" class="form-control" id="trabajoempresa" name="trabajoempresa">
+      </div>
+
+      <div class="form-group">
+        <label for="trabajodireccion">Dirección</label>
+        <input type="text" class="form-control" id="trabajodireccion" name="trabajodireccion">
+      </div>
+
+      <div class="form-group">
+        <label for="trabajotelefono">Teléfono</label>
+        <input type="text" class="form-control" id="trabajotelefono" name="trabajotelefono">
+      </div>
+
+    </div>
+
+  </div>
+</section>

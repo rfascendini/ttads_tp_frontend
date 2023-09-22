@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class SectionFamiliaComponent {
 
+  // -------------------- SECCION FAMILIA
+  padre_vive: string = "";
+  madre_vive: string = "";
+
 }

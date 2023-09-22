@@ -1,1 +1,345 @@
-<p>section-discapacidad works!</p>
+<section class="card mt-3">
+  <div class="card-header bg-dark text-white">
+    <h4 class="mb-0">Condición de Discapacidad</h4>
+  </div>
+  <div class="card-body row g-3 mt-0">
+
+    <div class="form-group">
+      <label for="discapacidad">Condición de discapacidad</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="discapacidad" value="SI"
+          [(ngModel)]="seccion_discapacidad" required />
+        <label for="" class="form-check-label">Declaro condición de discapacidad</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="discapacidad" value="NO"
+          [(ngModel)]="seccion_discapacidad" required>
+        <label for="" class="form-check-label">No presento ninguna condición que implique discapacidad</label>
+      </div>
+      <br><small id="alumnoapellidoHelpBlock" class="form-text text-muted">Tildar la opción que corresponda.</small>
+    </div>
+
+    <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidad == 'SI'">
+
+      <div class="form-group">
+        <label for="discapacidadCERTDISCAP">¿Posee Certificado de Discapacidad Único (CUD)?</label><br>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" name="discapacidadCERTDISCAP" value="SI">
+          <label for="" class="form-check-label">SI</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" name="discapacidadCERTDISCAP" value="NO">
+          <label for="" class="form-check-label">NO</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="discapacidad">Discapacidad</label>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="discapacidadNEAEAUDITI" value="SI"
+            [(ngModel)]="seccion_discapacidadNEAEAUDITI" id="discapacidadNEAEAUDITI" />
+          <label class="form-check-label" for="">Auditiva</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="discapacidadNEAEVISUAL" value="SI"
+            [(ngModel)]="seccion_discapacidadNEAEVISUAL" />
+          <label class="form-check-label" for="">Visual</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="discapacidadNEAEMOTRIZ" value="SI"
+            [(ngModel)]="seccion_discapacidadNEAEMOTRIZ" />
+          <label class="form-check-label" for="">Motora</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="discapacidadNEAEPSICOS" value="SI"
+            [(ngModel)]="seccion_discapacidadNEAEPSICOS" />
+          <label class="form-check-label" for="">Condición Psicosocial</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="discapacidadNEAEOTRAS" value="SI"
+            [(ngModel)]="seccion_discapacidadNEAEOTRAS" />
+          <label class="form-check-label" for="">Otras</label>
+        </div>
+
+        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEAUDITI == true">
+          <h4>Auditiva</h4>
+          <div class="form-group">
+            <label for="discapacidadAUD_DIFICU">¿Tiene dificultad para oír, incluso si usa un audífono o implante
+              coclear? </label>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_DIFICU" value="1">
+              <label class="form-check-label" for="">No, no hay dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_DIFICU" value="2">
+              <label class="form-check-label" for="">Si, alguna dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_DIFICU" value="3">
+              <label class="form-check-label" for="">Si, mucha dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_DIFICU" value="4">
+              <label class="form-check-label" for="">No puedo hacerlo en absoluto</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadAUDITIVAFORMA">¿Cuál es su forma habitual de comunicación?</label>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="discapacidadAUD_COMUNI" value="SI">
+              <label class="form-check-label" for="">Lengua de Señas</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="discapacidadAUD_COM_LA" value="SI">
+              <label class="form-check-label" for="">Lectura Labial</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" name="discapacidadAUD_COMOTR" id="discapacidadAUD_COMOTRDESC"
+                class="form-check-input" value="otro">
+              <label class="form-check-label" for="">Otras </label>
+              <input type="text" name="discapacidadAUD_COMOTRDESC" class="form-control">
+              <div class="invalid-feedback">Debe especificar este valor.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-group">
+              <label for="discapacidadAUD_APOYO">¿Qué apoyos utiliza en su vida diaria? </label>
+              <input type="text" class="form-control" id="discapacidadAUD_APOYO" name="discapacidadAUD_APOYO">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadAUD_APY_I">¿Requiere intérprete de lengua de señas Argentina?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_I" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_I" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadAUD_APY_A">¿Requiere aro magnético?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_A" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_A" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadAUD_APY_O">¿Requiere otros apoyos?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_O" value="SI"
+                data-dynamic-section="discapacidadAUD_APY_D">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadAUD_APY_O" value="NO"
+                data-dynamic-section="discapacidadAUD_APY_D">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group discapacidadAUD_APY_D-block">
+            <label for="discapacidadAUD_APY_D">Especificar cuales:</label>
+            <input type="text" class="form-control" id="discapacidadAUD_APY_D" name="discapacidadAUD_APY_D">
+          </div>
+        </div>
+
+        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEVISUAL == true">
+          <h4>Visual</h4>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_DIFICU">¿Tiene dificultad para ver, incluso si usa lentes? </label>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_DIFICU" value="1">
+              <label class="form-check-label" for="">No, no hay dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_DIFICU" value="2">
+              <label class="form-check-label" for="">Si, alguna dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_DIFICU" value="3">
+              <label class="form-check-label" for="">Si, mucha dificultad</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_DIFICU" value="4">
+              <label class="form-check-label" for="">No puedo hacerlo en absoluto</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APOYO">¿Qué apoyos utiliza en su vida diaria? </label>
+            <input type="text" class="form-control" id="discapacidadVIS_APOYO" name="discapacidadVIS_APOYO">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APY_A">¿Requiere archivos de audio?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_A" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_A" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APY_T">¿Requiere texto digital accesible?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_T" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_T" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APY_B">¿Requiere texto en Braile?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_B" value="SI">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_B" value="NO">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APY_O">¿Requiere otros apoyos?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_O" value="SI"
+                data-dynamic-section="discapacidadVIS_APY_D">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadVIS_APY_O" value="NO"
+                data-dynamic-section="discapacidadVIS_APY_D">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadVIS_APY_D">Especificar cuales:</label>
+            <input type="text" class="form-control" id="discapacidadVIS_APY_D" name="discapacidadVIS_APY_D">
+          </div>
+        </div>
+
+        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEMOTRIZ == true">
+          <h4>Motora</h4>
+
+          <div class="form-group">
+            <label for="discapacidadMOT_APOYO">¿Qué apoyos utiliza en su vida diaria? </label>
+            <input type="text" class="form-control" id="discapacidadMOT_APOYO" name="discapacidadMOT_APOYO">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadMOT_APY_P">¿Requiere apoyos para la permanencia en el aula? ¿Cuáles?</label>
+            <input type="text" class="form-control" id="discapacidadMOT_APY_P" name="discapacidadMOT_APY_P">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadMOT_APY_O">¿Requiere otros apoyos?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadMOT_APY_O" value="SI"
+                data-dynamic-section="discapacidadMOT_APY_D">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadMOT_APY_O" value="NO"
+                data-dynamic-section="discapacidadMOT_APY_D">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadMOT_APY_D">Especificar cuales:</label>
+            <input type="text" class="form-control" id="discapacidadMOT_APY_D" name="discapacidadMOT_APY_D">
+          </div>
+        </div>
+
+        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEPSICOS == true">
+          <h4>Condición Psicosocial</h4>
+
+          <div class="form-group">
+            <label for="discapacidadPSI_DESCRI">¿Describa cual?</label>
+            <input type="text" class="form-control" id="discapacidadPSI_DESCRI" name="discapacidadPSI_DESCRI">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadPSI_APOYO">¿Qué apoyos utiliza en su vida diaria? </label>
+            <input type="text" class="form-control" id="discapacidadPSI_APOYO" name="discapacidadPSI_APOYO">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadPSI_APY_O">¿Requiere otros apoyos?</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadPSI_APY_O" value="SI"
+                data-dynamic-section="discapacidadPSI_APY_D">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadPSI_APY_O" value="NO"
+                data-dynamic-section="discapacidadPSI_APY_D">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadPSI_APY_D">Especificar cuales:</label>
+            <input type="text" class="form-control" id="discapacidadPSI_APY_D" name="discapacidadPSI_APY_D">
+          </div>
+        </div>
+
+        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEOTRAS == true">
+          <h4>Otra Situación de Discapacidad</h4>
+
+          <div class="form-group">
+            <label for="discapacidadOTRA_CUAL">¿Describa cual?</label>
+            <input type="text" class="form-control" id="discapacidadOTRA_CUAL" name="discapacidadOTRA_CUAL">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadOTRA_APY_O">¿Requiere otros apoyos?</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadOTRA_APY_O" value="SI"
+                data-dynamic-section="discapacidadOTRA_APY_D">
+              <label for="" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="discapacidadOTRA_APY_O" value="NO"
+                data-dynamic-section="discapacidadOTRA_APY_D">
+              <label for="" class="form-check-label">NO</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadOTRA_APY_D">Especificar cuales:</label>
+            <input type="text" class="form-control" id="discapacidadOTRA_APY_D" name="discapacidadOTRA_APY_D">
+          </div>
+
+          <div class="form-group">
+            <label for="discapacidadOTRA_DISCA">¿Alguna otra información que considere importante comunicar?</label>
+            <input type="text" class="form-control" name="discapacidadOTRA_DISCA">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class SectionSecundarioComponent {
 
+    // -------------------- SECCION SECUNDARIO
+    secundario_completo: any = null;
+
 }

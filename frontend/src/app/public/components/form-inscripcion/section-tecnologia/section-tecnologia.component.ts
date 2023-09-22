@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class SectionTecnologiaComponent {
 
+    // -------------------- SECCION TECNOLOGIA
+    acceso_internet: string = "";
+    acceso_pc: string = "";
+
 }

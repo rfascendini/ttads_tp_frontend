@@ -1,1 +1,70 @@
-<p>section-tecnologia works!</p>
+<section class="card mt-3">
+  <div class="card-header bg-dark text-white">
+    <h4 class="mb-0">Tecnología</h4>
+  </div>
+  <div class="card-body row g-3 mt-0">
+
+
+    <div class="mb-12">
+      <label for="tecnotienepc">¿Tiene acceso a una computadora?</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="tecnotienepc" name="tecnotienepc" value="SI"
+          [(ngModel)]="acceso_pc">
+        <label for="" class="form-check-label">SI</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="tecnotienepc" name="tecnotienepc" value="NO"
+          [(ngModel)]="acceso_pc">
+        <label for="" class="form-check-label">NO</label>
+      </div>
+    </div>
+
+    <div class="row g-3 mt-0" *ngIf="acceso_pc == 'SI'">
+      <div class="form-group">
+        <label for="tecnodondepc">¿Desde donde?</label>
+        <select class="form-select is-invalid" name="tecnodondepc" id="tecnodondepc">
+          <option value="" selected disabled>Seleccione una opción</option>
+          <option value="">...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tecnocelular">¿Cuantos celulares hay en su hogar?</label>
+        <input type="number" step="1" min="0" class="form-control" id="tecnocelular" name="tecnocelular">
+      </div>
+    </div>
+
+    <div class="mb-12">
+      <label for="tecnotieneinternet">¿Tiene acceso a Internet?</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="tecnotieneinternet" name="tecnotieneinternet" value="SI"
+          [(ngModel)]="acceso_internet">
+        <label for="" class="form-check-label">SI</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="tecnotieneinternet" name="tecnotieneinternet" value="NO"
+          [(ngModel)]="acceso_internet">
+        <label for="" class="form-check-label">NO</label>
+      </div>
+    </div>
+
+    <div class="row g-3 mt-0" *ngIf="acceso_internet == 'SI'">
+      <div class="form-group">
+        <label for="tecnointernet">¿Desde donde accede a Internet?</label>
+        <select class="form-select is-invalid" name="tecnointernet" id="tecnointernet">
+          <option value="" selected disabled>Seleccione una opción</option>
+          <option value="">...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tecnousointernet">Utiliza internet para</label>
+        <select class="form-select is-invalid" name="tecnousointernet" id="tecnousointernet">
+          <option value="" selected disabled>Seleccione una opción</option>
+          <option value="">...</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,1 +1,110 @@
-<p>section-secundario works!</p>
+<section class="card mt-3">
+  <div class="card-header bg-dark text-white">
+    <h4 class="mb-0">Secundario</h4>
+  </div>
+  <div class="card-body row g-3 mt-0">
+
+
+    <div class="mb-12">
+
+      <label for="secundarioegreso">Secundario Completo</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="secundarioegreso" name="secundarioegreso" value="2"
+          [(ngModel)]="secundario_completo" required>
+        <label for="" class="form-check-label">SI</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="secundarioegreso" name="secundarioegreso" value="1"
+          [(ngModel)]="secundario_completo" required>
+        <label for="" class="form-check-label">NO</label>
+      </div>
+
+      <label class="text-danger" *ngIf="secundario_completo == 1">La finalización del secundario es obligatoria
+        para la carrera seleccionada.</label>
+    </div>
+
+
+    <div class="form-group" *ngIf="secundario_completo == 1">
+      <label for="secundarioestado">Estado</label>
+      <select class="form-select is-invalid" id="secundarioestado" name="secundarioestado" required>
+        <option value="" selected disabled>Seleccione una opción</option>
+        <option value="">...</option>
+      </select>
+    </div>
+
+    <div class="form-group" *ngIf="secundario_completo == 2">
+      <label for="secundarioanioegreso">Año de Egreso</label>
+      <input type="number" class="form-control" id="secundarioanioegreso" name="secundarioanioegreso" required>
+      <small id="secundarioanioegresoHelpBlock" class="form-text text-muted">Tal como figura en el
+        diploma.</small>
+    </div>
+
+
+    <div class="form-group">
+      <label for="secundariotituladoen">Nombre del título secundario obtenido o a obtener</label>
+      <input type="text" class="form-control" id="secundariotituladoen" name="secundariotituladoen" required>
+    </div>
+
+    <div class="mb-12">
+      <label for="secundariotecnico">¿Secundario Técnico?</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="secundariotecnico" name="secundariotecnico" value="2"
+          required>
+        <label for="" class="form-check-label">SI</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="secundariotecnico" name="secundariotecnico" value="1"
+          required>
+        <label for="" class="form-check-label">NO</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="secundarioanalitico">Constancia de Estudios</label>
+      <select class="form-select is-invalid" id="secundarioanalitico" name="secundarioanalitico" required>
+        <option value="" selected disabled>Seleccione una opción</option>
+        <option value="">...</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="secundariocue">CUE del Colegio <span style="color:red">*</span> <button class="btn btn-link"
+          type="button" id="button-addon2" data-section='secundario' data-toggle="modal"
+          data-target="#CUEModal">Buscar
+          CUE</button></label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="secundariocue" name="secundariocue" required>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2" data-section='secundario'
+            data-toggle="modal" data-target="#CUEModal">Buscar CUE</button>
+        </div>
+      </div>
+      <small id="secundariocueHelpBlock" class="form-text text-muted">El CUE es la Clave Única del Establecimiento y
+        suele figurar en el diploma.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="secundarioinstitucion">Nombre Colegio</label>
+      <input type="text" class="form-control" id="secundarioinstitucion" name="secundarioinstitucion" disabled>
+    </div>
+
+    <div class="form-group">
+      <label for="secundariolocalidad">Ciudad o localidad</label>
+      <input type="text" class="form-control" id="secundariolocalidad" name="secundariolocalidad" disabled>
+    </div>
+
+    <div class="form-group">
+      <label for="secundarioprovincia">Provincia</label>
+      <input type="text" class="form-control" id="secundarioprovincia" name="secundarioprovincia" disabled>
+    </div>
+
+    <div class="form-group">
+      <label for="secundariodependede">Depende de</label>
+      <select class="form-select is-invalid" id="secundariodependede" name="secundariodependede">
+        <option value="" selected disabled>Seleccione una opción</option>
+        <option value="">...</option>
+      </select>
+    </div>
+
+  </div>
+</section>

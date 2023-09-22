@@ -1,1 +1,57 @@
-<p>section-carrera works!</p>
+<section class="card mt-3">
+  <div class="card-header bg-dark text-white">
+    <h4 class="mb-0">Carrera</h4>
+  </div>
+  <div class="card-body row g-3 mt-0">
+
+    <div class="form-group">
+      <label for="carrera">Carrera</label>
+      <select class="form-select is-invalid" id="carrera" name="carrera"
+        data-related="lugarcursado|formaingreso|tipocursado" required>
+        <option value="" selected disabled>Seleccione una opción</option>
+        <option value="">...</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="lugarcursado">Lugar cursado</label>
+      <select class="form-select is-invalid" id="lugarcursado" name="lugarcursado" required>
+        <option value="" selected disabled>Seleccione una opción</option>
+        <option value="">...</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="formaingreso">Forma de ingreso</label>
+      <select class="form-select is-invalid" id="formaingreso" name="formaingreso" required
+        data-dynamic-section="formaingreso">
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="tipocursado">Curso</label>
+      <select class="form-select is-invalid" id="tipocursado" name="tipocursado">
+        <option value="" selected disabled>Seleccione una opción</option>
+        <option value="">...</option>
+      </select>
+    </div>
+
+    <div class="formaingreso-block" data-showon="introductorio">
+      <div class="mb-12">
+        <label for="introductoriointensivo">Desea realizar el curso intensivo de verano?</label><br>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="introductoriointensivo" name="introductoriointensivo"
+            value="SI">
+          <label for="" class="form-check-label">SI</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="introductoriointensivo" name="introductoriointensivo"
+            value="NO">
+          <label for="" class="form-check-label">NO</label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>

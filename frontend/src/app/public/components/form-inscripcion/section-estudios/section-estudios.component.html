@@ -1,1 +1,84 @@
-<p>section-estudios works!</p>
+<section class="card mt-3">
+  <div class="card-header bg-dark text-white">
+    <h4 class="mb-0">Estudios Universitarios o Superiores Previos</h4>
+  </div>
+  <div class="card-body row g-3 mt-0">
+
+    <div class="form-group">
+      <label for="trabajotrabajas">¿Tienes Estudios Universitarios o Superiores Previos?</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="titulo_universitario_previo" value="SI"
+          [(ngModel)]="titulo_universitario_previo" required>
+        <label for="" class="form-check-label">SI</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="titulo_universitario_previo" value="NO"
+          [(ngModel)]="titulo_universitario_previo" required>
+        <label for="" class="form-check-label">NO</label>
+      </div>
+    </div>
+
+    <div class="row g-3 mt-0" *ngIf="titulo_universitario_previo == 'SI'">
+      <div class="form-group">
+        <label for="titulounivnombre">Titulo Universitario o Superior obtenido o a obtener (tal como figura en el
+          diploma)</label>
+        <input type="text" class="form-control" id="titulounivnombre" name="titulounivnombre" required>
+      </div>
+
+      <div class="mb-12">
+        <label for="titulouniventramite">T&iacute;tulo en tr&aacute;mite</label><br>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="titulouniventramite" name="titulouniventramite" value="2"
+            [(ngModel)]="titulo_universitario_tramite" required>
+          <label for="" class="form-check-label">SI</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="titulouniventramite" name="titulouniventramite" value="1"
+            [(ngModel)]="titulo_universitario_tramite" required>
+          <label for="" class="form-check-label">NO</label>
+        </div>
+      </div>
+
+      <div class="form-group" *ngIf="titulo_universitario_tramite == 'SI'">
+        <label for="titulounivanioegreso">Año de Egreso</label>
+        <input type="text" class="form-control" id="titulounivanioegreso" name="titulounivanioegreso">
+        <small id="titulounivanioegresoHelpBlock" class="form-text text-muted">Tal como figura en el
+          diploma.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="titulounivcue">CUE de la Institución <span style="color:red">*</span><button
+            class="btn btn-link" type="button" id="button-addon2" data-section='titulouniv' data-toggle="modal"
+            data-target="#CUEModal">Buscar
+            CUE</button></label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="titulounivcue" name="titulounivcue" required>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" data-section='titulouniv'
+              data-toggle="modal" data-target="#CUEModal">Buscar CUE</button>
+          </div>
+        </div>
+        <small id="titulounivcueHelpBlock" class="form-text text-muted">El CUE es la Clave Única del Establecimiento
+          y
+          suele figurar en el diploma.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="titulounivinstitucion">Nombre de la Institución</label>
+        <input type="text" class="form-control" id="titulounivinstitucion" name="titulounivinstitucion" disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="titulounivlocalidad">Ciudad o localidad</label>
+        <input type="text" class="form-control" id="titulounivlocalidad" name="titulounivlocalidad" disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="titulounivprovincia">Provincia</label>
+        <input type="text" class="form-control" id="titulounivprovincia" name="titulounivprovincia" disabled>
+      </div>
+
+    </div>
+
+  </div>
+</section>

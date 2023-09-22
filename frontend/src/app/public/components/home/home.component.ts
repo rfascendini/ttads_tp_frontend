@@ -14,15 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiService, private carreraService: CarrerasService) { }
 
   ngOnInit(): void {
-    this.obtenerData();
     this.obtenerCarreras();
-  }
-
-  obtenerData() {
-    this.apiService.getData().subscribe(data => {
-      this.data = data;
-      console.log(data);
-    })
   }
 
   obtenerCarreras() {

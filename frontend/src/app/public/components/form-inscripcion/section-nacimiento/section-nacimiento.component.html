@@ -1,1 +1,48 @@
-<p>section-nacimiento works!</p>
+<section class="card mt-3">
+  <div class="card-header bg-dark text-white">
+    <h4 class="mb-0">Nacimiento</h4>
+  </div>
+  <div class="card-body row g-3 mt-0">
+
+    <div class="form-group">
+      <label for="nacfechanacimiento">Fecha Nacimiento</label>
+      <input type="date" class="form-control" id="nacfechanacimiento" name="nacfechanacimiento" required>
+      <div class="invalid-feedback"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="nacnacionalidad">Nacionalidad</label>
+      <select class="form-select is-invalid" id="nacnacionalidad" name="nacnacionalidad" required>
+        <option value="" selected disabled>Seleccione una opción</option>
+        <option value="">...</option>
+      </select>
+
+    </div>
+
+    <div class="form-group">
+      <label for="nacvencdni">Fecha de Vencimiento del DNI</label>
+      <input type="date" class="form-control" id="nacvencdni" name="nacvencdni">
+    </div>
+
+    <div class="form-group">
+      <label for="nacpais">País</label>
+      <input type="text" class="form-control" id="nacpais" name="nacpais" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nacprovincia">Provincia</label>
+      <input type="text" class="form-control" id="nacprovincia" name="nacprovincia" required>
+    </div>
+
+    <div class="form-group">
+      <label for="naclocalidad">Ciudad o localidad</label>
+      <input type="text" class="form-control" id="naclocalidad" name="naclocalidad" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nacpartidodepartamento">Partido</label>
+      <input type="text" class="form-control" id="nacpartidodepartamento" name="nacpartidodepartamento">
+    </div>
+
+  </div>
+</section>

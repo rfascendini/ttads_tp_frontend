@@ -8,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class SectionDiscapacidadComponent {
 
+
+  // -------------------- SECCION DISCAPACIDAD
+  seccion_discapacidad: string = "";
+
+  // SUBSECCIONES DISCAPACIDAD
+  seccion_discapacidadNEAEAUDITI: boolean = false;
+  seccion_discapacidadNEAEVISUAL: boolean = false;
+  seccion_discapacidadNEAEMOTRIZ: boolean = false;
+  seccion_discapacidadNEAEPSICOS: boolean = false;
+  seccion_discapacidadNEAEOTRAS: boolean = false;
+
 }
