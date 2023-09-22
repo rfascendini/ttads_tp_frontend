@@ -6,9 +6,15 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class CarrerasService {
-  constructor(private http: HttpClient) {}
+  
+  private urlApi = "http://localhost:3000/api/carreras";
 
-  getCarreras(): Observable<any>{
-    return this.http.get('https://reqres.in/api/users?page=2');
+  constructor(private http: HttpClient) {
+
   }
+
+  public getData(): Observable<any> {
+    return this.http.get<any>(this.urlApi);
+  }
+
 }
