@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { SectionCarreraComponent } from './section-carrera/section-carrera.component';
 import { SectionDatosPersonalesComponent } from './section-datos-personales/section-datos-personales.component';
 import { SectionDiscapacidadComponent } from './section-discapacidad/section-discapacidad.component';
@@ -15,7 +17,7 @@ import { SectionFamiliaComponent } from './section-familia/section-familia.compo
 import { SectionCasaComponent } from './section-casa/section-casa.component';
 import { FormInscripcionComponent } from './form-inscripcion.component';
 import { PublicSharedModule } from '../../shared/shared.module';
-import { CommonModule } from '@angular/common';
+
 
 @NgModule({
 
@@ -36,7 +38,7 @@ import { CommonModule } from '@angular/common';
     SectionFamiliaComponent,
     SectionCasaComponent,
   ],
-  imports: [PublicSharedModule, CommonModule],
+  imports: [PublicSharedModule, CommonModule,FormsModule],
   providers: [],
   bootstrap: [],
   exports: []

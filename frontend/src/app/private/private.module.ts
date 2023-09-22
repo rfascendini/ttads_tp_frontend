@@ -12,6 +12,7 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 
