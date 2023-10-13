@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/services/api.prueba';
 import { CarrerasService } from 'src/services/carrerasService';
 
 @Component({
@@ -11,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   data: any[] = [];
 
-  constructor(private apiService: ApiService, private carreraService: CarrerasService) { }
+  constructor(private carreraService: CarrerasService) { }
 
   ngOnInit(): void {
     this.obtenerCarreras();

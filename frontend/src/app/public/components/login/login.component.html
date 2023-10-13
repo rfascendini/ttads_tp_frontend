@@ -1,0 +1,43 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;400&display=swap');
+
+  * {
+    font-family: 'Urbanist', sans-serif;
+  }
+</style>
+
+<body style="background: #1453ba;display:grid; justify-content: center;align-items: center;">
+
+  <div class="container text-center">
+
+    <div class="pb-2"><img class="logo img-fluid for-light" src="../../../../assets/images/home/logo-utn-white.png"
+        style="width: 25em;">
+
+      <div class="bg-white mt-3" style="border-radius: 15px; max-width: 25em;">
+
+        <h2 class="form-signin-heading pb-0 pt-3 mb-0 text-left" style="padding: .375rem"> Iniciar sesión</h2>
+        <p class="pt-0" style="padding: .375rem">Personal de Alumnado y Posgrado</p>
+        <h4 class="text-center mb-2">Gestor Inscripciones</h4>
+
+        <form class="form-signin text-center" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+
+          <div class="container row p-3 m-0 g-3">
+
+
+            <input type="text" name="usuario" class="form-control" placeholder="Usuario" ngModel required />
+
+
+            <input type="password" name="password" class="form-control" placeholder="Contraseña" ngModel required />
+
+
+            <button class="btn btn-primary" type="submit" name="procesar">Ingresar</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
