@@ -1,6 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LoginService } from 'src/services/loginService.js';
+import { LoginService } from 'src/services/loginService';
 
 @Component({
   selector: 'app-login',
@@ -14,22 +14,19 @@ import { LoginService } from 'src/services/loginService.js';
 })
 
 export class LoginComponent {
+  
+  response: any;
 
   constructor(private loginService: LoginService) { }
 
-  sendDataToServer() {
-    const jsonData = { /* Your JSON data here */ };
-
-    this.loginService.sendData(jsonData)
-      .subscribe((response: any) => {
-        console.log('Data sent successfully:', response);
-        // Handle the server's response here
-      },
-        (error: any) => {
-          console.error('Error sending data:', error);
-          // Handle errors here
-        });
+  loginForm(username: string,password: string) {
+    this.loginService.sendData(username,password).subscribe((response) => {
+      this.response = response;
+      console.log(this.response);
+      
+    })
   }
+
 
   onSubmit(form: NgForm) {
     if (form.valid) {
@@ -37,6 +34,9 @@ export class LoginComponent {
       console.log('JSON con los datos del form:', form.value);
       // You can send the form data to a server or perform any other action here.
       if (form.value.usuario != '' && form.value.password != '') {
+
+        this.loginForm(form.value.usuario, form.value.password);
+
 
 
       } else {
