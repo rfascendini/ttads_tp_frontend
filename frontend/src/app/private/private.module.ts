@@ -8,7 +8,7 @@ import { InscripcionesComponent } from './components/inscripciones/inscripciones
 import { PreguntasComponent } from './components/preguntas/preguntas.component';
 import { SysacadComponent } from './components/sysacad/sysacad.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
-import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -26,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     PreguntasComponent,
     SysacadComponent,
     UsuariosComponent,
-    AdminPanelComponent,
+    DashboardComponent,
     NavbarComponent
   ],
   imports: [CommonModule,
