@@ -5,9 +5,9 @@ import { Observable } from "rxjs";
 @Injectable({
   providedIn: "root",
 })
-export class LoginService {
+export class AuthTokenService {
 
-  private urlApi = "http://localhost:3000/api/usuarios/login";
+  private urlApi = "http://localhost:3000/api/usuarios/verifyAuth";
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -18,8 +18,8 @@ export class LoginService {
 
   }
 
-  public sendDataLogin(username: string, password: string): Observable<any> {
-    return this.http.post<any>(this.urlApi, { "usuario": username, "password": password }, this.httpOptions);
+  public verifyToken(token: string): Observable<any> {
+    return this.http.post<any>(this.urlApi, {"token": token }, this.httpOptions);
   }
 
 }

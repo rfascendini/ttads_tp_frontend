@@ -2,7 +2,7 @@ import { Component, Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LoginService } from 'src/services/loginService';
 import { Router } from '@angular/router';
-
+import { AuthTokenService } from 'src/services/authTokenService';
 
 @Component({
   selector: 'app-login',
@@ -17,10 +17,12 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
 
-  dataUsuario: any = null;
-  error: any = null;
+  alerta = {
+    status: "",
+    message: ""
+  };
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService, private router: Router, private authTokenService: AuthTokenService) { }
 
   onSubmit(form: NgForm) {
 
@@ -31,30 +33,31 @@ export class LoginComponent {
 
       if (usuario != '' && password != '') {
 
-        // this.loginForm(form.value.usuario, form.value.password);
+        this.loginService.sendDataLogin(usuario, password).subscribe((response) => {
 
-        this.loginService.sendData(usuario, password).subscribe((response) => {
-          
-          this.dataUsuario = response.user;
+          this.alerta.status = response.status
+          this.alerta.message = response.message    
 
-          if (this.dataUsuario != null) {
-            sessionStorage.setItem("dataUsuario", this.dataUsuario);
-            this.router.navigate(['gestor'])
+          if (this.alerta.status === "success") {
+
+            this.authTokenService.verifyToken(response.user['token']).subscribe((response) => {
+              console.log("response en el onSubmit: ", response);
+            })
+
+          } else {
+
           }
 
         })
 
       }
 
-
     } else {
       console.log("Error. No puede enviar parametros vacios.");
     }
 
   }
-  
+
 }
-
-
 
 
