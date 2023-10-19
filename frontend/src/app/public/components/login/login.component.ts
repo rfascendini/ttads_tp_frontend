@@ -40,8 +40,15 @@ export class LoginComponent {
 
           if (this.alerta.status === "success") {
 
-            this.authTokenService.verifyToken(response.user['token']).subscribe((response) => {
-              console.log("response en el onSubmit: ", response);
+            this.authTokenService.verifyToken(response.user['token']).subscribe((responseToken) => {     
+          
+              sessionStorage.setItem('nombre', response.user['nombre']);
+              sessionStorage.setItem('apellido', response.user['apellido']);
+              sessionStorage.setItem('username', response.user['userName']);
+              sessionStorage.setItem('token', response.user['token']);
+
+              this.router.navigate(['gestor']);
+
             })
 
           } else {

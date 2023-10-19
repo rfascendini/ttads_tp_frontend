@@ -6,15 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class DashboardComponent implements OnInit {
-  
-  ngOnInit(): void {
-    console.log();
-    
-  }
 
-
-
-
+export class DashboardComponent {
 
 }

@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 })
 export class LoginService {
 
-  private urlApi = "http://localhost:3000/api/usuarios/login";
+  private urlApi = "http://localhost:3000/api/admin/login";
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -21,5 +21,6 @@ export class LoginService {
   public sendDataLogin(username: string, password: string): Observable<any> {
     return this.http.post<any>(this.urlApi, { "usuario": username, "password": password }, this.httpOptions);
   }
+
 
 }

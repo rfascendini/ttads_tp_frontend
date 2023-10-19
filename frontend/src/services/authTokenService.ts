@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 })
 export class AuthTokenService {
 
-  private urlApi = "http://localhost:3000/api/usuarios/verifyAuth";
+  private urlApi = "http://localhost:3000/api/admin/verifyAuth";
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
