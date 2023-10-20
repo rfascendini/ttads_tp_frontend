@@ -6,10 +6,15 @@ import { DashboardComponent } from './private/components/dashboard/dashboard.com
 import { LoginComponent } from './public/components/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, title: 'Ingresantes - FRRo' },
   { path: 'formulario', component: FormInscripcionComponent, title: 'Formulario de Ingreso - 2024' },
   { path: 'gestor', component: DashboardComponent, title: 'Admin Panel - Gestor Inscripciones' },
   { path: 'login', component: LoginComponent, title: 'Admin Panel - Login' },
+  { path: '', component: HomeComponent, title: 'Ingresantes - FRRo' },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

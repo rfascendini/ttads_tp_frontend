@@ -24,6 +24,8 @@ export class DashboardComponent implements OnInit {
     // VALIDAMOS QUE EXISTA EL TOKEN PARA MANTENERSE EN LA PAGINA
     this.authTokenService.verifyToken(this.token).subscribe((responseToken) => {
 
+      console.log(responseToken);
+      
       // SI EL TOKEN ES INCORRECTO QUE NOS ENVÍE A OTRO SITIO
       if (responseToken.status != "success") {
         this.router.navigate(['login'])

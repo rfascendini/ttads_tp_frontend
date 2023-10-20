@@ -46,8 +46,6 @@ export class LoginComponent {
             sessionStorage.setItem('token', response.user['token']);
             this.router.navigate(['gestor']);
 
-          } else {
-            this.router.navigate(['login']);
           }
 
         })

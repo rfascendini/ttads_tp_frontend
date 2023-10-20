@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LogoutService } from 'src/services/logoutService';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderPrivateComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private logginout: LogoutService) { }
 
   usuario = {
     nombre: sessionStorage.getItem('nombre'),
@@ -26,13 +27,7 @@ export class HeaderPrivateComponent implements OnInit {
   }
 
   logout() {
-    sessionStorage.removeItem('nombre');
-    sessionStorage.removeItem('apellido');
-    sessionStorage.removeItem('username');
-    sessionStorage.removeItem('token');
-    this.router.navigate(['login']);
+    this.logginout.logout();
   }
-
-
 
 }
