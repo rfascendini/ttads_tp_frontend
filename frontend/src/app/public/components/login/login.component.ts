@@ -33,30 +33,24 @@ export class LoginComponent {
 
       if (usuario != '' && password != '') {
 
-        this.loginService.sendDataLogin(usuario, password).subscribe((response) => {
+        this.loginService.login(usuario, password).subscribe((response) => {
 
           this.alerta.status = response.status
-          this.alerta.message = response.message    
+          this.alerta.message = response.message
 
           if (this.alerta.status === "success") {
 
-            this.authTokenService.verifyToken(response.user['token']).subscribe((responseToken) => {     
-          
-              sessionStorage.setItem('nombre', response.user['nombre']);
-              sessionStorage.setItem('apellido', response.user['apellido']);
-              sessionStorage.setItem('username', response.user['userName']);
-              sessionStorage.setItem('token', response.user['token']);
-
-              this.router.navigate(['gestor']);
-
-            })
+            sessionStorage.setItem('nombre', response.user['nombre']);
+            sessionStorage.setItem('apellido', response.user['apellido']);
+            sessionStorage.setItem('username', response.user['userName']);
+            sessionStorage.setItem('token', response.user['token']);
+            this.router.navigate(['gestor']);
 
           } else {
-
+            this.router.navigate(['login']);
           }
 
         })
-
       }
 
     } else {

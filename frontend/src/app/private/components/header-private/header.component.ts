@@ -25,6 +25,14 @@ export class HeaderPrivateComponent implements OnInit {
     }
   }
 
+  logout() {
+    sessionStorage.removeItem('nombre');
+    sessionStorage.removeItem('apellido');
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('token');
+    this.router.navigate(['login']);
+  }
+
 
 
 }

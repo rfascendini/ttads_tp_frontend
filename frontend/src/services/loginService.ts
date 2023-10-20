@@ -18,7 +18,7 @@ export class LoginService {
 
   }
 
-  public sendDataLogin(username: string, password: string): Observable<any> {
+  public login(username: string, password: string): Observable<any> {
     return this.http.post<any>(this.urlApi, { "usuario": username, "password": password }, this.httpOptions);
   }
 

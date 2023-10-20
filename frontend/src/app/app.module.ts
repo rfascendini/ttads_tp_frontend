@@ -26,6 +26,7 @@ import { PrivateModule } from './private/private.module';
   providers: [],
   bootstrap: [AppComponent],
   exports: [RouterModule,]
+  
 })
 
 export class AppModule { }

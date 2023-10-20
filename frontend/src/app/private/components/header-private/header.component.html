@@ -5,7 +5,17 @@
 
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <h4 class="text-white m-0 p-0">{{ usuario.apellido }} , {{ usuario.nombre }}</h4>
+
+          <div class="dropdown">
+            <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              {{ usuario.apellido }}, {{ usuario.nombre }}
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" (click)="logout()" href="#">Cerrar Sesión</a></li>
+            </ul>
+          </div>
+
         </li>
       </ul>
     </header>
