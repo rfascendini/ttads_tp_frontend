@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CarrerasService } from 'src/services/carrerasService';
 
 @Component({
   selector: 'app-section-carrera',
@@ -6,6 +7,27 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class SectionCarreraComponent {
+export class SectionCarreraComponent implements OnInit {
+  
+  carreras: any[] = [];
+
+  constructor (  // LLAMAMOS A LAS VARIABLES QUE SE CONECTAN A LAS API'S
+    private carreraService: CarrerasService,
+  ) { }
+
+  ngOnInit(): void {
+    this.carreras = this.getJsonCarreras()
+  }
+
+  // OBTENEMOS TODA LA DATA DE LA BD CON LOS REGISTROS NECESARIOS DE LOS CAMPOS DE LOS FORMULARIOS
+  getJsonCarreras() {
+    const jsonCarreras: any[] = []
+    this.carreraService.getCarreras().subscribe(data => {
+      data.forEach((carrera: any) => {
+        if (carrera.inscripcionAbierta == 1) { jsonCarreras.push(carrera) }
+      });
+    })
+    return jsonCarreras;
+  }
 
 }

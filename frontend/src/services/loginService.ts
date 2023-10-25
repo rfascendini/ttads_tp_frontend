@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 })
 export class LoginService {
 
-  private urlApi = "http://localhost:3000/api/admin/login";
+
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -18,10 +18,21 @@ export class LoginService {
 
   }
 
-  public login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(this.urlApi, { "usuario": username, "password": password }, this.httpOptions);
+  public adminLogin(username: string, password: string): Observable<any> {
+    const urlApi: string = "http://localhost:3000/api/admin/login";
+    return this.http.post<any>(urlApi, { "username": username, "password": password }, this.httpOptions);
   }
 
-  
+  public inscriptionLogin(dni: string, token: string): Observable<any> {
+    const urlApi: string = "http://localhost:3000/api/inscripcion/login";
+    return this.http.post<any>(urlApi, { "dni": dni, "token": token }, this.httpOptions);
+  }
+
+  public destroySession() {
+    sessionStorage.removeItem('nombre');
+    sessionStorage.removeItem('apellido');
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('token');
+  }
 
 }

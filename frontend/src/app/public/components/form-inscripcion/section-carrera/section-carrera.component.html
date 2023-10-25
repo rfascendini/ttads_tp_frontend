@@ -6,10 +6,15 @@
 
     <div class="form-group">
       <label for="carrera">Carrera</label>
-      <select class="form-select is-invalid" id="carrera" name="carrera"
-        data-related="lugarcursado|formaingreso|tipocursado" required>
+      <select class="form-select is-invalid" id="carrera" name="carrera" required>
         <option value="" selected disabled>Seleccione una opción</option>
-        <option value="">...</option>
+
+        <option *ngFor="let carrera of carreras" 
+          [value]="carrera.id">
+          <!-- [attr.selected]="carrera.id == inscripcion.id_carrera ? true : null" -->
+          {{carrera.nombre}}
+        </option>
+
       </select>
     </div>
 
@@ -23,8 +28,7 @@
 
     <div class="form-group">
       <label for="formaingreso">Forma de ingreso</label>
-      <select class="form-select is-invalid" id="formaingreso" name="formaingreso" required
-        data-dynamic-section="formaingreso">
+      <select class="form-select is-invalid" id="formaingreso" name="formaingreso" required>
       </select>
     </div>
 

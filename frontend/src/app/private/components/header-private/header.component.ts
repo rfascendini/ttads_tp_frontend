@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LogoutService } from 'src/services/logoutService';
+import { LoginService } from 'src/services/loginService';
 
 
 @Component({
@@ -9,25 +9,19 @@ import { LogoutService } from 'src/services/logoutService';
   styles: [
   ]
 })
-export class HeaderPrivateComponent implements OnInit {
+export class HeaderPrivateComponent {
+sessionStorage: any;
 
-  constructor(private router: Router, private logginout: LogoutService) { }
+  constructor(private router: Router, private logginOut: LoginService) { }
 
   usuario = {
     nombre: sessionStorage.getItem('nombre'),
     apellido: sessionStorage.getItem('apellido'),
-    username: sessionStorage.getItem('username'),
-    token: sessionStorage.getItem('token')
-  }
-
-  ngOnInit(): void {
-    if (sessionStorage.getItem('token') == undefined) {
-      this.router.navigate(['login']);
-    }
   }
 
   logout() {
-    this.logginout.logout();
+    this.logginOut.destroySession();
+    this.router.navigate(['login']);
   }
 
 }

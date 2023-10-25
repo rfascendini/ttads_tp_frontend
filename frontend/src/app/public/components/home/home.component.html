@@ -5,13 +5,13 @@
     <app-header></app-header>
 
     <main class="px-3">
-      <div class="container d-flex align-items-center space-between!important mx-auto py-5 row">
+      <div class="container d-flex align-items-center justify-content-between mx-auto py-5 row">
 
         <div class="col-lg-7 pe-5">
           <h1 class="display-6 fw-bold lh-1 mb-4 text-center">
             ¡Bienvenidos al <span class="text-primary">Ingreso 2024!</span>
           </h1>
-          <p class="col-lg-12 fs-6" style="text-align: justify; font-size: 2vh !important;">
+          <p class="col-lg-12 fs-6 mb-0" style="text-align: justify; font-size: 2.5vh !important;">
             &nbsp;Para comenzar con la inscripción complete el siguiente formulario. Enviaremos un correo electrónico
             con
             las instrucciones para completar su inscripción. <br><br>
@@ -24,24 +24,62 @@
           </p>
         </div>
 
-        <div class="col-lg-5 p-4 p-md-5 border rounded-3 bg-light">
-          <form action="" method="" class="needs-validation">
-            <div class="form-floating mb-3">
-              <input type="number" class="form-control" required />
-              <label for="">DNI</label>
+        <div class="col-lg-5 p-4 p-md-4 border rounded-3 bg-light">
+
+          <ul class="nav nav-pills mb-3 row g-3" id="pills-tab" role="tablist">
+            <li class="nav-item col" role="signin">
+              <button class="nav-link active w-100" id="pills-signin-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-signin" type="button" role="tab" aria-controls="pills-signin"
+                aria-selected="true">Registrarme</button>
+            </li>
+            <li class="nav-item col" role="login">
+              <button class="nav-link w-100" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login"
+                type="button" role="tab" aria-controls="pills-login" aria-selected="false">Iniciar Sesión</button>
+            </li>
+
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div *ngIf="alerta.status == 'error'" class="alert alert-danger mb-3 p-1" role="alert">
+              <p class="mb-0" style="font-size: 2vh;">{{ alerta.message }}</p>
             </div>
-            <div class="form-floating mb-3">
-              <input type="number" class="form-control" required />
-              <label for="">Número de Trámite</label>
+            <div class="tab-pane fade show active" id="pills-signin" role="tabpanel" aria-labelledby="pills-signin-tab"
+              tabindex="0">
+              <form action="" method="" class="needs-validation mb-0">
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control" required />
+                  <label for="">DNI</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control" required />
+                  <label for="">Número de Trámite</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" required />
+                  <label for="">Correo Electrónico</label>
+                </div>
+                <button class="w-100 btn btn btn-dark" type="submit">
+                  Iniciar Inscripción
+                </button>
+              </form>
             </div>
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control" required />
-              <label for="">Correo Electrónico</label>
+            <div class="tab-pane fade" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab" tabindex="0">
+
+              <form class="needs-validation mb-0" #myForm="ngForm" (ngSubmit)="formLogin(myForm)">
+                <div class="form-floating mb-3">
+                  <input type="text" name="dni" class="form-control" ngModel required />
+                  <label for="">DNI</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" name="token" class="form-control" ngModel required />
+                  <label for="">Token de Acceso</label>
+                </div>
+                <button class="w-100 btn btn-dark" type="submit">
+                  Continuar Inscripción
+                </button>
+              </form>
             </div>
-            <button class="w-100 btn btn-lg btn-dark" type="submit">
-              Iniciar Inscripción
-            </button>
-          </form>
+          </div>
+
         </div>
 
       </div>

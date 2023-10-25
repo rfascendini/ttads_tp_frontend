@@ -22,7 +22,7 @@ export class LoginComponent {
     message: ""
   };
 
-  constructor(private loginService: LoginService, private router: Router, private authTokenService: AuthTokenService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   onSubmit(form: NgForm) {
 
@@ -33,7 +33,7 @@ export class LoginComponent {
 
       if (usuario != '' && password != '') {
 
-        this.loginService.login(usuario, password).subscribe((response) => {
+        this.loginService.adminLogin(usuario, password).subscribe((response) => {
 
           this.alerta.status = response.status
           this.alerta.message = response.message
@@ -52,7 +52,8 @@ export class LoginComponent {
       }
 
     } else {
-      console.log("Error. No puede enviar parametros vacios.");
+      this.alerta.status = 'error'
+      this.alerta.message = 'No se enviaron parametros.'
     }
 
   }
