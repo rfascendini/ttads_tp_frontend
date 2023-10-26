@@ -46,6 +46,7 @@ export class HomeComponent {
             sessionStorage.setItem('inscripcion_dni', response.inscripcion['alumnonumerodocumento']);
             sessionStorage.setItem('inscripcion_access_token', response.inscripcion['access_token']);
             sessionStorage.setItem('token', response.inscripcion['token']);
+            sessionStorage.setItem('inscripcion', JSON.stringify(response.inscripcion));
             this.router.navigate(['formulario']);
 
           }

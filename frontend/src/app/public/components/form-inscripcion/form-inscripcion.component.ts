@@ -19,10 +19,15 @@ export class FormInscripcionComponent {
 
   // ASIGNAMOS EL TOKEN DE LA SESSION EN UNA VARIABLE
   token: any = sessionStorage.getItem('token');
+  inscripcion: any = sessionStorage.getItem('inscripcion')
 
 
   ngOnInit(): void {
 
+    this.inscripcion = JSON.parse(this.inscripcion);
+    console.log(this.inscripcion);
+    
+    
     if (this.token != null) {
 
       // VALIDAMOS QUE EXISTA EL TOKEN PARA MANTENERSE EN LA PAGINA
