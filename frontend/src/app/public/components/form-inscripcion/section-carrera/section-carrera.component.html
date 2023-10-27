@@ -10,11 +10,10 @@
         <option value="" selected disabled>Seleccione una opción</option>
 
         <option *ngFor="let carrera of carreras" 
-          [value]="carrera.id">
-          <!-- [attr.selected]="carrera.id == inscripcion.id_carrera ? true : null" -->
+          [value]="carrera.id"
+          [selected]="carrera.id === inscripcion.id_carrera">
           {{carrera.nombre}}
         </option>
-
       </select>
     </div>
 

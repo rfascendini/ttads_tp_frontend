@@ -2,6 +2,7 @@ import { Component, Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LoginService } from 'src/services/loginService';
 import { Router } from '@angular/router';
+import { InscripcionesService } from 'src/services/inscripcionesService';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,7 @@ export class HomeComponent {
     message: ""
   };
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService, private router: Router, private inscripcionService: InscripcionesService) { }
 
   formLogin(form: NgForm) {
 
@@ -30,13 +31,13 @@ export class HomeComponent {
       const token: string = form.value.token
 
       console.log(form.value);
-      
+
       if (dni != '' && token != '') {
 
         this.loginService.inscriptionLogin(dni, token).subscribe((response) => {
 
           console.log(response);
-          
+
           this.alerta.status = response.status
           this.alerta.message = response.message
 
@@ -61,11 +62,33 @@ export class HomeComponent {
 
   }
 
-  // formSignin(form: NgForm) {
+  formSignin(form: NgForm) {
 
+    const dni: string = form.value.dni
+    const nroTramite: string = form.value.token
+    const email: string = form.value.email
 
+    console.log(form.value);
 
-  // }
+    if (dni != '' && nroTramite != '' && email != '') {
+
+      this.inscripcionService.addInscripcion(dni, nroTramite, email).subscribe((response) => {
+
+        console.log(response);
+
+        this.alerta.status = response.status
+        this.alerta.message = response.message
+
+        if (this.alerta.status === "success") {
+
+          
+
+        }
+
+      })
+    }
+
+  }
 
 
 }

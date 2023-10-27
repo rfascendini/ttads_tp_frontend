@@ -21,14 +21,12 @@ export class FormInscripcionComponent {
   token: any = sessionStorage.getItem('token');
   inscripcion: any = sessionStorage.getItem('inscripcion')
 
-
   ngOnInit(): void {
 
-    this.inscripcion = JSON.parse(this.inscripcion);
-    console.log(this.inscripcion);
-    
-    
     if (this.token != null) {
+
+      this.inscripcion = JSON.parse(this.inscripcion);
+      console.log(this.inscripcion);
 
       // VALIDAMOS QUE EXISTA EL TOKEN PARA MANTENERSE EN LA PAGINA
       this.authTokenService.verifyToken(this.token).subscribe((responseToken) => {
