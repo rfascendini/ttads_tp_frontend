@@ -23,8 +23,8 @@ export class InscripcionesService {
     return this.http.get<any>(urlApi);
   }
 
-  public addInscripcion(dni: string, nroTramite: string, email: string): Observable<any> {
-    const urlApi: string = "http://localhost:3000/api/inscripciones/add";
-    return this.http.post<any>(urlApi, { "dni" : dni, "nroTramite" : nroTramite, "email" : email }, this.httpOptions);
-  }
+  // public addInscripcion(dni: string, nroTramite: string, email: string): Observable<any> {
+  //   const urlApi: string = "http://localhost:3000/api/inscripciones/add";
+  //   return this.http.post<any>(urlApi, { "dni" : dni, "nroTramite" : nroTramite, "email" : email }, this.httpOptions);
+  // }
 }

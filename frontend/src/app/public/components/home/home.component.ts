@@ -62,36 +62,36 @@ export class HomeComponent {
 
   }
 
-  formSignin(form: NgForm) {
+//   formSignin(form: NgForm) {
 
-    const dni: string = form.value.dni
-    const nroTramite: string = form.value.token
-    const email: string = form.value.email
+//     const dni: string = form.value.dni
+//     const nroTramite: string = form.value.token
+//     const email: string = form.value.email
 
-    console.log(form.value);
+//     console.log(form.value);
 
-    if (dni != '' && nroTramite != '' && email != '') {
+//     if (dni != '' && nroTramite != '' && email != '') {
 
-      this.inscripcionService.addInscripcion(dni, nroTramite, email).subscribe((response) => {
+//       this.inscripcionService.addInscripcion(dni, nroTramite, email).subscribe((response) => {
 
-        console.log(response);
+//         console.log(response);
 
-        this.alerta.status = response.status
-        this.alerta.message = response.message
+//         this.alerta.status = response.status
+//         this.alerta.message = response.message
 
-        if (this.alerta.status === "success") {
+//         if (this.alerta.status === "success") {
 
           
 
-        }
+//         }
 
-      })
-    }
+//       })
+//     }
 
-  }
+//   }
 
 
-}
+ }
 
 
 
