@@ -21,7 +21,9 @@ export class FormInscripcionComponent {
   token: any = sessionStorage.getItem('token');
   inscripcion: any = sessionStorage.getItem('inscripcion')
 
+
   ngOnInit(): void {
+
 
     if (this.token != null) {
 

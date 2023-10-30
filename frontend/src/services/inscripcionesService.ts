@@ -7,20 +7,20 @@ import { Observable } from "rxjs";
 })
 export class InscripcionesService {
 
+  constructor(private http: HttpClient) {}
+
+  private token : any = sessionStorage.getItem('token')
+
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
+      'Authorization': this.token,
     })
   };
 
-
-  constructor(private http: HttpClient) {
-
-  }
-
   public getInscripciones(): Observable<any> {
     const urlApi: string = "http://localhost:3000/api/inscripciones";
-    return this.http.get<any>(urlApi);
+    return this.http.get<any>(urlApi, this.httpOptions);
   }
 
   // public addInscripcion(dni: string, nroTramite: string, email: string): Observable<any> {

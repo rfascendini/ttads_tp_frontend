@@ -8,6 +8,7 @@ import { Observable } from "rxjs";
 export class AuthTokenService {
 
   private urlApi = "http://localhost:3000/api/token/verifyAuth";
+  
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

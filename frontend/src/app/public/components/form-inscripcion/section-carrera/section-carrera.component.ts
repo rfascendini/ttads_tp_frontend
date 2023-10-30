@@ -8,19 +8,19 @@ import { CarrerasService } from 'src/services/carrerasService';
   ]
 })
 export class SectionCarreraComponent implements OnInit {
-  
+
   carreras: any[] = [];
   inscripcion: any = sessionStorage.getItem('inscripcion')
 
-  constructor (  // LLAMAMOS A LAS VARIABLES QUE SE CONECTAN A LAS API'S
+  constructor(  // LLAMAMOS A LAS VARIABLES QUE SE CONECTAN A LAS API'S
     private carreraService: CarrerasService,
   ) { }
 
   ngOnInit(): void {
-    
+
     // INICIALIZAMOS LA SESSION
     this.inscripcion = JSON.parse(this.inscripcion);
-    
+
     this.carreras = this.getJsonCarreras()
 
   }
@@ -32,6 +32,10 @@ export class SectionCarreraComponent implements OnInit {
       data.forEach((carrera: any) => {
         if (carrera.inscripcionAbierta == 1) { jsonCarreras.push(carrera) }
       });
+    }, () => {
+      const error = {status: "error", message: "Debe iniciar sesión para acceder."}
+      console.log(error);
+      return error;
     })
     return jsonCarreras;
   }

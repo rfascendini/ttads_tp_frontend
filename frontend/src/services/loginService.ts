@@ -28,13 +28,8 @@ export class LoginService {
     return this.http.post<any>(urlApi, { "dni": dni, "token": token }, this.httpOptions);
   }
 
-  
-
   public destroySession() {
-    sessionStorage.removeItem('nombre');
-    sessionStorage.removeItem('apellido');
-    sessionStorage.removeItem('username');
-    sessionStorage.removeItem('token');
+    sessionStorage.clear()
   }
 
 }

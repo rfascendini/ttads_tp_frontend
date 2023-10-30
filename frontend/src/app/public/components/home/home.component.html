@@ -46,16 +46,16 @@
               tabindex="0">
               <form action="" method="" class="needs-validation mb-0">
                 <div class="form-floating mb-3">
-                  <input type="number" name="dni" class="form-control" required />
-                  <label for="">DNI</label>
+                  <input type="number" id="inputSigninDni" name="dni" class="form-control" required />
+                  <label for="inputSigninDni">DNI</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="number" name="nroTramite" class="form-control" required />
-                  <label for="">Número de Trámite</label>
+                  <input type="number" id="inputSigninNroTramite" name="nroTramite" class="form-control" required />
+                  <label for="inputSigninNroTramite">Número de Trámite</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="email" name="email" class="form-control" required />
-                  <label for="">Correo Electrónico</label>
+                  <input type="email" id="inputSigninEmail" name="email" class="form-control" required />
+                  <label for="inputSigninEmail">Correo Electrónico</label>
                 </div>
                 <button class="w-100 btn btn btn-dark" type="submit">
                   Iniciar Inscripción
@@ -66,12 +66,12 @@
 
               <form class="needs-validation mb-0" #myForm="ngForm" (ngSubmit)="formLogin(myForm)">
                 <div class="form-floating mb-3">
-                  <input type="text" name="dni" class="form-control" ngModel required />
-                  <label for="">DNI</label>
+                  <input type="text" name="dni" id="inputLoginDni" class="form-control" ngModel required />
+                  <label for="inputLoginDni">DNI</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" name="token" class="form-control" ngModel required />
-                  <label for="">Token de Acceso</label>
+                  <input type="text" name="token" id="inputLoginToken" class="form-control" ngModel required />
+                  <label for="inputLoginToken">Token de Acceso</label>
                 </div>
                 <button class="w-100 btn btn-dark" type="submit">
                   Continuar Inscripción

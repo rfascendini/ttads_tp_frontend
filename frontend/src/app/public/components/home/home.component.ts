@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { LoginService } from 'src/services/loginService';
 import { Router } from '@angular/router';
 import { InscripcionesService } from 'src/services/inscripcionesService';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -30,13 +31,11 @@ export class HomeComponent {
       const dni: string = form.value.dni
       const token: string = form.value.token
 
-      console.log(form.value);
-
       if (dni != '' && token != '') {
 
         this.loginService.inscriptionLogin(dni, token).subscribe((response) => {
 
-          console.log(response);
+          // console.log(response);
 
           this.alerta.status = response.status
           this.alerta.message = response.message
