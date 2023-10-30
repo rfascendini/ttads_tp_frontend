@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { LoginService } from 'src/services/loginService';
 import { Router } from '@angular/router';
 import { AuthTokenService } from 'src/services/authTokenService';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -35,25 +36,21 @@ export class LoginComponent {
 
         this.loginService.adminLogin(usuario, password).subscribe((response) => {
 
-          this.alerta.status = response.status
-          this.alerta.message = response.message
-
           if (this.alerta.status === "success") {
 
-            sessionStorage.setItem('nombre', response.user['nombre']);
-            sessionStorage.setItem('apellido', response.user['apellido']);
-            sessionStorage.setItem('username', response.user['userName']);
-            sessionStorage.setItem('token', response.user['token']);
+            sessionStorage.setItem('usuario', JSON.stringify(response.user));
             this.router.navigate(['gestor']);
 
           }
 
-        })
+        }, (error: HttpErrorResponse) => {
+          console.log(error.error)
+          this.alerta = { status: error.error.status, message: error.error.message }
+        });
       }
 
     } else {
-      this.alerta.status = 'error'
-      this.alerta.message = 'No se enviaron parametros.'
+      this.alerta = { status: 'error', message: 'No se enviaron parametros.' }
     }
 
   }

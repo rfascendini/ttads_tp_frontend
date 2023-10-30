@@ -10,14 +10,12 @@ import { LoginService } from 'src/services/loginService';
   ]
 })
 export class HeaderPrivateComponent {
-sessionStorage: any;
 
   constructor(private router: Router, private logginOut: LoginService) { }
 
-  usuario = {
-    nombre: sessionStorage.getItem('nombre'),
-    apellido: sessionStorage.getItem('apellido'),
-  }
+  dataUsuario : any = sessionStorage.getItem('usuario')
+
+  usuario = JSON.parse(this.dataUsuario);
 
   logout() {
     this.logginOut.destroySession();

@@ -8,19 +8,19 @@ import { Observable } from "rxjs";
 export class AuthTokenService {
 
   private urlApi = "http://localhost:3000/api/token/verifyAuth";
-  
-  private httpOptions = {
+
+  constructor(private http: HttpClient) { }
+
+  public verificarToken(token: string): Observable<any> {
+    
+  const httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
+      'Authorization': token
     })
   };
 
-  constructor(private http: HttpClient) {
-
-  }
-
-  public verifyToken(token: string): Observable<any> {    
-    return this.http.post<any>(this.urlApi, { "token" : token }, this.httpOptions);
+    return this.http.post<any>(this.urlApi,null,httpOptions);
   }
 
 }

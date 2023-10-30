@@ -1,3 +1,4 @@
+import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthTokenService } from 'src/services/authTokenService';
@@ -24,19 +25,16 @@ export class FormInscripcionComponent {
 
   ngOnInit(): void {
 
-
     if (this.token != null) {
 
       this.inscripcion = JSON.parse(this.inscripcion);
       console.log(this.inscripcion);
 
       // VALIDAMOS QUE EXISTA EL TOKEN PARA MANTENERSE EN LA PAGINA
-      this.authTokenService.verifyToken(this.token).subscribe((responseToken) => {
+      this.authTokenService.verificarToken(this.token).subscribe((responseToken) => {
 
-        // SI EL TOKEN ES INCORRECTO QUE NOS ENVÍE A OTRO SITIO
-        if (responseToken.status != "success") {
-          this.router.navigate([''])
-        }
+        console.log(responseToken);
+        
 
       })
 

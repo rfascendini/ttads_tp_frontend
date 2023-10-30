@@ -32,10 +32,6 @@ export class SectionCarreraComponent implements OnInit {
       data.forEach((carrera: any) => {
         if (carrera.inscripcionAbierta == 1) { jsonCarreras.push(carrera) }
       });
-    }, () => {
-      const error = {status: "error", message: "Debe iniciar sesión para acceder."}
-      console.log(error);
-      return error;
     })
     return jsonCarreras;
   }

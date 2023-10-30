@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { LoginService } from 'src/services/loginService';
 import { Router } from '@angular/router';
 import { InscripcionesService } from 'src/services/inscripcionesService';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -35,22 +35,18 @@ export class HomeComponent {
 
         this.loginService.inscriptionLogin(dni, token).subscribe((response) => {
 
-          // console.log(response);
-
-          this.alerta.status = response.status
-          this.alerta.message = response.message
+          this.alerta = { status: response.status, message: response.message }
 
           if (this.alerta.status === "success") {
-
-            sessionStorage.setItem('inscripcion_id', response.inscripcion['id']);
-            sessionStorage.setItem('inscripcion_dni', response.inscripcion['alumnonumerodocumento']);
-            sessionStorage.setItem('inscripcion_access_token', response.inscripcion['access_token']);
             sessionStorage.setItem('token', response.inscripcion['token']);
             sessionStorage.setItem('inscripcion', JSON.stringify(response.inscripcion));
             this.router.navigate(['formulario']);
 
           }
 
+        }, (error: HttpErrorResponse) => {
+          console.log(error.error)
+          this.alerta = { status: error.error.status, message: error.error.message }
         })
       }
 
@@ -61,36 +57,36 @@ export class HomeComponent {
 
   }
 
-//   formSignin(form: NgForm) {
+  //   formSignin(form: NgForm) {
 
-//     const dni: string = form.value.dni
-//     const nroTramite: string = form.value.token
-//     const email: string = form.value.email
+  //     const dni: string = form.value.dni
+  //     const nroTramite: string = form.value.token
+  //     const email: string = form.value.email
 
-//     console.log(form.value);
+  //     console.log(form.value);
 
-//     if (dni != '' && nroTramite != '' && email != '') {
+  //     if (dni != '' && nroTramite != '' && email != '') {
 
-//       this.inscripcionService.addInscripcion(dni, nroTramite, email).subscribe((response) => {
+  //       this.inscripcionService.addInscripcion(dni, nroTramite, email).subscribe((response) => {
 
-//         console.log(response);
+  //         console.log(response);
 
-//         this.alerta.status = response.status
-//         this.alerta.message = response.message
+  //         this.alerta.status = response.status
+  //         this.alerta.message = response.message
 
-//         if (this.alerta.status === "success") {
-
-          
-
-//         }
-
-//       })
-//     }
-
-//   }
+  //         if (this.alerta.status === "success") {
 
 
- }
+
+  //         }
+
+  //       })
+  //     }
+
+  //   }
+
+
+}
 
 
 

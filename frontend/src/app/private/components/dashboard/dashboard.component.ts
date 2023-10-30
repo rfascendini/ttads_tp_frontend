@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { LoginService } from 'src/services/loginService';
 import { Router } from '@angular/router';
 import { AuthTokenService } from 'src/services/authTokenService';
@@ -14,20 +13,18 @@ import { AuthTokenService } from 'src/services/authTokenService';
 export class DashboardComponent implements OnInit {
 
   // LLAMAMOS A LAS VARIABLES QUE SE CONECTAN A LAS API'S
-  constructor(private loginService: LoginService, private router: Router, private authTokenService: AuthTokenService) { }
+  constructor(private router: Router, private authTokenService: AuthTokenService) { }
 
   // ASIGNAMOS EL TOKEN DE LA SESSION EN UNA VARIABLE
   token: any = sessionStorage.getItem('token');
-  usuario: { nombre: string | null; apellido: string | null; username: string | null; token: string | null; } | undefined;
+  usuario: any = sessionStorage.getItem('usuario')
 
   ngOnInit(): void {
 
-    if (this.token != null) {
+    if (this.token != null && this.usuario != null) {
 
       // VALIDAMOS QUE EXISTA EL TOKEN PARA MANTENERSE EN LA PAGINA
-      this.authTokenService.verifyToken(this.token).subscribe((responseToken) => {
-
-        console.log(responseToken);
+      this.authTokenService.verificarToken(this.token).subscribe((responseToken) => {
 
         // SI EL TOKEN ES INCORRECTO QUE NOS ENVÍE A OTRO SITIO
         if (responseToken.status != "success") {
@@ -36,12 +33,10 @@ export class DashboardComponent implements OnInit {
 
         } else {
 
-          this.usuario = {
-            nombre: sessionStorage.getItem('nombre'),
-            apellido: sessionStorage.getItem('apellido'),
-            username: sessionStorage.getItem('username'),
-            token: sessionStorage.getItem('token')
-          }
+          this.usuario = JSON.parse(this.usuario)
+
+          console.log(this.usuario);
+          
 
         }
       })
