@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/services/loginService';
 
@@ -13,9 +13,7 @@ export class HeaderPrivateComponent {
 
   constructor(private router: Router, private logginOut: LoginService) { }
 
-  dataUsuario : any = sessionStorage.getItem('usuario')
-
-  usuario = JSON.parse(this.dataUsuario);
+  usuario = JSON.parse(sessionStorage.getItem('usuario') as string);
 
   logout() {
     this.logginOut.destroySession();

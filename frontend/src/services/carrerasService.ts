@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, catchError, throwError } from "rxjs";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -8,22 +8,22 @@ import { Observable, catchError, throwError } from "rxjs";
 export class CarrerasService {
 
   private urlApi = "http://localhost:3000/api/carreras";
+  private inscripcion: any = sessionStorage.getItem('inscripcion')
 
-  private token: any = sessionStorage.getItem('token')
-
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': this.token,
-    })
-  };
-
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) { }
 
   public getCarreras(): Observable<any> {
-    return this.http.get<any>(this.urlApi, this.httpOptions)
+
+    this.inscripcion = JSON.parse(this.inscripcion);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.inscripcion.token,
+      })
+    };
+
+    return this.http.get<any>(this.urlApi, httpOptions)
   }
 
 }

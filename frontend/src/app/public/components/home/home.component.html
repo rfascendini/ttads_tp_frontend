@@ -44,17 +44,17 @@
             </div>
             <div class="tab-pane fade show active" id="pills-signin" role="tabpanel" aria-labelledby="pills-signin-tab"
               tabindex="0">
-              <form action="" method="" class="needs-validation mb-0">
+              <form action="" method="" class="needs-validation mb-0" #signinForm="ngForm" (ngSubmit)="formSignin(signinForm)">
                 <div class="form-floating mb-3">
-                  <input type="number" id="inputSigninDni" name="dni" class="form-control" required />
+                  <input type="text" id="inputSigninDni" name="dni" class="form-control" ngModel required />
                   <label for="inputSigninDni">DNI</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="number" id="inputSigninNroTramite" name="nroTramite" class="form-control" required />
-                  <label for="inputSigninNroTramite">Número de Trámite</label>
+                  <input type="text" id="inputSigninNroTramiteDni" name="nroTramiteDni" class="form-control" ngModel required />
+                  <label for="inputSigninNroTramiteDni">Número de Trámite</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="email" id="inputSigninEmail" name="email" class="form-control" required />
+                  <input type="email" id="inputSigninEmail" name="email" class="form-control" ngModel required />
                   <label for="inputSigninEmail">Correo Electrónico</label>
                 </div>
                 <button class="w-100 btn btn btn-dark" type="submit">
@@ -64,7 +64,7 @@
             </div>
             <div class="tab-pane fade" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab" tabindex="0">
 
-              <form class="needs-validation mb-0" #myForm="ngForm" (ngSubmit)="formLogin(myForm)">
+              <form class="needs-validation mb-0" #loginForm="ngForm" (ngSubmit)="formLogin(loginForm)">
 
                 <p>44428531<br>51a0715e6cd6c3f0f7e8ab5f1d54f6aa</p>
 

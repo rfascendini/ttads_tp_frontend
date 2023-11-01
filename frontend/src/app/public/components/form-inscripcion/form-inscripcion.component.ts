@@ -10,42 +10,26 @@ import { AuthTokenService } from 'src/services/authTokenService';
 
 export class FormInscripcionComponent {
 
-
   // LLAMAMOS A LAS VARIABLES QUE SE CONECTAN A LAS API'S
   constructor(
     private router: Router,
     private authTokenService: AuthTokenService,
   ) { }
 
-
   // ASIGNAMOS EL TOKEN DE LA SESSION EN UNA VARIABLE
-  token: any = sessionStorage.getItem('token');
   inscripcion: any = sessionStorage.getItem('inscripcion')
-
 
   ngOnInit(): void {
 
-    if (this.token != null) {
-
+    if (this.inscripcion != null) {
       this.inscripcion = JSON.parse(this.inscripcion);
-      console.log(this.inscripcion);
-
-      // VALIDAMOS QUE EXISTA EL TOKEN PARA MANTENERSE EN LA PAGINA
-      this.authTokenService.verificarToken(this.token).subscribe((responseToken) => {
-
-        console.log(responseToken);
-        
-
+      this.authTokenService.verificarToken(this.inscripcion.token).subscribe((responseToken) => {
+        console.log(this.inscripcion);
       })
-
     } else {
       this.router.navigate([''])
+      console.log("Debe iniciar sesión para acceder.")
     }
 
   }
-
-
-
-
-
 }

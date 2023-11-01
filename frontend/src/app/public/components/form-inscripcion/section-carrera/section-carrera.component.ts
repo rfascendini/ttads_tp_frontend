@@ -18,14 +18,12 @@ export class SectionCarreraComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // INICIALIZAMOS LA SESSION
-    this.inscripcion = JSON.parse(this.inscripcion);
-
-    this.carreras = this.getJsonCarreras()
+    if (this.inscripcion != null) {
+      this.carreras = this.getJsonCarreras()
+    }
 
   }
 
-  // OBTENEMOS TODA LA DATA DE LA BD CON LOS REGISTROS NECESARIOS DE LOS CAMPOS DE LOS FORMULARIOS
   getJsonCarreras() {
     const jsonCarreras: any[] = []
     this.carreraService.getCarreras().subscribe(data => {

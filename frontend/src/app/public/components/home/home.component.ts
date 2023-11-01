@@ -24,12 +24,12 @@ export class HomeComponent {
 
   constructor(private loginService: LoginService, private router: Router, private inscripcionService: InscripcionesService) { }
 
-  formLogin(form: NgForm) {
+  formLogin(formLogin: NgForm) {
 
-    if (form.valid) {
+    if (formLogin.valid) {
 
-      const dni: string = form.value.dni
-      const token: string = form.value.token
+      const dni: string = formLogin.value.dni
+      const token: string = formLogin.value.token
 
       if (dni != '' && token != '') {
 
@@ -38,10 +38,8 @@ export class HomeComponent {
           this.alerta = { status: response.status, message: response.message }
 
           if (this.alerta.status === "success") {
-            sessionStorage.setItem('token', response.inscripcion['token']);
             sessionStorage.setItem('inscripcion', JSON.stringify(response.inscripcion));
             this.router.navigate(['formulario']);
-
           }
 
         }, (error: HttpErrorResponse) => {
@@ -51,39 +49,35 @@ export class HomeComponent {
       }
 
     } else {
-      this.alerta.status = 'error'
-      this.alerta.message = 'No se enviaron parametros.'
+      this.alerta = { status: 'error', message: 'Falta uno o más parametros.' }
     }
 
   }
 
-  //   formSignin(form: NgForm) {
+  formSignin(formSignin: NgForm) {
 
-  //     const dni: string = form.value.dni
-  //     const nroTramite: string = form.value.token
-  //     const email: string = form.value.email
+    const { dni, nroTramiteDni, email } = formSignin.value
 
-  //     console.log(form.value);
+    if (dni != '' && nroTramiteDni != '' && email != '') {
 
-  //     if (dni != '' && nroTramite != '' && email != '') {
+      console.log(formSignin.value);
 
-  //       this.inscripcionService.addInscripcion(dni, nroTramite, email).subscribe((response) => {
+      this.inscripcionService.addInscripcion(dni, nroTramiteDni, email).subscribe((response) => {
 
-  //         console.log(response);
+        this.alerta = { status: response.status, message: response.message }
 
-  //         this.alerta.status = response.status
-  //         this.alerta.message = response.message
+      }, (error: HttpErrorResponse) => {
+        console.log(error.error)
+        this.alerta = { status: error.error.status, message: error.error.message }
+      })
 
-  //         if (this.alerta.status === "success") {
+    } else {
+      this.alerta = { status: 'error', message: 'Falta uno o más parametros.' }
+      console.log(this.alerta);
+      
+    }
 
-
-
-  //         }
-
-  //       })
-  //     }
-
-  //   }
+  }
 
 
 }

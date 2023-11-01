@@ -2,7 +2,6 @@ import { Component, Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LoginService } from 'src/services/loginService';
 import { Router } from '@angular/router';
-import { AuthTokenService } from 'src/services/authTokenService';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -36,9 +35,10 @@ export class LoginComponent {
 
         this.loginService.adminLogin(usuario, password).subscribe((response) => {
 
-          if (this.alerta.status === "success") {
+          if (response.status === 'success') {
 
             sessionStorage.setItem('usuario', JSON.stringify(response.user));
+
             this.router.navigate(['gestor']);
 
           }
