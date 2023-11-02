@@ -29,6 +29,7 @@ export class DashboardComponent implements OnInit {
     } else {
       this.router.navigate(['login'])
       console.log("Debe iniciar sesión para acceder.")
+      
     }
 
   }

@@ -3,12 +3,12 @@
     <header class="py-3 d-flex flex-wrap align-items-center justify-content-between py-1">
       <img src="../assets/images/home/logo-utn-white.png" width="150rem" alt="" srcset="" />
 
-      <ul class="nav nav-pills">
+      <ul class="nav nav-pills mt-xs-3">
         <li class="nav-item">
-          <a href="#" class="btn btn-outline-light btn-lg">Contacto</a>
+          <a href="#" class="btn btn-outline-light btn-lg"><i class="bi bi-info-circle"></i></a>
         </li>
         <li class="nav-item ms-3" *ngIf="inscripcion != null">
-          <a class="btn btn-danger btn-lg" (click)="logout()">Cerrar Sesión</a>
+          <a class="btn btn-danger btn-lg" (click)="logout()"><i class="bi bi-box-arrow-right"></i></a>
         </li>
 
       </ul>

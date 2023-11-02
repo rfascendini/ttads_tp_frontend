@@ -64,6 +64,8 @@ export class HomeComponent {
 
       this.inscripcionService.addInscripcion(dni, nroTramiteDni, email).subscribe((response) => {
 
+        console.log(response);
+        
         this.alerta = { status: response.status, message: response.message }
 
       }, (error: HttpErrorResponse) => {

@@ -19,7 +19,7 @@ export class CarrerasService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': this.inscripcion.token,
+        'Authorization': this.inscripcion['token'],
       })
     };
 

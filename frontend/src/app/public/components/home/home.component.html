@@ -40,17 +40,22 @@
           </ul>
           <div class="tab-content" id="pills-tabContent">
             <div *ngIf="alerta.status == 'error'" class="alert alert-danger mb-3 p-1" role="alert">
-              <p class="mb-0" style="font-size: 2vh;">{{ alerta.message }}</p>
+              <p class="mb-0" style="font-size: 1.5vw;">{{ alerta.message }}</p>
+            </div>
+            <div *ngIf="alerta.status == 'success'" class="alert alert-success mb-3 p-1" role="alert">
+              <p class="mb-0" style="font-size: 1.5vw;">{{ alerta.message }}</p>
             </div>
             <div class="tab-pane fade show active" id="pills-signin" role="tabpanel" aria-labelledby="pills-signin-tab"
               tabindex="0">
-              <form action="" method="" class="needs-validation mb-0" #signinForm="ngForm" (ngSubmit)="formSignin(signinForm)">
+              <form action="" method="" class="needs-validation mb-0" #signinForm="ngForm"
+                (ngSubmit)="formSignin(signinForm)">
                 <div class="form-floating mb-3">
                   <input type="text" id="inputSigninDni" name="dni" class="form-control" ngModel required />
                   <label for="inputSigninDni">DNI</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" id="inputSigninNroTramiteDni" name="nroTramiteDni" class="form-control" ngModel required />
+                  <input type="text" id="inputSigninNroTramiteDni" name="nroTramiteDni" class="form-control" ngModel
+                    required />
                   <label for="inputSigninNroTramiteDni">Número de Trámite</label>
                 </div>
                 <div class="form-floating mb-3">
