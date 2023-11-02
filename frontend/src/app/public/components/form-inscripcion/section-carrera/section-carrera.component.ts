@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ICarrera } from 'src/interfaces/Carrera.interface';
+import { IInscripcion } from 'src/interfaces/Inscripcion.interface';
 import { CarrerasService } from 'src/services/carrerasService';
 
 @Component({
@@ -9,8 +11,8 @@ import { CarrerasService } from 'src/services/carrerasService';
 })
 export class SectionCarreraComponent implements OnInit {
 
-  carreras: any[] = [];
-  inscripcion: any = sessionStorage.getItem('inscripcion')
+  carreras: ICarrera[] = [];
+  inscripcion: IInscripcion = JSON.parse(sessionStorage.getItem('inscripcion') as string)
 
   constructor(  // LLAMAMOS A LAS VARIABLES QUE SE CONECTAN A LAS API'S
     private carreraService: CarrerasService,
@@ -19,13 +21,14 @@ export class SectionCarreraComponent implements OnInit {
   ngOnInit(): void {
 
     if (this.inscripcion != null) {
+
       this.carreras = this.getJsonCarreras()
     }
 
   }
 
   getJsonCarreras() {
-    const jsonCarreras: any[] = []
+    const jsonCarreras: ICarrera[] = []
     this.carreraService.getCarreras().subscribe(data => {
       data.forEach((carrera: any) => {
         if (carrera.inscripcionAbierta == 1) { jsonCarreras.push(carrera) }

@@ -8,7 +8,6 @@
       <label for="carrera">Carrera</label>
       <select class="form-select is-invalid" id="carrera" name="carrera" required>
         <option value="" selected disabled>Seleccione una opción</option>
-
         <option *ngFor="let carrera of carreras" 
           [value]="carrera.id"
           [selected]="carrera.id === inscripcion.id_carrera">

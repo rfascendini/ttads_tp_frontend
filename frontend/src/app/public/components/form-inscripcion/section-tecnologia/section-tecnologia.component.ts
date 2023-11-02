@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IInscripcion } from 'src/interfaces/Inscripcion.interface';
 
 @Component({
   selector: 'app-section-tecnologia',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
   ]
 })
 export class SectionTecnologiaComponent {
+
+  inscripcion: IInscripcion = JSON.parse(sessionStorage.getItem('inscripcion') as string)
 
     // -------------------- SECCION TECNOLOGIA
     acceso_internet: string = "";

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IInscripcion } from 'src/interfaces/Inscripcion.interface';
 
 @Component({
   selector: 'app-section-casa',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   ]
 })
 export class SectionCasaComponent {
+
+  inscripcion: IInscripcion = JSON.parse(sessionStorage.getItem('inscripcion') as string)
+
 
 }
