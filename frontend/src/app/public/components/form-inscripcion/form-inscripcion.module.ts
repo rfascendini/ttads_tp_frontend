@@ -18,7 +18,6 @@ import { SectionCasaComponent } from './section-casa/section-casa.component';
 import { FormInscripcionComponent } from './form-inscripcion.component';
 import { PublicSharedModule } from '../../shared/shared.module';
 
-
 @NgModule({
 
   declarations: [

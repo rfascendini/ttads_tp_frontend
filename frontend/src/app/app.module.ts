@@ -8,16 +8,14 @@ import { RouterModule } from '@angular/router';
 import { PublicModule } from './public/public.module';
 import { PrivateModule } from './private/private.module';
 
-
-
 @NgModule({
-  
+
   declarations: [
     AppComponent,
   ],
-  imports: [
+  imports: [    
     BrowserModule,
-    HttpClientModule, 
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     PublicModule,
@@ -26,7 +24,7 @@ import { PrivateModule } from './private/private.module';
   providers: [],
   bootstrap: [AppComponent],
   exports: [RouterModule,]
-  
+
 })
 
 export class AppModule { }

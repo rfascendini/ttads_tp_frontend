@@ -9,12 +9,12 @@
       <label for="tecnotienepc">¿Tiene acceso a una computadora?</label><br>
       <div class="form-check form-check-inline">
         <input type="radio" class="form-check-input" id="tecnotienepc" name="tecnotienepc" value="SI"
-          [(ngModel)]="acceso_pc">
+          [checked]="inscripcion.tecnodondepc === 'SI'" [(ngModel)]="acceso_pc">
         <label for="" class="form-check-label">SI</label>
       </div>
       <div class="form-check form-check-inline">
         <input type="radio" class="form-check-input" id="tecnotienepc" name="tecnotienepc" value="NO"
-          [(ngModel)]="acceso_pc">
+          [checked]="inscripcion.tecnodondepc === 'NO'" [(ngModel)]="acceso_pc">
         <label for="" class="form-check-label">NO</label>
       </div>
     </div>
@@ -24,7 +24,11 @@
         <label for="tecnodondepc">¿Desde donde?</label>
         <select class="form-select is-invalid" name="tecnodondepc" id="tecnodondepc">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option value="">...</option>
+          <option *ngFor="let item of cfgparams_tecnodondepc" 
+            [value]="item.value"
+            [selected]="item.value === inscripcion.tecnodondepc">
+            {{item.display}}
+          </option>
         </select>
       </div>
 
@@ -38,12 +42,12 @@
       <label for="tecnotieneinternet">¿Tiene acceso a Internet?</label><br>
       <div class="form-check form-check-inline">
         <input type="radio" class="form-check-input" id="tecnotieneinternet" name="tecnotieneinternet" value="SI"
-          [(ngModel)]="acceso_internet">
+          [checked]="inscripcion.tecnotieneinternet === 'SI'" [(ngModel)]="acceso_internet">
         <label for="" class="form-check-label">SI</label>
       </div>
       <div class="form-check form-check-inline">
         <input type="radio" class="form-check-input" id="tecnotieneinternet" name="tecnotieneinternet" value="NO"
-          [(ngModel)]="acceso_internet">
+          [checked]="inscripcion.tecnotieneinternet === 'NO'" [(ngModel)]="acceso_internet">
         <label for="" class="form-check-label">NO</label>
       </div>
     </div>
@@ -53,7 +57,11 @@
         <label for="tecnointernet">¿Desde donde accede a Internet?</label>
         <select class="form-select is-invalid" name="tecnointernet" id="tecnointernet">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option value="">...</option>
+          <option *ngFor="let item of cfgparams_tecnointernet" 
+          [value]="item.value"
+          [selected]="item.value === inscripcion.tecnointernet">
+          {{item.display}}
+        </option>
         </select>
       </div>
 
@@ -61,7 +69,11 @@
         <label for="tecnousointernet">Utiliza internet para</label>
         <select class="form-select is-invalid" name="tecnousointernet" id="tecnousointernet">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option value="">...</option>
+          <option *ngFor="let item of cfgparams_tecnousointernet" 
+          [value]="item.value"
+          [selected]="item.value === inscripcion.tecnousointernet">
+          {{item.display}}
+        </option>
         </select>
       </div>
     </div>

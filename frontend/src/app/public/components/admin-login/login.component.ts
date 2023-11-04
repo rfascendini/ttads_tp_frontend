@@ -1,6 +1,6 @@
 import { Component, Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LoginService } from 'src/services/loginService';
+import { LoginService } from 'src/services/shared/loginService';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 

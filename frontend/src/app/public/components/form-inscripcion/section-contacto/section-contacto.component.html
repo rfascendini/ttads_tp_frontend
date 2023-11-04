@@ -4,61 +4,48 @@
   </div>
   <div class="card-body row g-3 mt-0">
 
-    <div class="form-group telefono">
+    <div class="form-group telefono row">
 
-      <label for="contactotelefonofijo">Teléfono Fijo</label>
-
-      <div class="input-group">
-
-        <input type="phone" pattern="\d*" name="contactotelefonofijo" maxlength="5" class="form-control prefix"
-          placeholder="Ingrese el código de área" required>
-        <div class="input-group-prepend">
-          <span class="input-group-text"> - </span>
+      <div class="col-12 col-md-6">
+        <label for="contactotelefonofijo">Teléfono Fijo</label>
+        <div class="input-group">
+          <input type="phone" name="contactotelefonofijo" pattern="\d*" maxlength="13" class="form-control"
+            value="{{ inscripcion.contactotelefonofijo }}" placeholder="Ingrese el número de teléfono" required>
         </div>
-        <input type="phone" pattern="\d*" maxlength="8" class="form-control nbr"
-          placeholder="Ingrese el número de teléfono" required>
       </div>
 
-    </div>
-
-    <div class="form-group telefono">
-
-      <label for="contactotelefonomovil">Teléfono Móvil</label>
-
-      <div class="input-group">
-
-        <input type="phone" pattern="\d*" name="contactotelefonomovil" maxlength="5" class="form-control prefix"
-          placeholder="Ingrese el código de área" required>
-        <div class="input-group-prepend">
-          <span class="input-group-text"> - 15 - </span>
+      <div class="col-12 col-md-6">
+        <label for="contactotelefonomovil">Teléfono Móvil</label>
+        <div class="input-group">
+          <input type="phone" name="contactotelefonomovil" pattern="\d*" maxlength="13" class="form-control"
+            value="{{ inscripcion.contactotelefonomovil }}" placeholder="Ingrese el número de teléfono" required>
         </div>
-        <input type="phone" pattern="\d*" maxlength="8" class="form-control nbr"
-          placeholder="Ingrese el número de teléfono" required>
       </div>
-
     </div>
 
     <div class="form-group">
       <label for="contactoemail">Correo Electrónico</label>
-      <input type="email" class="form-control" id="contactoemail" name="contactoemail" readonly="true" required>
+      <input type="email" class="form-control" id="contactoemail" name="contactoemail" readonly="true"
+        value="{{ inscripcion.contactoemail }}" required>
       <div class="invalid-feedback"></div>
     </div>
 
     <div class="form-group">
       <label for="contactoemailalternativo">Correo Electrónico Alternativo</label>
-      <input type="email" class="form-control" id="contactoemailalternativo" name="contactoemailalternativo">
+      <input type="email" class="form-control" id="contactoemailalternativo" name="contactoemailalternativo"
+        value="{{ inscripcion.contactoemailalternativo }}">
     </div>
 
-    <h5 class=" text-dark">¿A quién recurrir en caso de que lo necesites?</h5>
+    <h5 class="text-dark">¿A quién recurrir en caso de que lo necesites?</h5>
 
     <div class="form-group emergenciacontacto">
       <label for="emergenciacontacto">Contacto</label>
-      <input type="text" class="form-control" name="emergenciacontacto">
+      <input type="text" class="form-control" name="emergenciacontacto" value="{{ inscripcion.emergenciacontacto }}">
     </div>
 
     <div class="form-group emergenciatelefono">
       <label for="emergenciatelefono">Tel&eacute;fono (incluir característica)</label>
-      <input type="text" class="form-control" name="emergenciatelefono">
+      <input type="text" class="form-control" name="emergenciatelefono" value="{{ inscripcion.emergenciatelefono }}">
     </div>
 
   </div>

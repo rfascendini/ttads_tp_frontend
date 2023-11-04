@@ -6,13 +6,13 @@
 
     <div class="form-group">
       <label for="nacfechanacimiento">Fecha Nacimiento</label>
-      <input type="date" class="form-control" id="nacfechanacimiento" name="nacfechanacimiento" required>
+      <input type="date" class="form-control" id="nacfechanacimiento" name="nacfechanacimiento" value="{{ inscripcion.nacfechanacimiento }}" required>
       <div class="invalid-feedback"></div>
     </div>
 
     <div class="form-group">
       <label for="nacnacionalidad">Nacionalidad</label>
-      <select class="form-select is-invalid" id="nacnacionalidad" name="nacnacionalidad" required>
+      <select class="form-select is-invalid" id="nacnacionalidad" name="nacnacionalidad" value="{{ inscripcion.nacnacionalidad }}" required>
         <option value="" selected disabled>Seleccione una opción</option>
         <option value="">...</option>
       </select>
@@ -21,27 +21,27 @@
 
     <div class="form-group">
       <label for="nacvencdni">Fecha de Vencimiento del DNI</label>
-      <input type="date" class="form-control" id="nacvencdni" name="nacvencdni">
+      <input type="date" class="form-control" id="nacvencdni" name="nacvencdni" value="{{ inscripcion.nacvencdni }}">
     </div>
 
     <div class="form-group">
       <label for="nacpais">País</label>
-      <input type="text" class="form-control" id="nacpais" name="nacpais" required>
+      <input type="text" class="form-control" id="nacpais" name="nacpais" value="{{ inscripcion.nacpais }}" required>
     </div>
 
     <div class="form-group">
       <label for="nacprovincia">Provincia</label>
-      <input type="text" class="form-control" id="nacprovincia" name="nacprovincia" required>
+      <input type="text" class="form-control" id="nacprovincia" name="nacprovincia" value="{{ inscripcion.nacprovincia }}" required>
     </div>
 
     <div class="form-group">
       <label for="naclocalidad">Ciudad o localidad</label>
-      <input type="text" class="form-control" id="naclocalidad" name="naclocalidad" required>
+      <input type="text" class="form-control" id="naclocalidad" name="naclocalidad" value="{{ inscripcion.naclocalidad }}" required>
     </div>
 
     <div class="form-group">
       <label for="nacpartidodepartamento">Partido</label>
-      <input type="text" class="form-control" id="nacpartidodepartamento" name="nacpartidodepartamento">
+      <input type="text" class="form-control" id="nacpartidodepartamento" name="nacpartidodepartamento" value="{{ inscripcion.nacpartidodepartamento }}">
     </div>
 
   </div>

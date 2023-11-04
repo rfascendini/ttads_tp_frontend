@@ -22,9 +22,13 @@
 
       <div class="form-group">
         <label for="situacionlaboral">Situación Laboral</label>
-        <select class="form-select is-invalid" id="situacionlaboral" name="situacionlaboral" formControlName="situacionlaboral">
+        <select class="form-select is-invalid" id="situacionlaboral" name="situacionlaboral">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option value="">...</option>
+          <option *ngFor="let item of cfgparams_tipotrabajo" 
+            [value]="item.value"
+            [selected]="item.value === inscripcion.tipotrabajo">
+            {{item.display}}
+          </option>
         </select>
       </div>
 
@@ -33,7 +37,11 @@
           <label for="trabajoocupacion">Ocupación</label>
           <select class="form-select is-invalid" id="trabajoocupacion" name="trabajoocupacion">
             <option value="" selected disabled>Seleccione una opción</option>
-            <option value="">...</option>
+            <option *ngFor="let item of cfgparams_trabajoocupacion" 
+              [value]="item.value"
+              [selected]="item.value === inscripcion.trabajoocupacion">
+              {{item.display}}
+            </option>
           </select>
         </div>
       </div>
@@ -42,7 +50,11 @@
         <label for="tipotrabajo">Tipo de Trabajo</label>
         <select class="form-select is-invalid" id="tipotrabajo" name="tipotrabajo">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option value="">...</option>
+          <option *ngFor="let item of cfgparams_tipotrabajo" 
+            [value]="item.value"
+            [selected]="item.value === inscripcion.tipotrabajo">
+            {{item.display}}
+          </option>
         </select>
       </div>
 
@@ -50,20 +62,29 @@
         <label for="tipoocupacion">Tipo de Ocupación</label>
         <select class="form-select is-invalid" id="tipoocupacion" name="tipoocupacion">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option value="">...</option>
+          <option *ngFor="let item of cfgparams_tipoocupacion" 
+            [value]="item.value"
+            [selected]="item.value === inscripcion.tipoocupacion">
+            {{item.display}}
+          </option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="trabajoenque">Ocupación/Cargo</label>
-        <input type="text" class="form-control" id="trabajoenque" name="trabajoenque">
+        <input type="text" class="form-control" id="trabajoenque" name="trabajoenque"
+          value="{{ inscripcion.trabajoenque }}">
       </div>
 
       <div class="form-group">
         <label for="trabajohoras">Cantidad de horas semanales</label>
         <select class="form-select is-invalid" id="trabajohoras" name="trabajohoras">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option value="">...</option>
+          <option *ngFor="let item of cfgparams_trabajohoras" 
+            [value]="item.value"
+            [selected]="item.value === inscripcion.trabajohoras">
+            {{item.display}}
+          </option>
         </select>
       </div>
 
@@ -71,23 +92,30 @@
         <label for="trabajorelcarrera">Relación del trabajo con la carrera</label>
         <select class="form-select is-invalid" id="trabajorelcarrera" name="trabajorelcarrera">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option value="">...</option>
+          <option *ngFor="let item of cfgparams_trabajorelcarrera"
+            [value]="item.value"
+            [selected]="item.value === inscripcion.trabajorelcarrera">
+            {{item.display}}
+          </option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="trabajoempresa">Nombre de la Empresa</label>
-        <input type="text" class="form-control" id="trabajoempresa" name="trabajoempresa">
+        <input type="text" class="form-control" id="trabajoempresa" name="trabajoempresa"
+          value="{{ inscripcion.trabajoempresa }}">
       </div>
 
       <div class="form-group">
         <label for="trabajodireccion">Dirección</label>
-        <input type="text" class="form-control" id="trabajodireccion" name="trabajodireccion">
+        <input type="text" class="form-control" id="trabajodireccion" name="trabajodireccion"
+          value="{{ inscripcion.trabajodireccion }}">
       </div>
 
       <div class="form-group">
         <label for="trabajotelefono">Teléfono</label>
-        <input type="text" class="form-control" id="trabajotelefono" name="trabajotelefono">
+        <input type="text" class="form-control" id="trabajotelefono" name="trabajotelefono"
+          value="{{ inscripcion.trabajotelefono }}">
       </div>
 
     </div>

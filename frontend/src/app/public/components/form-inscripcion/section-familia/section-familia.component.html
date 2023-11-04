@@ -9,7 +9,7 @@
 
     <div class="form-group">
       <label for="hijosacargo">Cantidad de hijos a cargo</label>
-      <select class="form-select is-invalid" id="hijosacargo" name="hijosacargo">
+      <select class="form-select is-invalid" id="hijosacargo" name="hijosacargo" value="{{ inscripcion.hijosacargo }}">
         <option value="" selected disabled>Seleccione una opción</option>
         <option value="">...</option>
       </select>
@@ -17,7 +17,7 @@
 
     <div class="form-group">
       <label for="familiaacargo">Cantidad de familiares a cargo (sin incluir a los hijos)</label>
-      <select class="form-select is-invalid" id="familiaacargo" name="familiaacargo">
+      <select class="form-select is-invalid" id="familiaacargo" name="familiaacargo" value="{{ inscripcion.familiaacargo }}">
         <option value="" selected disabled>Seleccione una opción</option>
         <option value="">...</option>
       </select>
@@ -28,35 +28,34 @@
 
     <div class="form-group">
       <label for="padreapellido">Apellido</label>
-      <input type="text" class="form-control" id="padreapellido" name="padreapellido">
+      <input type="text" class="form-control" id="padreapellido" name="padreapellido" value="{{ inscripcion.padreapellido }}">
     </div>
 
     <div class="form-group">
       <label for="padrenombre">Nombre</label>
-      <input type="text" class="form-control" id="padrenombre" name="padrenombre">
+      <input type="text" class="form-control" id="padrenombre" name="padrenombre" value="{{ inscripcion.padrenombre }}">
     </div>
 
     <div class="form-group">
       <label for="padrefechanac">Fecha de Nacimiento</label>
-      <input type="date" class="form-control" id="padrefechanac" name="padrefechanac" min="1900-01-01"
-        max="2005-01-01">
+      <input type="date" class="form-control" id="padrefechanac" name="padrefechanac" min="1900-01-01" max="2005-01-01" value="{{ inscripcion.padrefechanac }}">
     </div>
 
 
     <div class="form-group">
       <label for="padrevive">Vive?</label><br>
       <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input" id="padrevive" name="padrevive" value="SI"
-          [(ngModel)]="padre_vive">
+        <input type="radio" class="form-check-input" id="padrevive" name="padrevive" value="SI" [checked]="inscripcion.padrevive === 'SI'"
+          [(ngModel)]="padre_vive" value="{{ inscripcion.familiaacargo }}">
         <label for="" class="form-check-label">SI</label>
       </div>
       <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input" id="padrevive" name="padrevive" value="NO"
+        <input type="radio" class="form-check-input" id="padrevive" name="padrevive" value="NO" [checked]="inscripcion.padrevive === 'NO'"
           [(ngModel)]="padre_vive">
         <label for="" class="form-check-label">NO</label>
       </div>
       <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input" id="padrevive" name="padrevive" value="desconoce"
+        <input type="radio" class="form-check-input" id="padrevive" name="padrevive" value="desconoce" [checked]="inscripcion.padrevive === 'desconoce'"
           [(ngModel)]="padre_vive">
         <label for="" class="form-check-label">Desconoce</label>
       </div>
@@ -75,7 +74,7 @@
 
       <div class="form-group">
         <label for="padretrabajo">Trabajo/actividad</label>
-        <input type="text" class="form-control" id="padretrabajo" name="padretrabajo">
+        <input type="text" class="form-control" id="padretrabajo" name="padretrabajo" value="{{ inscripcion.padretrabajo }}">
       </div>
 
       <div class="form-group">
@@ -90,11 +89,11 @@
         <label for="padreobrasocial">Obra Social</label>
         <br>
         <div class="form-check form-check-inline">
-          <input type="radio" class="form-check-input" id="padreobrasocial" name="padreobrasocial" value="SI">
+          <input type="radio" class="form-check-input" id="padreobrasocial" name="padreobrasocial" value="SI" [checked]="inscripcion.padreobrasocial === 'SI'">
           <label for="" class="form-check-label">SI</label>
         </div>
         <div class="form-check form-check-inline">
-          <input type="radio" class="form-check-input" id="padreobrasocial" name="padreobrasocial" value="NO">
+          <input type="radio" class="form-check-input" id="padreobrasocial" name="padreobrasocial" value="NO" [checked]="inscripcion.padreobrasocial === 'NO'">
           <label for="" class="form-check-label">NO</label>
         </div>
       </div>
@@ -106,41 +105,40 @@
 
     <div class="form-group">
       <label for="madreapellido">Apellido</label>
-      <input type="text" class="form-control" id="madreapellido" name="madreapellido">
+      <input type="text" class="form-control" id="madreapellido" name="madreapellido" value="{{ inscripcion.madreapellido }}">
     </div>
 
     <div class="form-group">
       <label for="madrenombre">Nombre</label>
-      <input type="text" class="form-control" id="madrenombre" name="madrenombre">
+      <input type="text" class="form-control" id="madrenombre" name="madrenombre" value="{{ inscripcion.madrenombre }}">
     </div>
 
     <div class="form-group">
       <label for="madrefechanac">Fecha de Nacimiento</label>
-      <input type="date" class="form-control" id="madrefechanac" name="madrefechanac" min="1900-01-01"
-        max="2005-01-01">
+      <input type="date" class="form-control" id="madrefechanac" name="madrefechanac" min="1900-01-01" max="2005-01-01" value="{{ inscripcion.madrefechanac }}">
     </div>
 
     <div class="form-group">
       <label for="madrevive">Vive?</label><br>
       <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input" id="madrevive" name="madrevive" value="SI"
+        <input type="radio" class="form-check-input" id="madrevive" name="madrevive" value="SI" [checked]="inscripcion.madrevive === 'SI'"
           [(ngModel)]="madre_vive">
         <label for="" class="form-check-label">SI</label>
       </div>
       <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input" id="madrevive" name="madrevive" value="NO"
+        <input type="radio" class="form-check-input" id="madrevive" name="madrevive" value="NO" [checked]="inscripcion.madrevive === 'NO'"
           [(ngModel)]="madre_vive">
         <label for="" class="form-check-label">NO</label>
       </div>
       <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input" id="madrevive" name="madrevive" value="desconoce"
+        <input type="radio" class="form-check-input" id="madrevive" name="madrevive" value="desconoce" [checked]="inscripcion.madrevive === 'desconoce'"
           [(ngModel)]="madre_vive">
         <label for="" class="form-check-label">Desconoce</label>
       </div>
     </div>
 
     <!-- SECCION MADRE VIVE = SI -->
-    <div class="row g-3 mt-0" *ngIf="madre_vive == 'SI'">
+    <div class="row g-3 mt-0" *ngIf="madre_vive === 'SI'">
 
       <div class="form-group">
         <label for="madreestudios">Nivel de estudios alcanzados</label>
@@ -152,7 +150,7 @@
 
       <div class="form-group">
         <label for="madretrabajo">Trabajo/actividad</label>
-        <input type="text" class="form-control" id="madretrabajo" name="madretrabajo">
+        <input type="text" class="form-control" id="madretrabajo" name="madretrabajo" value="{{ inscripcion.madretrabajo }}">
       </div>
 
       <div class="form-group">
@@ -167,11 +165,11 @@
         <label for="madreobrasocial">Obra Social</label>
         <br>
         <div class="form-check form-check-inline">
-          <input type="radio" class="form-check-input" id="madreobrasocial" name="madreobrasocial" value="SI">
+          <input type="radio" class="form-check-input" id="madreobrasocial" name="madreobrasocial" value="SI" [checked]="inscripcion.madreobrasocial === 'SI'">
           <label for="" class="form-check-label">SI</label>
         </div>
         <div class="form-check form-check-inline">
-          <input type="radio" class="form-check-input" id="madreobrasocial" name="madreobrasocial" value="NO">
+          <input type="radio" class="form-check-input" id="madreobrasocial" name="madreobrasocial" value="NO" [checked]="inscripcion.madreobrasocial === 'NO'">
           <label for="" class="form-check-label">NO</label>
         </div>
       </div>
@@ -184,17 +182,17 @@
 
     <div class="form-group">
       <label for="hermanoscantidad">Cantidad</label>
-      <input type="number" step="1" class="form-control" id="hermanoscantidad" name="hermanoscantidad">
+      <input type="number" step="1" class="form-control" id="hermanoscantidad" name="hermanoscantidad" value="{{ inscripcion.hermanoscantidad }}">
     </div>
 
     <div class="form-group">
       <label for="hermanosedades">Edades (separar por comas si son varios)</label>
-      <input type="text" class="form-control" id="hermanosedades" name="hermanosedades">
+      <input type="text" class="form-control" id="hermanosedades" name="hermanosedades" value="{{ inscripcion.hermanosedades }}">
     </div>
 
     <div class="form-group">
       <label for="hermanosactividades">Actividades (separar por comas si son varias)</label>
-      <input type="text" class="form-control" id="hermanosactividades" name="hermanosactividades">
+      <input type="text" class="form-control" id="hermanosactividades" name="hermanosactividades" value="{{ inscripcion.hermanosactividades }}">
     </div>
 
   </div>

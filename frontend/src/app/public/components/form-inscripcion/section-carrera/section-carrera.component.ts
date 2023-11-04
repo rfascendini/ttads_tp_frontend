@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICarrera } from 'src/interfaces/Carrera.interface';
 import { IInscripcion } from 'src/interfaces/Inscripcion.interface';
-import { CarrerasService } from 'src/services/carrerasService';
+import { CarrerasService } from 'src/services/entities/carrerasService';
 
 @Component({
   selector: 'app-section-carrera',
