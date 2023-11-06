@@ -11,4 +11,6 @@ export class SectionDatosPersonalesComponent {
 
   inscripcion: IInscripcion = JSON.parse(sessionStorage.getItem('inscripcion') as string)
 
+  alumnoapellido: string = this.inscripcion.alumnoapellido as string;
+
 }

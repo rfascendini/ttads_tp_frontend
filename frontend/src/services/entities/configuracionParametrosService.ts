@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { IConfiguracionParametro } from "src/interfaces/ConfiguracionParametro.interface";
 
 @Injectable({
   providedIn: "root",
@@ -11,8 +12,8 @@ export class ConfiguracionParametrosService {
   private inscripcion: any = sessionStorage.getItem('inscripcion')
 
   constructor(private http: HttpClient) { }
-
-  public getConfiguracionParametros(): Observable<any> {
+  
+  public getConfiguracionParametros(): Observable<IConfiguracionParametro[]> {
 
     this.inscripcion = JSON.parse(this.inscripcion);
 
@@ -23,7 +24,8 @@ export class ConfiguracionParametrosService {
       })
     };
 
-    return this.http.get<any>(this.urlApi, httpOptions)
+    return this.http.get<IConfiguracionParametro[]>(this.urlApi, httpOptions)
+
   }
 
 }

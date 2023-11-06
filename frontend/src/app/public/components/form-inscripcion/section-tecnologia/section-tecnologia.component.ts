@@ -27,11 +27,11 @@ export class SectionTecnologiaComponent {
 
   ngOnInit(): void {
     if (this.inscripcion != null) {
-      this.getCfgParams_trabajo()
+      this.getCfgParams_tecnologia()
     }
   }
 
-  getCfgParams_trabajo() {
+  getCfgParams_tecnologia() {
     this.configuracionTecnologia.getConfiguracionParametros().subscribe(data => {
       data.forEach((item: IConfiguracionParametro) => {
         if (item.field == 'tecnodondepc') { this.cfgparams_tecnodondepc.push(item) }
@@ -39,7 +39,6 @@ export class SectionTecnologiaComponent {
         if (item.field == 'tecnousointernet') { this.cfgparams_tecnousointernet.push(item) }
       });
     })
-    return [this.cfgparams_tecnodondepc, this.cfgparams_tecnointernet, this.cfgparams_tecnousointernet];
   }
 
 }

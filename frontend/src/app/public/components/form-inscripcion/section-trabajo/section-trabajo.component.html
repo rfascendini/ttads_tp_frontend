@@ -62,8 +62,7 @@
         <label for="tipoocupacion">Tipo de Ocupación</label>
         <select class="form-select is-invalid" id="tipoocupacion" name="tipoocupacion">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option *ngFor="let item of cfgparams_tipoocupacion" 
-            [value]="item.value"
+          <option *ngFor="let item of cfgparams_tipoocupacion" [value]="item.value"
             [selected]="item.value === inscripcion.tipoocupacion">
             {{item.display}}
           </option>
@@ -80,8 +79,7 @@
         <label for="trabajohoras">Cantidad de horas semanales</label>
         <select class="form-select is-invalid" id="trabajohoras" name="trabajohoras">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option *ngFor="let item of cfgparams_trabajohoras" 
-            [value]="item.value"
+          <option *ngFor="let item of cfgparams_trabajohoras" [value]="item.value"
             [selected]="item.value === inscripcion.trabajohoras">
             {{item.display}}
           </option>
@@ -92,8 +90,7 @@
         <label for="trabajorelcarrera">Relación del trabajo con la carrera</label>
         <select class="form-select is-invalid" id="trabajorelcarrera" name="trabajorelcarrera">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option *ngFor="let item of cfgparams_trabajorelcarrera"
-            [value]="item.value"
+          <option *ngFor="let item of cfgparams_trabajorelcarrera" [value]="item.value"
             [selected]="item.value === inscripcion.trabajorelcarrera">
             {{item.display}}
           </option>

@@ -2,7 +2,7 @@
 
 <div class="container my-4">
 
-  <form class="was-validated">
+  <form class="was-validated" #formUpdate="ngForm" (ngSubmit)="UpdateForm(formUpdate)">
 
     <!---------------------------------------- SECCIONES -------------------------------------------->
 
@@ -13,7 +13,7 @@
     <app-section-datos-personales></app-section-datos-personales>
 
     <!-- DISCAPACIDAD -->
-    <app-section-discapacidad></app-section-discapacidad>
+    <!-- <app-section-discapacidad></app-section-discapacidad> -->
 
     <!-- NACIMIENTO  -->
     <app-section-nacimiento></app-section-nacimiento>
@@ -51,6 +51,7 @@
     <div class="container text-center mt-3">
       <button type="submit" class="btn btn-lg btn-success">Finalizar Inscripción</button>
     </div>
+
   </form>
 
 </div>

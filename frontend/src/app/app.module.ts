@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { PublicModule } from './public/public.module';
 import { PrivateModule } from './private/private.module';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 
@@ -19,7 +20,8 @@ import { PrivateModule } from './private/private.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     PublicModule,
-    PrivateModule
+    PrivateModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
