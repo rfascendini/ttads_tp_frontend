@@ -14,8 +14,8 @@ export class ConfiguracionParametrosService {
   constructor(private http: HttpClient) { }
   
   public getConfiguracionParametros(): Observable<IConfiguracionParametro[]> {
-
-    this.inscripcion = JSON.parse(this.inscripcion);
+    
+    this.inscripcion = JSON.parse(sessionStorage.getItem('inscripcion') as string);
 
     const httpOptions = {
       headers: new HttpHeaders({

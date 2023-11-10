@@ -10,7 +10,10 @@ import { AuthTokenService } from 'src/services/shared/authTokenService';
 
 export class FormInscripcionComponent {
 
-
+  alerta = {
+    status: "",
+    message: ""
+  };
 
   // LLAMAMOS A LAS VARIABLES QUE SE CONECTAN A LAS API'S
   constructor(
@@ -37,10 +40,24 @@ export class FormInscripcionComponent {
 
 
   UpdateForm(formUpdate: NgForm) {
+
+    if(formUpdate.valid) {
    
-    console.log(formUpdate.value);
+    const updInscripcion =  formUpdate.value
+    this.alerta = { status: 'success', message: 'Se ha guardado el formulario correctamente!' }
+    console.log(this.alerta, updInscripcion);
+
+      
+
+    } else {
+      this.alerta = { status: 'error', message: 'Falta completar campos obligatorios.' }
+      console.log(this.alerta);
+    }
+    
     
 
+
+    
   }
 
 

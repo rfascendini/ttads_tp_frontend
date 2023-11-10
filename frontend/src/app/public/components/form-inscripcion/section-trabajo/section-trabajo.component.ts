@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
+import { ControlContainer, NgForm } from '@angular/forms';
 import { IConfiguracionParametro } from 'src/interfaces/ConfiguracionParametro.interface.js';
 import { IInscripcion } from 'src/interfaces/Inscripcion.interface';
 import { ConfiguracionParametrosService } from 'src/services/entities/configuracionParametrosService';
-import { ConfigParamsSharedData } from '../shared-data/cfg.params.shared.data';
 
 @Component({
   selector: 'app-section-trabajo',
   templateUrl: './section-trabajo.component.html',
   styles: [
-  ]
+  ],
+  viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
 })
 export class SectionTrabajoComponent {
 
@@ -23,9 +24,9 @@ export class SectionTrabajoComponent {
   // -------------------- SECCION TRABAJO
   seccion_trabajo: string = "";
 
-  constructor(  // LLAMAMOS A LAS VARIABLES QUE SE CONECTAN A LAS API'S
-    private configuracionTrabajo: ConfiguracionParametrosService,
-  ) { }
+  constructor(controlContainer: ControlContainer, private configParams: ConfiguracionParametrosService) {
+    (controlContainer as NgForm).form;
+  }
 
   ngOnInit(): void {
     if (this.inscripcion != null) {
@@ -36,7 +37,7 @@ export class SectionTrabajoComponent {
   }
 
   getCfgParams_trabajo() {
-    this.configuracionTrabajo.getConfiguracionParametros().subscribe(data => {
+    this.configParams.getConfiguracionParametros().subscribe(data => {
       data.forEach((item: IConfiguracionParametro) => {
 
         if (item.field == 'tipotrabajo') { this.cfgparams_tipotrabajo.push(item) }

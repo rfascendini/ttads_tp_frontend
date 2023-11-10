@@ -5,11 +5,11 @@
   <div class="card-body row g-3 mt-0">
 
     <div class="form-group">
-      <label for="carrera">Carrera</label>
-      <select class="form-select is-invalid" id="carrera" name="carrera" required>
+      <label for="id_carrera">Carrera</label>
+      <select class="form-select is-invalid" id="id_carrera" name="id_carrera" [(ngModel)]="inscripcion.id_carrera"
+        required>
         <option value="" selected disabled>Seleccione una opción</option>
-        <option *ngFor="let carrera of carreras" 
-          [value]="carrera.id"
+        <option *ngFor="let carrera of carreras" [value]="carrera.id"
           [selected]="carrera.id === inscripcion.id_carrera">
           {{carrera.nombre}}
         </option>
@@ -18,41 +18,52 @@
 
     <div class="form-group">
       <label for="lugarcursado">Lugar cursado</label>
-      <select class="form-select is-invalid" id="lugarcursado" name="lugarcursado" required>
+      <select class="form-select is-invalid" id="lugarcursado" name="lugarcursado"
+        [(ngModel)]="inscripcion.lugarcursado" required>
         <option value="" selected disabled>Seleccione una opción</option>
-        <option value="">...</option>
+        <option *ngFor="let item of cfgparams_lugardecursado" [value]="item.value" [selected]="item.value === inscripcion.lugarcursado">
+          {{item.display}}</option>
       </select>
     </div>
 
     <div class="form-group">
       <label for="formaingreso">Forma de ingreso</label>
-      <select class="form-select is-invalid" id="formaingreso" name="formaingreso" required>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="tipocursado">Curso</label>
-      <select class="form-select is-invalid" id="tipocursado" name="tipocursado">
+      <select class="form-select is-invalid" id="formaingreso" name="formaingreso"
+        [(ngModel)]="inscripcion.formaingreso" required>
         <option value="" selected disabled>Seleccione una opción</option>
-        <option value="">...</option>
+        <option *ngFor="let item of cfgparams_formaingreso" [value]="item.value" [selected]="item.value === inscripcion.formaingreso">
+          {{item.display}}
+        </option>
       </select>
     </div>
 
-    <div class="formaingreso-block" data-showon="introductorio">
+    <!-- <div class="form-group">
+      <label for="tipocursado">Curso</label>
+      <select class="form-select is-invalid" id="tipocursado" name="tipocursado" [(ngModel)]="inscripcion.tipocursado">
+        <option value="" selected disabled>Seleccione una opción</option>
+        <option *ngFor="let carrera of carreras" 
+          [value]="carrera.id"
+          [selected]="carrera.id === inscripcion.id_carrera">
+          {{carrera.nombre}}
+        </option>
+      </select>
+    </div> -->
+
+    <!-- <div class="formaingreso-block" data-showon="introductorio">
       <div class="mb-12">
         <label for="introductoriointensivo">Desea realizar el curso intensivo de verano?</label><br>
         <div class="form-check form-check-inline">
-          <input type="radio" class="form-check-input" id="introductoriointensivo" name="introductoriointensivo"
+          <input type="radio" class="form-check-input" id="introductoriointensivo" name="introductoriointensivo" [(ngModel)]="inscripcion.introductoriointensivo"
             value="SI">
           <label for="" class="form-check-label">SI</label>
         </div>
         <div class="form-check form-check-inline">
-          <input type="radio" class="form-check-input" id="introductoriointensivo" name="introductoriointensivo"
+          <input type="radio" class="form-check-input" id="introductoriointensivo" name="introductoriointensivo" [(ngModel)]="inscripcion.introductoriointensivo"
             value="NO">
           <label for="" class="form-check-label">NO</label>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 

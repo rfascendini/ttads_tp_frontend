@@ -6,7 +6,8 @@
 
     <div class="form-group">
       <label for="alumnoapellido">Apellido</label>
-      <input type="text" class="form-control" id="alumnoapellido" name="alumnoapellido" value="{{ inscripcion.alumnoapellido }}" required>
+      <input type="text" class="form-control" id="alumnoapellido" name="alumnoapellido"
+        [(ngModel)]="inscripcion.alumnoapellido" required>
       <small id="alumnoapellidoHelpBlock" class="form-text text-muted">Si su apellido es compuesto, ingréselo
         completo.</small>
       <div class="invalid-feedback"></div>
@@ -14,7 +15,8 @@
 
     <div class="form-group">
       <label for="alumnonombres">Nombres</label>
-      <input type="text" class="form-control" id="alumnonombres" name="alumnonombres" value="{{ inscripcion.alumnonombres }}" required>
+      <input type="text" class="form-control" id="alumnonombres" name="alumnonombres"
+        [(ngModel)]="inscripcion.alumnonombres" required>
       <small id="alumnonombreHelpBlock" class="form-text text-muted">Si su nombre es compuesto, ingréselo
         completo.</small>
       <div class="invalid-feedback"></div>
@@ -22,66 +24,88 @@
 
     <div class="form-group">
       <label for="alumnotipodocumento">Tipo de Documento</label>
-      <select class="form-select is-invalid" id="alumnotipodocumento" name="alumnotipodocumento" required>
-        <option value="" selected disabled>Seleccione una opción</option>
-        <option value="">...</option>
+      <select class="form-select is-invalid" id="alumnotipodocumento" name="alumnotipodocumento" [(ngModel)]="inscripcion.alumnotipodocumento" required>
+        <option selected disabled>Selecciona una opción</option>
+        <option *ngFor="let item of cfgparams_alumnotipodocumento" [value]="item.value"
+          [selected]="item.value === inscripcion.alumnotipodocumento">
+          {{ item.display }}
+        </option>
       </select>
     </div>
 
     <div class="form-group">
       <label for="alumnonumerodocumento">Número de Documento</label>
-      <input type="text" class="form-control" id="alumnonumerodocumento" name="alumnonumerodocumento" value="{{ inscripcion.alumnonumerodocumento }}" required>
+      <input type="text" class="form-control" id="alumnonumerodocumento" name="alumnonumerodocumento"
+        [(ngModel)]="inscripcion.alumnonumerodocumento" required>
       <div class="invalid-feedback"></div>
     </div>
 
     <div class="form-group">
-      <label for="alumnonumerodocumento">Número de Trámite de DNI</label>
-      <input type="text" class="form-control" id="alumnonumerodocumento" name="alumnonumerodocumento" value="{{ inscripcion.nroTramiteDni }}" required>
+      <label for="nroTramiteDni">Número de Trámite de DNI</label>
+      <input type="text" class="form-control" id="nroTramiteDni" name="nroTramiteDni"
+        [(ngModel)]="inscripcion.nroTramiteDni" required>
       <div class="invalid-feedback"></div>
     </div>
 
     <div class="form-group">
       <label for="alumnocuil">CUIL (Puede obtener su n&uacute;mero de CUIL haciendo clic <a
           href="https://www.anses.gob.ar/consulta/constancia-de-cuil" target="_blank">aqui</a>)</label>
-      <input type="cuil" class="form-control" id="alumnocuil" name="alumnocuil" value="{{ inscripcion.alumnocuil }}"
-        pattern="([0-9]{2})-([0-9]{8})-([0-9]{1})">
+      <input type="cuil" class="form-control" id="alumnocuil" name="alumnocuil" [(ngModel)]="inscripcion.alumnocuil"
+        pattern="([0-9]{2})-([0-9]{8})-([0-9]{1})" required>
       <div class="invalid-feedback">Este valor es obligatorio y debe estar en formato 99-99999999-9</div>
     </div>
 
     <div class="form-group">
       <label for="alumnosexo">Sexo (como figura en su documento)</label>
-      <select class="form-select is-invalid" id="alumnosexo" name="alumnosexo" required>
-        <option value="" selected disabled>Seleccione una opción</option>
-        <option value="">...</option>
+      <select class="form-select is-invalid" id="alumnosexo" name="alumnosexo" [(ngModel)]="inscripcion.alumnosexo"
+        required>
+        <option selected disabled>Seleccione una opción</option>
+        <option *ngFor="let item of cfgparams_alumnosexo" [value]="item.value"
+          [selected]="item.value === inscripcion.alumnosexo">
+          {{ item.display }}
+        </option>
       </select>
     </div>
 
     <div class="form-group">
       <label for="alumnogenero">Identidad de Género</label>
-      <select class="form-select is-invalid" id="alumnogenero" name="alumnogenero">
-        <option value="" selected disabled>Seleccione una opción</option>
-        <option value="">...</option>
+      <select class="form-select is-invalid" id="alumnogenero" name="alumnogenero"
+        [(ngModel)]="inscripcion.alumnogenero">
+        <option selected disabled>Seleccione una opción</option>
+        <option *ngFor="let item of cfgparams_alumnogenero" [value]="item.value"
+          [selected]="item.value === inscripcion.alumnogenero">
+          {{ item.display }}
+        </option>
       </select>
     </div>
 
     <div class="form-group alumnogenero-block" data-showon="13">
       <label for="alumnogenerodet">Detalle de Género</label>
-      <input type="text" class="form-control" id="alumnogenerodet" name="alumnogenerodet">
+      <input type="text" class="form-control" id="alumnogenerodet" name="alumnogenerodet"
+        [(ngModel)]="inscripcion.alumnogenerodet">
     </div>
 
     <div class="form-group">
       <label for="alumnoestadocivil">Estado Civil</label>
-      <select class="form-select is-invalid" id="alumnoestadocivil" name="alumnoestadocivil">
-        <option value="" selected disabled>Seleccione una opción</option>
-        <option value="">...</option>
+      <select class="form-select is-invalid" id="alumnoestadocivil" name="alumnoestadocivil"
+        [(ngModel)]="inscripcion.alumnoestadocivil">
+        <option selected disabled>Seleccione una opción</option>
+        <option *ngFor="let item of cfgparams_alumnoestadocivil" [value]="item.value"
+          [selected]="item.value === inscripcion.alumnoestadocivil">
+          {{ item.display }}
+        </option>
       </select>
     </div>
 
     <div class="form-group">
       <label for="nacgruposanguineo">Grupo Sanguíneo</label>
-      <select class="form-select is-invalid" id="nacgruposanguineo" name="nacgruposanguineo">
-        <option value="" selected disabled>Seleccione una opción</option>
-        <option value="">...</option>
+      <select class="form-select is-invalid" id="nacgruposanguineo" name="nacgruposanguineo"
+        [(ngModel)]="inscripcion.nacgruposanguineo">
+        <option selected disabled>Seleccione una opción</option>
+        <option *ngFor="let item of cfgparams_nacgruposanguineo" [value]="item.value"
+          [selected]="item.value === inscripcion.nacgruposanguineo">
+          {{ item.display }}
+        </option>
       </select>
     </div>
 
