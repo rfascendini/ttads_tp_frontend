@@ -8,29 +8,39 @@ import { IInscripcion } from "src/interfaces/Inscripcion.interface.js";
 })
 export class InscripcionesService {
 
-  constructor(private http: HttpClient) {}
 
-  private token : any = sessionStorage.getItem('token')
+  private inscripcion: any = JSON.parse(sessionStorage.getItem('inscripcion') as string)
 
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': this.token,
-    })
-  };
+  constructor(private http: HttpClient) { }
 
   public getInscripciones(): Observable<any> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.inscripcion['token'],
+      })
+    };
+
     const urlApi: string = "http://localhost:3000/api/inscripciones";
-    return this.http.get<any>(urlApi, this.httpOptions);
+    return this.http.get<any>(urlApi, httpOptions);
   }
 
   public addInscripcion(dni: string, nroTramiteDni: string, email: string): Observable<any> {
     const urlApi: string = "http://localhost:3000/api/inscripciones";
-    return this.http.post<any>(urlApi, { "dni" : dni, "nroTramiteDni" : nroTramiteDni, "email" : email });
+    return this.http.post<any>(urlApi, { "dni": dni, "nroTramiteDni": nroTramiteDni, "email": email });
   }
 
-  public updateInscripcion(inscripcion : IInscripcion): Observable<any> {
-    const urlApi: string = "http://localhost:3000/api/inscripciones";
-    return this.http.put<any>(urlApi, { inscripcion: inscripcion });
+  public updateInscripcion(updInscripcion: IInscripcion): Observable<any> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.inscripcion['token'],
+      })
+    };
+
+    const urlApi: string = "http://localhost:3000/api/inscripciones/" + updInscripcion.id;
+    return this.http.put<any>(urlApi, updInscripcion, httpOptions);
   }
 }

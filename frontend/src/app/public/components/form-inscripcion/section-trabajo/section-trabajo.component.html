@@ -8,24 +8,24 @@
       <label for="trabajotrabajas">¿Trabajas?</label><br>
       <div class="form-check form-check-inline">
         <input type="radio" class="form-check-input" id="trabajotrabajas" name="trabajotrabajas" [value]="'SI'"
-          [(ngModel)]="seccion_trabajo" required>
+          [(ngModel)]="inscripcion.trabajotrabajas" required>
         <label for="" class="form-check-label">SI</label>
       </div>
       <div class="form-check form-check-inline">
         <input type="radio" class="form-check-input" id="trabajotrabajas" name="trabajotrabajas" [value]="'NO'"
-          [(ngModel)]="seccion_trabajo" required>
+          [(ngModel)]="inscripcion.trabajotrabajas" required>
         <label for="" class="form-check-label">NO</label>
       </div>
     </div>
 
-    <div class="form-group row g-3 mt-0" *ngIf="seccion_trabajo == 'SI'">
+    <div class="form-group row g-3 mt-0" *ngIf="inscripcion.trabajotrabajas == 'SI'">
 
       <div class="form-group">
         <label for="situacionlaboral">Situación Laboral</label>
-        <select class="form-select is-invalid" id="situacionlaboral" name="situacionlaboral" [(ngModel)]="inscripcion.situacionlaboral">
+        <select class="form-select is-invalid" id="situacionlaboral" name="situacionlaboral"
+          [(ngModel)]="inscripcion.situacionlaboral">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option *ngFor="let item of cfgparams_tipotrabajo" 
-            [value]="item.value"
+          <option *ngFor="let item of cfgparams_tipotrabajo" [value]="item.value"
             [selected]="item.value === inscripcion.tipotrabajo">
             {{item.display}}
           </option>
@@ -35,10 +35,10 @@
       <div class="form-group">
         <div class="form-group">
           <label for="trabajoocupacion">Ocupación</label>
-          <select class="form-select is-invalid" id="trabajoocupacion" name="trabajoocupacion"  [(ngModel)]="inscripcion.trabajoocupacion">
+          <select class="form-select is-invalid" id="trabajoocupacion" name="trabajoocupacion"
+            [(ngModel)]="inscripcion.trabajoocupacion">
             <option value="" selected disabled>Seleccione una opción</option>
-            <option *ngFor="let item of cfgparams_trabajoocupacion" 
-              [value]="item.value"
+            <option *ngFor="let item of cfgparams_trabajoocupacion" [value]="item.value"
               [selected]="item.value === inscripcion.trabajoocupacion">
               {{item.display}}
             </option>
@@ -48,10 +48,10 @@
 
       <div class="form-group">
         <label for="tipotrabajo">Tipo de Trabajo</label>
-        <select class="form-select is-invalid" id="tipotrabajo" name="tipotrabajo" [(ngModel)]="inscripcion.tipotrabajo">
+        <select class="form-select is-invalid" id="tipotrabajo" name="tipotrabajo"
+          [(ngModel)]="inscripcion.tipotrabajo">
           <option value="" selected disabled>Seleccione una opción</option>
-          <option *ngFor="let item of cfgparams_tipotrabajo" 
-            [value]="item.value"
+          <option *ngFor="let item of cfgparams_tipotrabajo" [value]="item.value"
             [selected]="item.value === inscripcion.tipotrabajo">
             {{item.display}}
           </option>
@@ -60,7 +60,8 @@
 
       <div class="form-group">
         <label for="tipoocupacion">Tipo de Ocupación</label>
-        <select class="form-select is-invalid" id="tipoocupacion" name="tipoocupacion" [(ngModel)]="inscripcion.tipoocupacion">
+        <select class="form-select is-invalid" id="tipoocupacion" name="tipoocupacion"
+          [(ngModel)]="inscripcion.tipoocupacion">
           <option value="" selected disabled>Seleccione una opción</option>
           <option *ngFor="let item of cfgparams_tipoocupacion" [value]="item.value"
             [selected]="item.value === inscripcion.tipoocupacion">
@@ -71,12 +72,14 @@
 
       <div class="form-group">
         <label for="trabajoenque">Ocupación/Cargo</label>
-        <input type="text" class="form-control" id="trabajoenque" name="trabajoenque" [(ngModel)]="inscripcion.trabajoenque">
+        <input type="text" class="form-control" id="trabajoenque" name="trabajoenque"
+          [(ngModel)]="inscripcion.trabajoenque">
       </div>
 
       <div class="form-group">
         <label for="trabajohoras">Cantidad de horas semanales</label>
-        <select class="form-select is-invalid" id="trabajohoras" name="trabajohoras" [(ngModel)]="inscripcion.trabajohoras">
+        <select class="form-select is-invalid" id="trabajohoras" name="trabajohoras"
+          [(ngModel)]="inscripcion.trabajohoras">
           <option value="" selected disabled>Seleccione una opción</option>
           <option *ngFor="let item of cfgparams_trabajohoras" [value]="item.value"
             [selected]="item.value === inscripcion.trabajohoras">
@@ -87,7 +90,8 @@
 
       <div class="form-group">
         <label for="trabajorelcarrera">Relación del trabajo con la carrera</label>
-        <select class="form-select is-invalid" id="trabajorelcarrera" name="trabajorelcarrera" [(ngModel)]="inscripcion.trabajorelcarrera">
+        <select class="form-select is-invalid" id="trabajorelcarrera" name="trabajorelcarrera"
+          [(ngModel)]="inscripcion.trabajorelcarrera">
           <option value="" selected disabled>Seleccione una opción</option>
           <option *ngFor="let item of cfgparams_trabajorelcarrera" [value]="item.value"
             [selected]="item.value === inscripcion.trabajorelcarrera">
@@ -98,17 +102,20 @@
 
       <div class="form-group">
         <label for="trabajoempresa">Nombre de la Empresa</label>
-        <input type="text" class="form-control" id="trabajoempresa" name="trabajoempresa" [(ngModel)]="inscripcion.trabajoempresa">
+        <input type="text" class="form-control" id="trabajoempresa" name="trabajoempresa"
+          [(ngModel)]="inscripcion.trabajoempresa">
       </div>
 
       <div class="form-group">
         <label for="trabajodireccion">Dirección</label>
-        <input type="text" class="form-control" id="trabajodireccion" name="trabajodireccion" [(ngModel)]="inscripcion.trabajodireccion">
+        <input type="text" class="form-control" id="trabajodireccion" name="trabajodireccion"
+          [(ngModel)]="inscripcion.trabajodireccion">
       </div>
 
       <div class="form-group">
         <label for="trabajotelefono">Teléfono</label>
-        <input type="text" class="form-control" id="trabajotelefono" name="trabajotelefono" [(ngModel)]="inscripcion.trabajotelefono">
+        <input type="text" class="form-control" id="trabajotelefono" name="trabajotelefono"
+          [(ngModel)]="inscripcion.trabajotelefono">
       </div>
 
     </div>

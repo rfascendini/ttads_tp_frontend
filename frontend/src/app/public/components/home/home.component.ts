@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { LoginService } from 'src/services/shared/loginService';
 import { Router } from '@angular/router';
 import { InscripcionesService } from 'src/services/entities/inscripcionesService';
-import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
