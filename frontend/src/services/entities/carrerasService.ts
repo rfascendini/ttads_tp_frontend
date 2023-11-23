@@ -14,7 +14,7 @@ export class CarrerasService {
 
   public getCarreras(): Observable<any> {
 
-    return this.http.get<any>(this.urlApi, this.httpOptions.httpOptions)
+    return this.http.get<any>(this.urlApi, this.httpOptions.getHttpOptions())
 
   }
 

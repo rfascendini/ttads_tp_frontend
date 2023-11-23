@@ -13,7 +13,7 @@ export class InscripcionesService {
 
   public getInscripciones(): Observable<any> {
     const urlApi: string = "http://localhost:3000/api/inscripciones";
-    return this.http.get<any>(urlApi, this.httpOptions.httpOptions);
+    return this.http.get<any>(urlApi, this.httpOptions.getHttpOptions());
   }
 
   public addInscripcion(dni: string, nroTramiteDni: string, email: string): Observable<any> {
@@ -24,6 +24,6 @@ export class InscripcionesService {
   public updateInscripcion(updInscripcion: IInscripcion): Observable<any> {
 
     const urlApi: string = "http://localhost:3000/api/inscripciones/" + updInscripcion.id;
-    return this.http.put<any>(urlApi, updInscripcion, this.httpOptions.httpOptions);
+    return this.http.put<any>(urlApi, updInscripcion, this.httpOptions.getHttpOptions());
   }
 }

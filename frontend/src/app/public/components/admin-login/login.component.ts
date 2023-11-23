@@ -34,16 +34,18 @@ export class LoginComponent {
 
         this.loginService.adminLogin(username, password).subscribe((response) => {
 
+          console.log(response);
+          
+
           if (response.status === 'success') {
 
-            sessionStorage.setItem('username', JSON.stringify(response.user));
+            sessionStorage.setItem('user', JSON.stringify(response.user));
 
             this.router.navigate(['gestor']);
 
           }
 
         }, (error: HttpErrorResponse) => {
-          console.log(error.error)
           this.alert = { status: error.error.status, message: error.error.message }
         });
       }

@@ -52,7 +52,6 @@ export class FormInscripcionComponent {
 
       const updInscripcion: IInscripcion = formUpdate.value
       this.alert = { status: 'success', message: 'Se ha guardado el formulario correctamente!' }
-      console.log(this.alert, updInscripcion);
 
       this.inscripcionService.updateInscripcion(updInscripcion).subscribe((response) => {
 
@@ -76,13 +75,11 @@ export class FormInscripcionComponent {
         }
 
       }, (error: HttpErrorResponse) => {
-        console.log(error.error)
         this.alert = { status: error.error.status, message: error.error.message }
       });
 
     } else {
       this.alert = { status: 'error', message: 'Falta completar campos obligatorios.' }
-      console.log(this.alert);
     }
 
   }

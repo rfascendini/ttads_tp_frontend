@@ -13,7 +13,7 @@ export class HeaderPrivateComponent {
 
   constructor(private router: Router, private logginOut: LoginService) { }
 
-  usuario = JSON.parse(sessionStorage.getItem('usuario') as string);
+  user = JSON.parse(sessionStorage.getItem('user') as string);
 
   logout() {
     this.logginOut.destroySession();

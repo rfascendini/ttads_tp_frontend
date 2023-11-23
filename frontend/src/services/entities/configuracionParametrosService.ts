@@ -15,8 +15,7 @@ export class ConfiguracionParametrosService {
   
   public getConfiguracionParametros(): Observable<IConfiguracionParametro[]> {
     
-
-    return this.http.get<IConfiguracionParametro[]>(this.urlApi, this.httpOptions.httpOptions)
+    return this.http.get<IConfiguracionParametro[]>(this.urlApi, this.httpOptions.getHttpOptions())
 
   }
 
