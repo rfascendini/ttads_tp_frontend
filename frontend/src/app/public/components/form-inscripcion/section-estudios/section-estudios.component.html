@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div class="row g-3 mt-0" *ngIf="titulo_universitario_previo == 'SI'">
+    <div class="row g-3 mt-0" *ngIf="titulo_universitario_previo === 'SI'">
       <div class="form-group">
         <label for="titulounivnombre">Titulo Universitario o Superior obtenido o a obtener (tal como figura en el
           diploma)</label>
@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <div class="form-group" *ngIf="titulo_universitario_tramite == 'SI'">
+      <div class="form-group" *ngIf="titulo_universitario_tramite === 'SI'">
         <label for="titulounivanioegreso">Año de Egreso</label>
         <input type="text" class="form-control" id="titulounivanioegreso" name="titulounivanioegreso">
         <small id="titulounivanioegresoHelpBlock" class="form-text text-muted">Tal como figura en el
@@ -47,7 +47,7 @@
       </div>
 
       <div class="form-group">
-        <label for="titulounivcue">CUE de la Institución <span style="color:red">*</span><button
+        <label for="titulounivcue">CUE de la Institución <span class="text-danger">*</span><button
             class="btn btn-link" type="button" id="button-addon2" data-section='titulouniv' data-toggle="modal"
             data-target="#CUEModal">Buscar
             CUE</button></label>

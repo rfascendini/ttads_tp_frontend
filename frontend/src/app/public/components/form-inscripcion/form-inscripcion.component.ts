@@ -15,7 +15,7 @@ import Swal from 'sweetalert2'
 
 export class FormInscripcionComponent {
 
-  alerta = {
+  alert = {
     status: "",
     message: ""
   };
@@ -30,18 +30,20 @@ export class FormInscripcionComponent {
   ) { }
 
   // ASIGNAMOS EL TOKEN DE LA SESSION EN UNA VARIABLE
-  inscripcion: any = JSON.parse(sessionStorage.getItem('inscripcion') as string)
+  inscripcion: IInscripcion = JSON.parse((sessionStorage.getItem('inscripcion') as IInscripcion) as string)
 
   ngOnInit(): void {
 
     if (this.inscripcion != null) {
-      this.authTokenService.verificarToken(this.inscripcion['token']).subscribe(() => {
-        console.log(this.inscripcion);
+      this.authTokenService.verificarToken(String(this.inscripcion.token)).subscribe((responseToken) => {
+        if (responseToken.status != "success") {
+          this.router.navigate([''])
+        }
       })
     } else {
       this.router.navigate([''])
-      console.log("Debe iniciar sesión para acceder.")
     }
+
   }
 
   UpdateForm(formUpdate: NgForm) {
@@ -49,18 +51,18 @@ export class FormInscripcionComponent {
     if (formUpdate.valid) {
 
       const updInscripcion: IInscripcion = formUpdate.value
-      this.alerta = { status: 'success', message: 'Se ha guardado el formulario correctamente!' }
-      console.log(this.alerta, updInscripcion);
+      this.alert = { status: 'success', message: 'Se ha guardado el formulario correctamente!' }
+      console.log(this.alert, updInscripcion);
 
       this.inscripcionService.updateInscripcion(updInscripcion).subscribe((response) => {
 
-        this.alerta = { status: response.status, message: response.message }
+        this.alert = { status: response.status, message: response.message }
 
-        if (this.alerta.status == 'success') {
+        if (this.alert.status === 'success') {
 
           Swal.fire({
-            icon: this.alerta.status,
-            title: this.alerta.message,
+            icon: this.alert.status,
+            title: this.alert.message,
             showConfirmButton: false,
             timer: 2000,
             timerProgressBar: true,
@@ -75,12 +77,12 @@ export class FormInscripcionComponent {
 
       }, (error: HttpErrorResponse) => {
         console.log(error.error)
-        this.alerta = { status: error.error.status, message: error.error.message }
+        this.alert = { status: error.error.status, message: error.error.message }
       });
 
     } else {
-      this.alerta = { status: 'error', message: 'Falta completar campos obligatorios.' }
-      console.log(this.alerta);
+      this.alert = { status: 'error', message: 'Falta completar campos obligatorios.' }
+      console.log(this.alert);
     }
 
   }

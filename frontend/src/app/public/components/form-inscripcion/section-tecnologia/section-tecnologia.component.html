@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="row g-3 mt-0" *ngIf="acceso_pc == 'SI'">
+    <div class="row g-3 mt-0" *ngIf="acceso_pc === 'SI'">
       <div class="form-group">
         <label for="tecnodondepc">¿Desde donde?</label>
         <select class="form-select is-invalid" name="tecnodondepc" id="tecnodondepc">
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <div class="row g-3 mt-0" *ngIf="acceso_internet == 'SI'">
+    <div class="row g-3 mt-0" *ngIf="acceso_internet === 'SI'">
       <div class="form-group">
         <label for="tecnointernet">¿Desde donde accede a Internet?</label>
         <select class="form-select is-invalid" name="tecnointernet" id="tecnointernet">

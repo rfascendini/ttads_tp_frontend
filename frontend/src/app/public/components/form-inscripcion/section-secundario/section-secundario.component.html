@@ -19,12 +19,12 @@
         <label for="" class="form-check-label">NO</label>
       </div>
 
-      <label class="text-danger" *ngIf="secundario_completo == 1">La finalización del secundario es obligatoria
+      <label class="text-danger" *ngIf="secundario_completo === 1">La finalización del secundario es obligatoria
         para la carrera seleccionada.</label>
     </div>
 
 
-    <div class="form-group" *ngIf="secundario_completo == 1">
+    <div class="form-group" *ngIf="secundario_completo === 1">
       <label for="secundarioestado">Estado</label>
       <select class="form-select is-invalid" id="secundarioestado" name="secundarioestado" required>
         <option value="" selected disabled>Seleccione una opción</option>
@@ -32,7 +32,7 @@
       </select>
     </div>
 
-    <div class="form-group" *ngIf="secundario_completo == 2">
+    <div class="form-group" *ngIf="secundario_completo === 2">
       <label for="secundarioanioegreso">Año de Egreso</label>
       <input type="number" class="form-control" id="secundarioanioegreso" name="secundarioanioegreso" required>
       <small id="secundarioanioegresoHelpBlock" class="form-text text-muted">Tal como figura en el
@@ -68,7 +68,7 @@
     </div>
 
     <div class="form-group">
-      <label for="secundariocue">CUE del Colegio <span style="color:red">*</span> <button class="btn btn-link"
+      <label for="secundariocue">CUE del Colegio <span class="text-danger">*</span> <button class="btn btn-link"
           type="button" id="button-addon2" data-section='secundario' data-toggle="modal"
           data-target="#CUEModal">Buscar
           CUE</button></label>

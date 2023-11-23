@@ -19,7 +19,7 @@
       <br><small id="alumnoapellidoHelpBlock" class="form-text text-muted">Tildar la opción que corresponda.</small>
     </div>
 
-    <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidad == 'SI'">
+    <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidad === 'SI'">
 
       <div class="form-group">
         <label for="discapacidadCERTDISCAP">¿Posee Certificado de Discapacidad Único (CUD)?</label><br>
@@ -61,7 +61,7 @@
           <label class="form-check-label" for="">Otras</label>
         </div>
 
-        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEAUDITI == true">
+        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEAUDITI === true">
           <h4>Auditiva</h4>
           <div class="form-group">
             <label for="discapacidadAUD_DIFICU">¿Tiene dificultad para oír, incluso si usa un audífono o implante
@@ -152,7 +152,7 @@
           </div>
         </div>
 
-        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEVISUAL == true">
+        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEVISUAL === true">
           <h4>Visual</h4>
 
           <div class="form-group">
@@ -234,7 +234,7 @@
           </div>
         </div>
 
-        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEMOTRIZ == true">
+        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEMOTRIZ === true">
           <h4>Motora</h4>
 
           <div class="form-group">
@@ -265,7 +265,7 @@
           </div>
         </div>
 
-        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEPSICOS == true">
+        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEPSICOS === true">
           <h4>Condición Psicosocial</h4>
 
           <div class="form-group">
@@ -296,7 +296,7 @@
           </div>
         </div>
 
-        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEOTRAS == true">
+        <div class="from-group row g-3 mt-0" *ngIf="seccion_discapacidadNEAEOTRAS === true">
           <h4>Otra Situación de Discapacidad</h4>
 
           <div class="form-group">

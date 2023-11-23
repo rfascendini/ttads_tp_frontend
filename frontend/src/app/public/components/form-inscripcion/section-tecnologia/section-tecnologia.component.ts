@@ -34,9 +34,9 @@ export class SectionTecnologiaComponent {
   getCfgParams_tecnologia() {
     this.configuracionTecnologia.getConfiguracionParametros().subscribe(data => {
       data.forEach((item: IConfiguracionParametro) => {
-        if (item.field == 'tecnodondepc') { this.cfgparams_tecnodondepc.push(item) }
-        if (item.field == 'tecnointernet') { this.cfgparams_tecnointernet.push(item) }
-        if (item.field == 'tecnousointernet') { this.cfgparams_tecnousointernet.push(item) }
+        if (item.field === 'tecnodondepc') { this.cfgparams_tecnodondepc.push(item) }
+        if (item.field === 'tecnointernet') { this.cfgparams_tecnointernet.push(item) }
+        if (item.field === 'tecnousointernet') { this.cfgparams_tecnousointernet.push(item) }
       });
     })
   }

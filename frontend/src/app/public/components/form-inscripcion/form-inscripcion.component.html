@@ -1,49 +1,51 @@
-<app-header></app-header>
+<div *ngIf="inscripcion != null">
 
-<div class="container my-4">
+  <app-header></app-header>
 
-  <form class="was-validated" #formUpdate="ngForm" (ngSubmit)="UpdateForm(formUpdate)">
+  <div class="container my-4">
 
-    <!---------------------------------------- SECCIONES -------------------------------------------->
+    <form class="was-validated" #formUpdate="ngForm" (ngSubmit)="UpdateForm(formUpdate)">
 
+      <!---------------------------------------- SECCIONES -------------------------------------------->
 
-    <input type="hidden" class="form-control" id="id" name="id" [(ngModel)]="inscripcion.id">
+      <input type="hidden" class="form-control" id="id" name="id" [(ngModel)]="inscripcion.id">
 
+      <app-section-carrera></app-section-carrera>
 
-    <app-section-carrera></app-section-carrera>
+      <app-section-datos-personales></app-section-datos-personales>
 
-    <app-section-datos-personales></app-section-datos-personales>
+      <!-- <app-section-discapacidad></app-section-discapacidad> -->
 
-    <!-- <app-section-discapacidad></app-section-discapacidad> -->
+      <!-- <app-section-nacimiento></app-section-nacimiento> -->
 
-    <!-- <app-section-nacimiento></app-section-nacimiento> -->
+      <app-section-domicilio></app-section-domicilio>
 
-    <app-section-domicilio></app-section-domicilio>
+      <!-- <app-section-contacto></app-section-contacto> -->
 
-    <!-- <app-section-contacto></app-section-contacto> -->
+      <!-- <app-section-secundario></app-section-secundario> -->
 
-    <!-- <app-section-secundario></app-section-secundario> -->
+      <!-- <app-section-estudios></app-section-estudios> -->
 
-    <!-- <app-section-estudios></app-section-estudios> -->
+      <!-- <app-section-otros></app-section-otros> -->
 
-    <!-- <app-section-otros></app-section-otros> -->
+      <app-section-trabajo></app-section-trabajo>
 
-    <app-section-trabajo></app-section-trabajo>
+      <!-- <app-section-deporte></app-section-deporte> -->
 
-    <!-- <app-section-deporte></app-section-deporte> -->
+      <!-- <app-section-tecnologia></app-section-tecnologia> -->
 
-    <!-- <app-section-tecnologia></app-section-tecnologia> -->
+      <!-- <app-section-familia></app-section-familia> -->
 
-    <!-- <app-section-familia></app-section-familia> -->
+      <!-- <app-section-casa></app-section-casa> -->
 
-    <!-- <app-section-casa></app-section-casa> -->
+      <div class="container text-center mt-3">
+        <button type="submit" class="btn btn-lg btn-success">Finalizar Inscripción</button>
+      </div>
 
-    <div class="container text-center mt-3">
-      <button type="submit" class="btn btn-lg btn-success">Finalizar Inscripción</button>
-    </div>
+    </form>
 
-  </form>
+  </div>
+
+  <app-footer></app-footer>
 
 </div>
-
-<app-footer></app-footer>

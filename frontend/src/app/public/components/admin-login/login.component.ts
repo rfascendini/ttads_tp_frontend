@@ -7,8 +7,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: [
-  ]
+  styleUrls: ['./login.component.css']
 })
 
 @Injectable({
@@ -17,7 +16,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 export class LoginComponent {
 
-  alerta = {
+  alert = {
     status: "",
     message: ""
   };
@@ -28,16 +27,16 @@ export class LoginComponent {
 
     if (form.valid) {
 
-      const usuario: string = form.value.usuario
+      const username: string = form.value.username
       const password: string = form.value.password
 
-      if (usuario != '' && password != '') {
+      if (username != '' && password != '') {
 
-        this.loginService.adminLogin(usuario, password).subscribe((response) => {
+        this.loginService.adminLogin(username, password).subscribe((response) => {
 
           if (response.status === 'success') {
 
-            sessionStorage.setItem('usuario', JSON.stringify(response.user));
+            sessionStorage.setItem('username', JSON.stringify(response.user));
 
             this.router.navigate(['gestor']);
 
@@ -45,12 +44,12 @@ export class LoginComponent {
 
         }, (error: HttpErrorResponse) => {
           console.log(error.error)
-          this.alerta = { status: error.error.status, message: error.error.message }
+          this.alert = { status: error.error.status, message: error.error.message }
         });
       }
 
     } else {
-      this.alerta = { status: 'error', message: 'No se enviaron parametros.' }
+      this.alert = { status: 'error', message: 'No se enviaron parametros.' }
     }
 
   }

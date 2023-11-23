@@ -11,7 +11,7 @@
           <h1 class="display-6 fw-bold lh-1 mb-4 text-center">
             ¡Bienvenidos al <span class="text-primary">Ingreso 2024!</span>
           </h1>
-          <p class="col-lg-12 fs-6 mb-0" style="text-align: justify; font-size: 2vh !important;">
+          <h4 class="col-lg-12 fs-6 mb-0 text-justify">
             &nbsp;Para comenzar con la inscripción complete el siguiente formulario. Enviaremos un correo electrónico
             con
             las instrucciones para completar su inscripción. <br><br>
@@ -21,7 +21,7 @@
             &nbsp;Si usted ya se encuentra registrado, deberá acceder al formulario utilizando el enlance enviado cuando
             se
             registro por primera vez. <br><br>
-          </p>
+          </h4>
         </div>
 
         <div class="col-lg-5 p-4 p-md-4 border rounded-3 bg-light">
@@ -39,11 +39,11 @@
 
           </ul>
           <div class="tab-content" id="pills-tabContent">
-            <div *ngIf="alerta.status == 'error'" class="alert alert-danger mb-3 p-1" role="alert">
-              <p class="mb-0" style="font-size: 1.5vw;">{{ alerta.message }}</p>
+            <div *ngIf="alert.status === 'error'" class="alert alert-danger mb-3 p-1" role="alert">
+              <p class="mb-0">{{ alert.message }}</p>
             </div>
-            <div *ngIf="alerta.status == 'success'" class="alert alert-success mb-3 p-1" role="alert">
-              <p class="mb-0" style="font-size: 1.5vw;">{{ alerta.message }}</p>
+            <div *ngIf="alert.status === 'success'" class="alert alert-success mb-3 p-1" role="alert">
+              <p class="mb-0">{{ alert.message }}</p>
             </div>
             <div class="tab-pane fade show active" id="pills-signin" role="tabpanel" aria-labelledby="pills-signin-tab"
               tabindex="0">

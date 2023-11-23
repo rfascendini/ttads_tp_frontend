@@ -12,6 +12,6 @@ export class SectionSecundarioComponent {
   inscripcion: IInscripcion = JSON.parse(sessionStorage.getItem('inscripcion') as string)
 
     // -------------------- SECCION SECUNDARIO
-    secundario_completo: any = null;
+    secundario_completo: number = 0;
 
 }

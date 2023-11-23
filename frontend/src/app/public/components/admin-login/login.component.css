@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;400&display=swap');
+
+* {
+  font-family: 'Urbanist', sans-serif;
+}
+
+body {
+  background: #1453ba;display:grid; justify-content: center;align-items: center;
+}
+
+.form-login {
+  border-radius: 15px; max-width: 25em;
+}
+
+.logo {
+  width: 25em;
+}

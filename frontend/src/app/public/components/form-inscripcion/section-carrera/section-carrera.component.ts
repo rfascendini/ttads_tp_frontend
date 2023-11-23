@@ -42,8 +42,8 @@ export class SectionCarreraComponent {
   getCfgParams_carrera() {
     this.configParams.getConfiguracionParametros().subscribe(data => {
       data.forEach((item: IConfiguracionParametro) => {
-        if (item.field == 'formaingreso') { this.cfgparams_formaingreso.push(item) }
-        if (item.field == 'lugarcursado') { this.cfgparams_lugardecursado.push(item) }
+        if (item.field === 'formaingreso') { this.cfgparams_formaingreso.push(item) }
+        if (item.field === 'lugarcursado') { this.cfgparams_lugardecursado.push(item) }
       });
     }
     )
@@ -51,8 +51,8 @@ export class SectionCarreraComponent {
 
   getJsonCarreras() {
     this.carreraService.getCarreras().subscribe(data => {
-      data.forEach((carrera: any) => {
-        if (carrera.inscripcionAbierta == 1) { this.carreras.push(carrera) }
+      data.forEach((carrera: ICarrera) => {
+        if (carrera.inscripcionAbierta === 1) { this.carreras.push(carrera) }
       });
     })
   }

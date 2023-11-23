@@ -37,11 +37,11 @@ export class SectionDatosPersonalesComponent {
     this.configParams.getConfiguracionParametros().subscribe(data => {
       data.forEach((item: IConfiguracionParametro) => {
 
-        if (item.field == 'alumnosexo')       { this.cfgparams_alumnosexo.push(item) }
-        if (item.field == 'alumnoestadocivil')  { this.cfgparams_alumnoestadocivil.push(item) }
-        if (item.field == 'alumnogenero')      { this.cfgparams_alumnogenero.push(item) }
-        if (item.field == 'alumnotipodocumento') { this.cfgparams_alumnotipodocumento.push(item) }
-        if (item.field == 'nacgruposanguineo')     { this.cfgparams_nacgruposanguineo.push(item) }
+        if (item.field === 'alumnosexo')       { this.cfgparams_alumnosexo.push(item) }
+        if (item.field === 'alumnoestadocivil')  { this.cfgparams_alumnoestadocivil.push(item) }
+        if (item.field === 'alumnogenero')      { this.cfgparams_alumnogenero.push(item) }
+        if (item.field === 'alumnotipodocumento') { this.cfgparams_alumnotipodocumento.push(item) }
+        if (item.field === 'nacgruposanguineo')     { this.cfgparams_nacgruposanguineo.push(item) }
       });
     }
     )

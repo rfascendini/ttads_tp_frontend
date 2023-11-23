@@ -7,12 +7,11 @@
         <li class="nav-item">
           <a href="#" class="btn btn-outline-light btn-lg"><i class="bi bi-info-circle"></i></a>
         </li>
-        <li class="nav-item ms-3" *ngIf="inscripcion != null">
+        <li class="nav-item ms-3" *ngIf="loggedIn === true">
           <a class="btn btn-danger btn-lg" (click)="logout()"><i class="bi bi-box-arrow-right"></i></a>
         </li>
 
       </ul>
-
 
     </header>
   </div>

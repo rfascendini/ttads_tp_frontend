@@ -36,9 +36,9 @@ export class SectionCasaComponent {
   getCfgParams_casa() {
     this.configuracionCasa.getConfiguracionParametros().subscribe(data => {
       data.forEach((item: IConfiguracionParametro) => {
-        if (item.field == 'casamediotraslado') { this.cfgparams_casamediotraslado.push(item) }
-        if (item.field == 'casacondicion') { this.cfgparams_casacondicion.push(item) }
-        if (item.field == 'casatipo') { this.cfgparams_casatipo.push(item) }
+        if (item.field === 'casamediotraslado') { this.cfgparams_casamediotraslado.push(item) }
+        if (item.field === 'casacondicion') { this.cfgparams_casacondicion.push(item) }
+        if (item.field === 'casatipo') { this.cfgparams_casatipo.push(item) }
       });
     })
   }

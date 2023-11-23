@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/services/shared/loginService';
 
@@ -6,11 +6,17 @@ import { LoginService } from 'src/services/shared/loginService';
   selector: 'app-header',
   templateUrl: './header.component.html'
 })
-export class HeaderComponent{
+export class HeaderComponent implements OnInit {
 
   constructor(private router: Router, private logginOut: LoginService) { }
-
-  inscripcion : any = sessionStorage.getItem('inscripcion');
+  
+  loggedIn : boolean = false;
+  
+  ngOnInit(): void {
+    if(sessionStorage.getItem('inscripcion') != null) {
+      this.loggedIn = true;
+    }
+  }
 
   logout() {
     this.logginOut.destroySession();

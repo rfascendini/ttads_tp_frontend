@@ -17,7 +17,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 export class HomeComponent {
 
-  alerta = {
+  alert = {
     status: "",
     message: ""
   };
@@ -35,21 +35,21 @@ export class HomeComponent {
 
         this.loginService.inscriptionLogin(dni, token).subscribe((response) => {
 
-          this.alerta = { status: response.status, message: response.message }
+          this.alert = { status: response.status, message: response.message }
 
-          if (this.alerta.status === "success") {
+          if (this.alert.status === "success") {
             sessionStorage.setItem('inscripcion', JSON.stringify(response.inscripcion));
             this.router.navigate(['formulario']);
           }
 
         }, (error: HttpErrorResponse) => {
-          console.log(error.error)
-          this.alerta = { status: error.error.status, message: error.error.message }
+          
+          this.alert = { status: error.error.status, message: error.error.message }
         })
       }
 
     } else {
-      this.alerta = { status: 'error', message: 'Falta uno o más parametros.' }
+      this.alert = { status: 'error', message: 'Falta uno o más parametros.' }
     }
 
   }
@@ -60,22 +60,22 @@ export class HomeComponent {
 
     if (dni != '' && nroTramiteDni != '' && email != '') {
 
-      console.log(formSignin.value);
+
 
       this.inscripcionService.addInscripcion(dni, nroTramiteDni, email).subscribe((response) => {
 
-        console.log(response);
+
         
-        this.alerta = { status: response.status, message: response.message }
+        this.alert = { status: response.status, message: response.message }
 
       }, (error: HttpErrorResponse) => {
-        console.log(error.error)
-        this.alerta = { status: error.error.status, message: error.error.message }
+
+        this.alert = { status: error.error.status, message: error.error.message }
       })
 
     } else {
-      this.alerta = { status: 'error', message: 'Falta uno o más parametros.' }
-      console.log(this.alerta);
+      this.alert = { status: 'error', message: 'Falta uno o más parametros.' }
+
       
     }
 
