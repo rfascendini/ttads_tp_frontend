@@ -32,20 +32,6 @@ export class FormInscripcionComponent {
   // ASIGNAMOS EL TOKEN DE LA SESSION EN UNA VARIABLE
   inscripcion: IInscripcion = JSON.parse((sessionStorage.getItem('inscripcion') as IInscripcion) as string)
 
-  ngOnInit(): void {
-
-    if (this.inscripcion != null) {
-      this.authTokenService.verificarToken(String(this.inscripcion.token)).subscribe((responseToken) => {
-        if (responseToken.status != "success") {
-          this.router.navigate([''])
-        }
-      })
-    } else {
-      this.router.navigate([''])
-    }
-
-  }
-
   UpdateForm(formUpdate: NgForm) {
 
     if (formUpdate.valid) {
