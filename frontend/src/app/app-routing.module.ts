@@ -4,18 +4,19 @@ import { HomeComponent } from './public/components/home/home.component';
 import { FormInscripcionComponent } from './public/components/form-inscripcion/form-inscripcion.component';
 import { DashboardComponent } from './private/components/dashboard/dashboard.component';
 import { LoginComponent } from './public/components/admin-login/login.component';
-import { authGuard } from 'src/services/guards/auth.guards';
+import { authGuardAdmin } from 'src/services/guards/auth.guard.admin';
+import { authGuardForm } from 'src/services/guards/auth.guard.form';
 
 const routes: Routes = [
   {
     path: 'formulario',
     component: FormInscripcionComponent,
-    canActivate: [authGuard],
+    canActivate: [authGuardForm],
     title: 'Formulario de Ingreso - 2024'
   },
   {
     path: 'gestor',
-    canActivate: [authGuard],
+    canActivate: [authGuardAdmin],
     component: DashboardComponent, 
     title: 'Admin Panel - Gestor Inscripciones'
   },

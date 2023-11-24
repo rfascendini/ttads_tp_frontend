@@ -43,9 +43,9 @@ export class HomeComponent {
           }
 
         }, (error: HttpErrorResponse) => {
-          
           this.alert = { status: error.error.status, message: error.error.message }
         })
+
       }
 
     } else {
@@ -60,23 +60,19 @@ export class HomeComponent {
 
     if (dni != '' && nroTramiteDni != '' && email != '') {
 
-
-
       this.inscripcionService.addInscripcion(dni, nroTramiteDni, email).subscribe((response) => {
 
-
-        
         this.alert = { status: response.status, message: response.message }
 
       }, (error: HttpErrorResponse) => {
 
         this.alert = { status: error.error.status, message: error.error.message }
+
       })
 
     } else {
       this.alert = { status: 'error', message: 'Falta uno o más parametros.' }
 
-      
     }
 
   }

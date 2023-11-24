@@ -37,16 +37,16 @@ export class SectionTrabajoComponent {
   }
 
   getCfgParams_trabajo() {
-    this.configParams.getConfiguracionParametros().subscribe(data => {
-      data.forEach((item: IConfiguracionParametro) => {
-
-        if (item.field === 'tipotrabajo') { this.cfgparams_tipotrabajo.push(item) }
-        if (item.field === 'trabajoocupacion') { this.cfgparams_trabajoocupacion.push(item) }
-        if (item.field === 'trabajohoras') { this.cfgparams_trabajohoras.push(item) }
-        if (item.field === 'trabajorelcarrera') { this.cfgparams_trabajorelcarrera.push(item) }
-        if (item.field === 'tipoocupacion') { this.cfgparams_tipoocupacion.push(item) }
-      });
-    }
-    )
+    this.configParams.getConfiguracionParametros().subscribe({
+      next: (data) => {
+        data.forEach((item: IConfiguracionParametro) => {
+          if (item.field === 'tipotrabajo') { this.cfgparams_tipotrabajo.push(item) }
+          if (item.field === 'trabajoocupacion') { this.cfgparams_trabajoocupacion.push(item) }
+          if (item.field === 'trabajohoras') { this.cfgparams_trabajohoras.push(item) }
+          if (item.field === 'trabajorelcarrera') { this.cfgparams_trabajorelcarrera.push(item) }
+          if (item.field === 'tipoocupacion') { this.cfgparams_tipoocupacion.push(item) }
+        });
+      }
+    })
   }
 }

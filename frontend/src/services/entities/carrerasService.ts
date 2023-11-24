@@ -2,13 +2,14 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpOptions } from "../shared/httpOptions";
+import { environment } from "src/environments/environment.development";
 
 @Injectable({
   providedIn: "root",
 })
 export class CarrerasService {
 
-  private urlApi = "http://localhost:3000/api/carreras";
+  private urlApi = environment.apiUrl+environment.apiPort+environment.apiRoot+"/carreras";
 
   constructor(private http: HttpClient, private httpOptions: HttpOptions) { }
 

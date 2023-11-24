@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment.development";
 
 @Injectable({
   providedIn: "root",
@@ -14,17 +15,15 @@ export class LoginService {
     })
   };
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
 
   public adminLogin(username: string, password: string): Observable<any> {
-    const urlApi: string = "http://localhost:3000/api/admin/login";
+    const urlApi = environment.apiUrl+environment.apiPort+environment.apiRoot+"/admin/login";
     return this.http.post<any>(urlApi, { "username": username, "password": password }, this.httpOptions);
   }
 
   public inscriptionLogin(dni: string, token: string): Observable<any> {
-    const urlApi: string = "http://localhost:3000/api/inscripcion/login";
+    const urlApi: string = environment.apiUrl+environment.apiPort+environment.apiRoot+"/inscripcion/login";
     return this.http.post<any>(urlApi, { "dni": dni, "token": token }, this.httpOptions);
   }
 

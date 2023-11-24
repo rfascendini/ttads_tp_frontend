@@ -32,22 +32,18 @@ export class LoginComponent {
 
       if (username != '' && password != '') {
 
-        this.loginService.adminLogin(username, password).subscribe((response) => {
-
-          console.log(response);
-          
-
-          if (response.status === 'success') {
-
-            sessionStorage.setItem('user', JSON.stringify(response.user));
-
-            this.router.navigate(['gestor']);
-
+        this.loginService.adminLogin(username, password).subscribe({
+          next: (response) => {
+            if (response.status === 'success') {
+              sessionStorage.setItem('user', JSON.stringify(response.user));
+              this.router.navigate(['gestor']);
+            }
+          },
+          error: (e) => {
+            this.alert = { status: e.error.status, message: e.error.message }
           }
-
-        }, (error: HttpErrorResponse) => {
-          this.alert = { status: error.error.status, message: error.error.message }
-        });
+        })
+    
       }
 
     } else {
