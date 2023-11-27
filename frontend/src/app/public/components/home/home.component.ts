@@ -33,23 +33,27 @@ export class HomeComponent {
 
       if (dni != '' && token != '') {
 
-        this.loginService.inscriptionLogin(dni, token).subscribe((response) => {
+        this.loginService.inscriptionLogin(dni, token).subscribe({
+          next: (response) => {
 
-          this.alert = { status: response.status, message: response.message }
+            this.alert = { status: response.status, message: response.message }
 
-          if (this.alert.status === "success") {
-            sessionStorage.setItem('inscripcion', JSON.stringify(response.inscripcion));
-            this.router.navigate(['formulario']);
+            if (this.alert.status === "success") {
+              sessionStorage.setItem('inscripcion', JSON.stringify(response.inscripcion));
+              this.router.navigate(['formulario']);
+            }
+
+          },
+          error: (e) => {
+            this.alert = { status: e.error.status, message: e.error.message }
           }
 
-        }, (error: HttpErrorResponse) => {
-          this.alert = { status: error.error.status, message: error.error.message }
         })
 
+      } else {
+        this.alert = { status: 'error', message: 'Falta uno o más parametros.' }
       }
 
-    } else {
-      this.alert = { status: 'error', message: 'Falta uno o más parametros.' }
     }
 
   }
@@ -60,19 +64,22 @@ export class HomeComponent {
 
     if (dni != '' && nroTramiteDni != '' && email != '') {
 
-      this.inscripcionService.addInscripcion(dni, nroTramiteDni, email).subscribe((response) => {
+      this.inscripcionService.addInscripcion(dni, nroTramiteDni, email).subscribe({
 
-        this.alert = { status: response.status, message: response.message }
+        next: (response) => {
 
-      }, (error: HttpErrorResponse) => {
+          this.alert = { status: response.status, message: response.message }
 
-        this.alert = { status: error.error.status, message: error.error.message }
+        },
+        error: (e) => {
 
+          this.alert = { status: e.error.status, message: e.error.message }
+
+        }
       })
 
     } else {
       this.alert = { status: 'error', message: 'Falta uno o más parametros.' }
-
     }
 
   }
